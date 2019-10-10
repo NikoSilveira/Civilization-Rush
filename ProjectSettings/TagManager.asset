@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Fire
   layers:
   - Default
   - TransparentFX
@@ -49,4 +50,7 @@ TagManager:
     locked: 0
   - name: Foreground
     uniqueID: 1581347075
+    locked: 0
+  - name: Button
+    uniqueID: 2417164483
     locked: 0
