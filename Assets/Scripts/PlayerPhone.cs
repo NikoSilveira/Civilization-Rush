@@ -14,16 +14,19 @@ public class PlayerPhone : MonoBehaviour
     bool facingRight, jumping;
     float speed;
 
+
     Animator anim;
     Rigidbody2D rb;
-    Collider2D myCollider2D;
+    CapsuleCollider2D myBodyCollider2D;
+    BoxCollider2D myBodyFeet;
 
     // Start is called before the first frame update
     void Start()
     {
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
-        myCollider2D = GetComponent<Collider2D>();
+        myBodyCollider2D = GetComponent<CapsuleCollider2D>();
+        myBodyFeet = GetComponent<BoxCollider2D>();
         facingRight = true;
     }
 
@@ -58,7 +61,7 @@ public class PlayerPhone : MonoBehaviour
        if(Input.GetKeyDown(KeyCode.UpArrow))
         {
             //rb.AddForce(new Vector2(rb.velocity.x, jumpSpeedY));
-            if (!myCollider2D.IsTouchingLayers(LayerMask.GetMask("Ground")))
+            if (!myBodyFeet.IsTouchingLayers(LayerMask.GetMask("Ground")))
             {
                 return;
             }
@@ -95,7 +98,7 @@ public class PlayerPhone : MonoBehaviour
 
     private void jump()
     { 
-        if(!myCollider2D.IsTouchingLayers(LayerMask.GetMask("Ground")))
+        if(!myBodyFeet.IsTouchingLayers(LayerMask.GetMask("Ground")))
         {
         return;
         }
@@ -134,11 +137,14 @@ public class PlayerPhone : MonoBehaviour
     public void Jump()
     {
         //rb.AddForce(new Vector2(rb.velocity.x, jumpSpeedY));
-        if (!myCollider2D.IsTouchingLayers(LayerMask.GetMask("Ground")))
+        if (!myBodyFeet.IsTouchingLayers(LayerMask.GetMask("Ground")))
         {
             return;
         }
         Vector2 jumpVelocityToAdd = new Vector2(0f, jumpSpeed);
         rb.velocity += jumpVelocityToAdd;
     }
+
+
 }
+
