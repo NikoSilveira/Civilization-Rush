@@ -879,6 +879,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 1
+  target: {fileID: 962532469}
 --- !u!61 &71420875
 BoxCollider2D:
   m_ObjectHideFlags: 0
