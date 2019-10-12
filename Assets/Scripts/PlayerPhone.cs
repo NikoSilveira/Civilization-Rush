@@ -107,12 +107,15 @@ public class PlayerPhone : MonoBehaviour
     }
     private void Flip()
     {
-        if(speed > 0 && !facingRight || speed < 0 && facingRight)
+        if(Time.timeScale == 1)
         {
-            facingRight = !facingRight;
-            Vector3 temp = transform.localScale;
-            temp.x *= -1;
-            transform.localScale = temp;
+            if(speed > 0 && !facingRight || speed < 0 && facingRight)
+            {
+                facingRight = !facingRight;
+                Vector3 temp = transform.localScale;
+                temp.x *= -1;
+                transform.localScale = temp;
+            }
         }
     }
 
