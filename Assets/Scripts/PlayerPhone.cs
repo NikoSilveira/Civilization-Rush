@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityStandardAssets.CrossPlatformInput;
 
 public class PlayerPhone : MonoBehaviour
@@ -67,6 +68,12 @@ public class PlayerPhone : MonoBehaviour
             }
             Vector2 jumpVelocityToAdd = new Vector2(0f, jumpSpeed);
             rb.velocity += jumpVelocityToAdd;
+        }
+
+        //Reiniciar
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            SceneManager.LoadScene("SampleScene");
         }
      
     }
