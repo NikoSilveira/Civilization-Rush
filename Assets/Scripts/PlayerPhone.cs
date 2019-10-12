@@ -75,7 +75,14 @@ public class PlayerPhone : MonoBehaviour
         {
             SceneManager.LoadScene("SampleScene");
         }
-     
+
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
+        if (Physics.Raycast(ray, out hit))
+        {
+            Debug.Log(hit.transform.name);
+        }
+
     }
 
     void MovePlayer(float playerSpeed)
