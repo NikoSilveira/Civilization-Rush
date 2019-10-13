@@ -15,9 +15,14 @@ public class PlayerPhone : MonoBehaviour
     bool facingRight, jumping;
     float speed;
 
+    //Health
+    public int myHealth;
+    public int maxHealth = 100;
+    public int myH;
+    public int maxH = 5;
 
     Animator anim;
-    Rigidbody2D rb;
+    private Rigidbody2D rb;
     CapsuleCollider2D myBodyCollider2D;
     BoxCollider2D myBodyFeet;
 
@@ -29,6 +34,10 @@ public class PlayerPhone : MonoBehaviour
         myBodyCollider2D = GetComponent<CapsuleCollider2D>();
         myBodyFeet = GetComponent<BoxCollider2D>();
         facingRight = true;
+
+        //Health
+        myHealth = maxHealth;
+        myH = maxH;
     }
 
     // Update is called once per frame
@@ -82,6 +91,48 @@ public class PlayerPhone : MonoBehaviour
         {
             Debug.Log(hit.transform.name);
         }
+
+        //Salud
+        if(myHealth > maxHealth)
+        {
+            myHealth = maxHealth;
+            myH = maxH;
+        }
+        if(myHealth <= 0)
+        {
+            Die();
+        }
+        /*
+        if (myHealth == 100)
+        {
+            myH = 5;
+        }*/
+        if (myHealth > 80 && myHealth <= 100)
+        {
+            myH = 5;
+        }
+        else if (myHealth > 60 && myHealth <= 80)
+        {
+            myH = 4;
+        }
+        else if (myHealth > 40 && myHealth <= 60)
+        {
+            myH = 3;
+        }
+        else if (myHealth > 20 && myHealth <= 40)
+        {
+            myH = 2;
+        }
+        else if (myHealth > 0 && myHealth <= 20)
+        {
+            myH = 1;
+        }
+        else if (myHealth <= 0)
+        {
+            myH = 0;
+        }
+
+
 
     }
 
@@ -162,6 +213,29 @@ public class PlayerPhone : MonoBehaviour
         rb.velocity += jumpVelocityToAdd;
     }
 
+    public void Die()
+    {
+        SceneManager.LoadScene("SampleScene");
+    }
 
+    public void takeDamage(int damage)
+    {
+        myHealth -= damage;
+    }
+
+    public IEnumerator Knockback(float knockDur, float knockbackpwe, Vector3 knockbackDir)
+    {
+        float timer = 0;
+        while( knockDur > timer)
+        {
+            timer += Time.deltaTime;
+
+            rb.AddForce(new Vector3(knockbackDir.x * -100, knockbackDir.y * knockbackpwe, transform.position.z));
+        }
+        
+        yield return 0;
+    }
+
+     
 }
 

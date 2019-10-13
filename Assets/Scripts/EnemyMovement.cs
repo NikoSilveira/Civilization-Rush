@@ -17,6 +17,18 @@ public class EnemyMovement : MonoBehaviour
     private Vector2 stop;
     private bool facingRight = true;
 
+    //health
+    public int enemyHealth;
+    public int maxHealth = 100;
+
+    public float attackSpeed = 100;
+    public float attacktimer;
+    public float attackInterval;
+
+    public bool attackActive;
+    public Transform attackLeft, attacKRight;
+
+    private PlayerPhone player;
     private void Awake()
     {
         anim = GetComponent<Animator>();
@@ -31,6 +43,10 @@ public class EnemyMovement : MonoBehaviour
         runRight = new Vector2(maxSpeed, 0);
         runLeft = new Vector2(-maxSpeed, 0);
         stop = new Vector2(0, 0);
+
+        //Health
+        maxHealth = 100;
+        enemyHealth = maxHealth;
     }
 
     // Update is called once per frame
@@ -73,6 +89,11 @@ public class EnemyMovement : MonoBehaviour
             rigiBody2D.velocity = new Vector2(-moveSpeed, 0);
         }
 
+        //enemy die
+        if(enemyHealth <= 0)
+        {
+            Destroy(gameObject);
+        }
 
 
     }
@@ -98,4 +119,48 @@ public class EnemyMovement : MonoBehaviour
     {
         transform.localScale = new Vector2(-(Mathf.Sign(myRigiBody.velocity.x)), 1f);
     }
+
+
+    /*public void attack(bool attackingRight)
+    {
+        attacktimer += Time.deltaTime;
+
+        if(attacktimer >= attackInterval)
+        {
+            Vector2 direction = target.transform.position - transform.position;
+            direction.Normalize();
+
+            if (!attackingRight)
+            {
+
+            }
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+
+        }
+    }*/
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.isTrigger != true)
+        {
+            if (collision.CompareTag("Player"))
+            {
+                collision.GetComponent<PlayerPhone>().takeDamage(20);
+      
+            }
+        }
+    }
+
+    public void Damage(int damage)
+    {
+        enemyHealth -= damage;
+    }
+
+
 }
