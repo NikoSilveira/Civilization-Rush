@@ -42,14 +42,20 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: SuperBackground
+    uniqueID: 846464985
+    locked: 0
   - name: Background
     uniqueID: 4052391383
     locked: 0
-  - name: Player
-    uniqueID: 553545561
+  - name: Semibackground
+    uniqueID: 2310820295
     locked: 0
   - name: Foreground
     uniqueID: 1581347075
+    locked: 0
+  - name: Player
+    uniqueID: 553545561
     locked: 0
   - name: Button
     uniqueID: 2417164483
