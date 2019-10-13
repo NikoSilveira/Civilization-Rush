@@ -4,7 +4,7 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Fire
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -14,7 +14,7 @@ TagManager:
   - UI
   - 
   - 
-  - Ground
+  - 
   - 
   - 
   - 
@@ -42,21 +42,21 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: SuperBackground
-    uniqueID: 846464985
-    locked: 0
   - name: Background
-    uniqueID: 4052391383
+    uniqueID: 2558961631
     locked: 0
   - name: Semibackground
-    uniqueID: 2310820295
+    uniqueID: 1906359211
     locked: 0
-  - name: Foreground
-    uniqueID: 1581347075
+  - name: Enemy
+    uniqueID: 2509938245
     locked: 0
   - name: Player
-    uniqueID: 553545561
+    uniqueID: 1603590629
+    locked: 0
+  - name: Foreground
+    uniqueID: 3670636971
     locked: 0
   - name: Button
-    uniqueID: 2417164483
+    uniqueID: 1789930167
     locked: 0

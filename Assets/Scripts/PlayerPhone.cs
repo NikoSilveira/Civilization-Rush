@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityStandardAssets.CrossPlatformInput;
 
 public class PlayerPhone : MonoBehaviour
@@ -14,17 +15,29 @@ public class PlayerPhone : MonoBehaviour
     bool facingRight, jumping;
     float speed;
 
+    //Health
+    public int myHealth;
+    public int maxHealth = 100;
+    public int myH;
+    public int maxH = 5;
+
     Animator anim;
-    Rigidbody2D rb;
-    Collider2D myCollider2D;
+    private Rigidbody2D rb;
+    CapsuleCollider2D myBodyCollider2D;
+    BoxCollider2D myBodyFeet;
 
     // Start is called before the first frame update
     void Start()
     {
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
-        myCollider2D = GetComponent<Collider2D>();
+        myBodyCollider2D = GetComponent<CapsuleCollider2D>();
+        myBodyFeet = GetComponent<BoxCollider2D>();
         facingRight = true;
+
+        //Health
+        myHealth = maxHealth;
+        myH = maxH;
     }
 
     // Update is called once per frame
@@ -58,14 +71,69 @@ public class PlayerPhone : MonoBehaviour
        if(Input.GetKeyDown(KeyCode.UpArrow))
         {
             //rb.AddForce(new Vector2(rb.velocity.x, jumpSpeedY));
-            if (!myCollider2D.IsTouchingLayers(LayerMask.GetMask("Ground")))
+            if (!myBodyFeet.IsTouchingLayers(LayerMask.GetMask("Ground")))
             {
                 return;
             }
             Vector2 jumpVelocityToAdd = new Vector2(0f, jumpSpeed);
             rb.velocity += jumpVelocityToAdd;
         }
-     
+
+        //Reiniciar
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            SceneManager.LoadScene("SampleScene");
+        }
+
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
+        if (Physics.Raycast(ray, out hit))
+        {
+            Debug.Log(hit.transform.name);
+        }
+
+        //Salud
+        if(myHealth > maxHealth)
+        {
+            myHealth = maxHealth;
+            myH = maxH;
+        }
+        if(myHealth <= 0)
+        {
+            Die();
+        }
+        /*
+        if (myHealth == 100)
+        {
+            myH = 5;
+        }*/
+        if (myHealth > 80 && myHealth <= 100)
+        {
+            myH = 5;
+        }
+        else if (myHealth > 60 && myHealth <= 80)
+        {
+            myH = 4;
+        }
+        else if (myHealth > 40 && myHealth <= 60)
+        {
+            myH = 3;
+        }
+        else if (myHealth > 20 && myHealth <= 40)
+        {
+            myH = 2;
+        }
+        else if (myHealth > 0 && myHealth <= 20)
+        {
+            myH = 1;
+        }
+        else if (myHealth <= 0)
+        {
+            myH = 0;
+        }
+
+
+
     }
 
     void MovePlayer(float playerSpeed)
@@ -95,7 +163,7 @@ public class PlayerPhone : MonoBehaviour
 
     private void jump()
     { 
-        if(!myCollider2D.IsTouchingLayers(LayerMask.GetMask("Ground")))
+        if(!myBodyFeet.IsTouchingLayers(LayerMask.GetMask("Ground")))
         {
         return;
         }
@@ -107,12 +175,15 @@ public class PlayerPhone : MonoBehaviour
     }
     private void Flip()
     {
-        if(speed > 0 && !facingRight || speed < 0 && facingRight)
+        if(Time.timeScale == 1)
         {
-            facingRight = !facingRight;
-            Vector3 temp = transform.localScale;
-            temp.x *= -1;
-            transform.localScale = temp;
+            if(speed > 0 && !facingRight || speed < 0 && facingRight)
+            {
+                facingRight = !facingRight;
+                Vector3 temp = transform.localScale;
+                temp.x *= -1;
+                transform.localScale = temp;
+            }
         }
     }
 
@@ -134,11 +205,37 @@ public class PlayerPhone : MonoBehaviour
     public void Jump()
     {
         //rb.AddForce(new Vector2(rb.velocity.x, jumpSpeedY));
-        if (!myCollider2D.IsTouchingLayers(LayerMask.GetMask("Ground")))
+        if (!myBodyFeet.IsTouchingLayers(LayerMask.GetMask("Ground")))
         {
             return;
         }
         Vector2 jumpVelocityToAdd = new Vector2(0f, jumpSpeed);
         rb.velocity += jumpVelocityToAdd;
     }
+
+    public void Die()
+    {
+        SceneManager.LoadScene("SampleScene");
+    }
+
+    public void takeDamage(int damage)
+    {
+        myHealth -= damage;
+    }
+
+    public IEnumerator Knockback(float knockDur, float knockbackpwe, Vector3 knockbackDir)
+    {
+        float timer = 0;
+        while( knockDur > timer)
+        {
+            timer += Time.deltaTime;
+
+            rb.AddForce(new Vector3(knockbackDir.x * -100, knockbackDir.y * knockbackpwe, transform.position.z));
+        }
+        
+        yield return 0;
+    }
+
+     
 }
+
