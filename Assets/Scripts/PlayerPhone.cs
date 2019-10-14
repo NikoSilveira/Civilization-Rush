@@ -55,7 +55,16 @@ public class PlayerPhone : MonoBehaviour
         // Movimiento a la izquierda
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            speed = -speedX;
+            if (!anim.GetBool("run"))
+            {
+                if(!shieldActive)
+                {
+                    speed = -speedX;
+                } else
+                {
+                    speed = 0;
+                }
+            }
         }
         if(Input.GetKeyUp(KeyCode.LeftArrow))
         {
@@ -65,7 +74,16 @@ public class PlayerPhone : MonoBehaviour
         // Movimiento a la derecha
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            speed = speedX;
+            if(!anim.GetBool("run"))
+            {
+                if(!shieldActive)
+                {
+                   speed = speedX;
+                } else
+                {
+                    speed = 0;
+                }
+            }
         }
         if (Input.GetKeyUp(KeyCode.RightArrow))
         {
@@ -80,8 +98,11 @@ public class PlayerPhone : MonoBehaviour
             {
                 return;
             }
-            Vector2 jumpVelocityToAdd = new Vector2(0f, jumpSpeed);
-            rb.velocity += jumpVelocityToAdd;
+            if(!shieldActive)
+            {
+                Vector2 jumpVelocityToAdd = new Vector2(0f, jumpSpeed);
+                rb.velocity += jumpVelocityToAdd;
+            }
         }
 
         //Reiniciar
@@ -143,6 +164,7 @@ public class PlayerPhone : MonoBehaviour
         {
             shieldActive = true;
             anim.SetBool("blocking", shieldActive);
+            speed = 0;
         }
         if (Input.GetKeyUp(KeyCode.D))
         {
@@ -207,12 +229,19 @@ public class PlayerPhone : MonoBehaviour
 
     public void WalkLeft()
     {
-        speed = -speedX;
+        if(!shieldActive)
+        {
+           speed = -speedX;
+        }
+        return;
     }
 
     public void WalkRight()
     {
-        speed = speedX;
+        if (!shieldActive)
+        {
+            speed = speedX;
+        }
     }
 
     public void StopMoving()
@@ -233,13 +262,16 @@ public class PlayerPhone : MonoBehaviour
     }
     public void Jump()
     {
-        //rb.AddForce(new Vector2(rb.velocity.x, jumpSpeedY));
-        if (!myBodyFeet.IsTouchingLayers(LayerMask.GetMask("Ground")))
+        if(!shieldActive)
         {
-            return;
+            //rb.AddForce(new Vector2(rb.velocity.x, jumpSpeedY));
+            if (!myBodyFeet.IsTouchingLayers(LayerMask.GetMask("Ground")))
+            {
+                return;
+            }
+            Vector2 jumpVelocityToAdd = new Vector2(0f, jumpSpeed);
+            rb.velocity += jumpVelocityToAdd;
         }
-        Vector2 jumpVelocityToAdd = new Vector2(0f, jumpSpeed);
-        rb.velocity += jumpVelocityToAdd;
     }
 
     public void Die()

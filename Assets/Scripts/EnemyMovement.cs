@@ -60,14 +60,14 @@ public class EnemyMovement : MonoBehaviour
 
         // Al ver al jugador
         distancePlayer = target.position.x - transform.position.x;
-        if(distancePlayer > 0 && !facingRight)
+        /*if(distancePlayer > 0 && !facingRight)
         {
             Flip();
         }
         else if(distancePlayer < 0 && facingRight)
         {
          Flip();
-        }
+        }*/
         /*
         if(distancePlayer < -1f)
         {

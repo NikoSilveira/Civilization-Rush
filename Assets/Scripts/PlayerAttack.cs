@@ -23,6 +23,7 @@ public class PlayerAttack : MonoBehaviour
     {
         if(Input.GetKeyDown("f") && !attacking)
         {
+            
             attacking = true;
             attackTimer = attackCd;
 
