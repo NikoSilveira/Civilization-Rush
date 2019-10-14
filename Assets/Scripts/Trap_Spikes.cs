@@ -24,7 +24,7 @@ public class Trap_Spikes : MonoBehaviour
         {
             player.takeDamage(20);
 
-            StartCoroutine(player.Knockback(0.2f, 350, player.transform.position));
+            StartCoroutine(player.Knockback(0.2f, 250, player.transform.position));
         }
     }
 }
