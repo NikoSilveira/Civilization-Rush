@@ -28,6 +28,9 @@ public class EnemyMovement : MonoBehaviour
     public bool attackActive;
     public Transform attackLeft, attacKRight;
 
+    //Instance Damage
+    public int damageLevel;
+
     private PlayerPhone player;
     private void Awake()
     {
@@ -151,7 +154,7 @@ public class EnemyMovement : MonoBehaviour
         {
             if (collision.CompareTag("Player"))
             {
-                collision.GetComponent<PlayerPhone>().takeDamage(20);
+                collision.GetComponent<PlayerPhone>().takeDamage(damageLevel);
       
             }
         }
