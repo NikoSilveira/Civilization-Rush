@@ -142,10 +142,12 @@ public class PlayerPhone : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.D))
         {
             shieldActive = true;
+            anim.SetBool("blocking", shieldActive);
         }
         if (Input.GetKeyUp(KeyCode.D))
         {
             shieldActive = false;
+            anim.SetBool("blocking", shieldActive);
         }
 
         //Debug.Log("Estado: "+shieldActive);
@@ -218,6 +220,17 @@ public class PlayerPhone : MonoBehaviour
         speed = 0;
     }
 
+    public void playerBlock()
+    {
+        shieldActive = true;
+        anim.SetBool("blocking", shieldActive);
+    }
+
+    public void playerDontBlock()
+    {
+        shieldActive = false;
+        anim.SetBool("blocking", shieldActive);
+    }
     public void Jump()
     {
         //rb.AddForce(new Vector2(rb.velocity.x, jumpSpeedY));
