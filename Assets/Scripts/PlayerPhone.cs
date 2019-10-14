@@ -21,6 +21,10 @@ public class PlayerPhone : MonoBehaviour
     public int myH;
     public int maxH = 5;
 
+    //Shield
+    public bool shield = false;
+    public bool shieldActive = false;
+
     Animator anim;
     private Rigidbody2D rb;
     CapsuleCollider2D myBodyCollider2D;
@@ -45,6 +49,7 @@ public class PlayerPhone : MonoBehaviour
     {
         MovePlayer(speed);
         Flip();
+        AnimationControl();
         
 
         // Movimiento a la izquierda
@@ -107,6 +112,7 @@ public class PlayerPhone : MonoBehaviour
         {
             myH = 5;
         }*/
+
         if (myHealth > 80 && myHealth <= 100)
         {
             myH = 5;
@@ -132,7 +138,17 @@ public class PlayerPhone : MonoBehaviour
             myH = 0;
         }
 
+        //Escudo
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            shieldActive = true;
+        }
+        if (Input.GetKeyUp(KeyCode.D))
+        {
+            shieldActive = false;
+        }
 
+        //Debug.Log("Estado: "+shieldActive);
 
     }
 
@@ -220,7 +236,10 @@ public class PlayerPhone : MonoBehaviour
 
     public void takeDamage(int damage)
     {
-        myHealth -= damage;
+        if(shield == false || (shield == true && shieldActive == false)) //Condiciones para recibir daño
+        {
+            myHealth -= damage;
+        }
     }
 
     public IEnumerator Knockback(float knockDur, float knockbackpwe, Vector3 knockbackDir)
@@ -234,6 +253,18 @@ public class PlayerPhone : MonoBehaviour
         }
         
         yield return 0;
+    }
+
+    void AnimationControl()
+    {
+        if(shield == false)
+        {
+            anim.SetLayerWeight(1,0);
+        }
+        else if(shield == true)
+        {
+            anim.SetLayerWeight(1,1);
+        }
     }
 
      
