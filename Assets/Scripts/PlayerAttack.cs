@@ -7,7 +7,7 @@ public class PlayerAttack : MonoBehaviour
 
     private bool attacking = false;
     private float attackTimer = 0;
-    public float attackCd = 0.3f;
+    public float attackCd = 0.2f;
 
     public Collider2D attackTrigger;
     private Animator anim;
@@ -53,4 +53,13 @@ public class PlayerAttack : MonoBehaviour
 
         attackTrigger.enabled = true;
     }
+
+    public void dontAttackButtom()
+    {
+       
+                attacking = false;
+                attackTrigger.enabled = false;
+            
+    }
+
 }
