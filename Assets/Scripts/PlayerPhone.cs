@@ -251,8 +251,12 @@ public class PlayerPhone : MonoBehaviour
 
     public void playerBlock()
     {
-        shieldActive = true;
-        anim.SetBool("blocking", shieldActive);
+        if(!shieldActive)
+        {
+            shieldActive = true;
+            anim.SetBool("blocking", shieldActive);
+            speed = 0;
+        }
     }
 
     public void playerDontBlock()
