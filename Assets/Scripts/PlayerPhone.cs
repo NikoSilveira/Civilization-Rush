@@ -206,13 +206,18 @@ public class PlayerPhone : MonoBehaviour
         if (Time.timeScale == 1 && !shieldActive)
         {
             //rb.AddForce(new Vector2(rb.velocity.x, jumpSpeedY));
-            if (!myBodyFeet.IsTouchingLayers(LayerMask.GetMask("Ground")))
+            if (myBodyFeet.IsTouchingLayers(LayerMask.GetMask("Ground")))
             {
+                Vector2 jumpVelocityToAdd = new Vector2(0f, jumpSpeed);
+                rb.velocity += jumpVelocityToAdd;
                 return;
             }
-            Vector2 jumpVelocityToAdd = new Vector2(0f, jumpSpeed);
-            rb.velocity += jumpVelocityToAdd;
         }
+    }
+
+    public void DontJump()
+    {
+        return;
     }
 
     private void Flip()
