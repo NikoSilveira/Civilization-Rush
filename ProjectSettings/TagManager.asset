@@ -4,8 +4,6 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Fire
-  - Sword
   - Enemy
   layers:
   - Default
@@ -45,17 +43,20 @@ TagManager:
     uniqueID: 0
     locked: 0
   - name: Background
-    uniqueID: 4052391383
+    uniqueID: 2558961631
+    locked: 0
+  - name: Semibackground
+    uniqueID: 1906359211
     locked: 0
   - name: Enemy
-    uniqueID: 1874748259
+    uniqueID: 2509938245
     locked: 0
   - name: Player
-    uniqueID: 553545561
+    uniqueID: 1603590629
     locked: 0
   - name: Foreground
-    uniqueID: 1581347075
+    uniqueID: 3670636971
     locked: 0
   - name: Button
-    uniqueID: 2417164483
+    uniqueID: 1789930167
     locked: 0
