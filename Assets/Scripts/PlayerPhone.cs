@@ -30,6 +30,7 @@ public class PlayerPhone : MonoBehaviour
     CapsuleCollider2D myBodyCollider2D;
     BoxCollider2D myBodyFeet;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -50,23 +51,48 @@ public class PlayerPhone : MonoBehaviour
         MovePlayer(speed);
         Flip();
         AnimationControl();
-        
 
+        controlSalud();
+
+        ControlConTeclado();
+
+
+
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
+        if (Physics.Raycast(ray, out hit))
+        {
+            Debug.Log(hit.transform.name);
+        }
+
+
+
+    }
+
+
+
+    //---------------------------------
+    //     CONTROLES CON TECLADO
+    //---------------------------------
+
+    void ControlConTeclado()
+    {
         // Movimiento a la izquierda
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
             if (!anim.GetBool("run"))
             {
-                if(!shieldActive)
+                if (!shieldActive)
                 {
                     speed = -speedX;
-                } else
+                }
+                else
                 {
                     speed = 0;
                 }
             }
         }
-        if(Input.GetKeyUp(KeyCode.LeftArrow))
+        if (Input.GetKeyUp(KeyCode.LeftArrow))
         {
             speed = 0;
         }
@@ -74,12 +100,13 @@ public class PlayerPhone : MonoBehaviour
         // Movimiento a la derecha
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            if(!anim.GetBool("run"))
+            if (!anim.GetBool("run"))
             {
-                if(!shieldActive)
+                if (!shieldActive)
                 {
-                   speed = speedX;
-                } else
+                    speed = speedX;
+                }
+                else
                 {
                     speed = 0;
                 }
@@ -90,73 +117,19 @@ public class PlayerPhone : MonoBehaviour
             speed = 0;
         }
 
-       //Salto
-       if(Input.GetKeyDown(KeyCode.UpArrow))
+        //Salto
+        if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             //rb.AddForce(new Vector2(rb.velocity.x, jumpSpeedY));
             if (!myBodyFeet.IsTouchingLayers(LayerMask.GetMask("Ground")))
             {
                 return;
             }
-            if(!shieldActive)
+            if (!shieldActive)
             {
                 Vector2 jumpVelocityToAdd = new Vector2(0f, jumpSpeed);
                 rb.velocity += jumpVelocityToAdd;
             }
-        }
-
-        //Reiniciar
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            SceneManager.LoadScene("SampleScene");
-        }
-
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
-        if (Physics.Raycast(ray, out hit))
-        {
-            Debug.Log(hit.transform.name);
-        }
-
-        //Salud
-        if(myHealth > maxHealth)
-        {
-            myHealth = maxHealth;
-            myH = maxH;
-        }
-        if(myHealth <= 0)
-        {
-            Die();
-        }
-        /*
-        if (myHealth == 100)
-        {
-            myH = 5;
-        }*/
-
-        if (myHealth > 80 && myHealth <= 100)
-        {
-            myH = 5;
-        }
-        else if (myHealth > 60 && myHealth <= 80)
-        {
-            myH = 4;
-        }
-        else if (myHealth > 40 && myHealth <= 60)
-        {
-            myH = 3;
-        }
-        else if (myHealth > 20 && myHealth <= 40)
-        {
-            myH = 2;
-        }
-        else if (myHealth > 0 && myHealth <= 20)
-        {
-            myH = 1;
-        }
-        else if (myHealth <= 0)
-        {
-            myH = 0;
         }
 
         //Escudo
@@ -172,9 +145,18 @@ public class PlayerPhone : MonoBehaviour
             anim.SetBool("blocking", shieldActive);
         }
 
-        //Debug.Log("Estado: "+shieldActive);
-
+        //Reiniciar
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            SceneManager.LoadScene("SampleScene");
+        }
     }
+
+
+
+    //--------------------------
+    //        MOVIMIENTO
+    //--------------------------
 
     void MovePlayer(float playerSpeed)
     {
@@ -249,6 +231,12 @@ public class PlayerPhone : MonoBehaviour
         speed = 0;
     }
 
+
+
+    //------------------------
+    //         ESCUDO
+    //------------------------
+
     public void playerBlock()
     {
         if(!shieldActive)
@@ -278,6 +266,12 @@ public class PlayerPhone : MonoBehaviour
         }
     }
 
+
+
+    //-----------------------
+    //         SALUD
+    //-----------------------
+
     public void Die()
     {
         SceneManager.LoadScene("SampleScene");
@@ -303,6 +297,56 @@ public class PlayerPhone : MonoBehaviour
         
         yield return 0;
     }
+
+    public void controlSalud()  //INTENTAR LIMPIAR UN POCO EL SISTEMA DE CONDICIONALES
+    {
+        //Salud
+        if (myHealth > maxHealth)
+        {
+            myHealth = maxHealth;
+            myH = maxH;
+        }
+        if (myHealth <= 0)
+        {
+            Die();
+        }
+        /*
+        if (myHealth == 100)
+        {
+            myH = 5;
+        }*/
+
+        if (myHealth > 80 && myHealth <= 100)
+        {
+            myH = 5;
+        }
+        else if (myHealth > 60 && myHealth <= 80)
+        {
+            myH = 4;
+        }
+        else if (myHealth > 40 && myHealth <= 60)
+        {
+            myH = 3;
+        }
+        else if (myHealth > 20 && myHealth <= 40)
+        {
+            myH = 2;
+        }
+        else if (myHealth > 0 && myHealth <= 20)
+        {
+            myH = 1;
+        }
+        else if (myHealth <= 0)
+        {
+            myH = 0;
+        }
+    }
+
+
+
+    //----------------------------------
+    //    CONTROLADOR DE ANIMACIONES
+    //----------------------------------
 
     void AnimationControl()
     {
