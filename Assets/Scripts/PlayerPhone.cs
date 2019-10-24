@@ -48,22 +48,24 @@ public class PlayerPhone : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        MovePlayer(speed);
-        Flip();
-        AnimationControl();
+        if(Time.timeScale == 1)
+        {
+            MovePlayer(speed);
+            Flip();
+            AnimationControl();
 
-        controlSalud();
+            controlSalud();
 
-        ControlConTeclado();
+            ControlConTeclado();
+        }
 
 
-
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        /*Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit))
         {
             Debug.Log(hit.transform.name);
-        }
+        }*/
 
 
 
@@ -185,28 +187,45 @@ public class PlayerPhone : MonoBehaviour
 
     private void jump()
     { 
-        if(!myBodyFeet.IsTouchingLayers(LayerMask.GetMask("Ground")))
-        {
-        return;
-        }
-        if(CrossPlatformInputManager.GetButtonDown("Jump"))
-        {
-        Vector2 jumpVelocityToAdd = new Vector2(0f, jumpSpeed);
-        rb.velocity += jumpVelocityToAdd;
-        }
-    }
-    private void Flip()
-    {
         if(Time.timeScale == 1)
         {
-            if(speed > 0 && !facingRight || speed < 0 && facingRight)
+            if (!myBodyFeet.IsTouchingLayers(LayerMask.GetMask("Ground")))
             {
-                facingRight = !facingRight;
-                Vector3 temp = transform.localScale;
-                temp.x *= -1;
-                transform.localScale = temp;
+                return;
+            }
+            if (CrossPlatformInputManager.GetButtonDown("Jump"))
+            {
+                Vector2 jumpVelocityToAdd = new Vector2(0f, jumpSpeed);
+                rb.velocity += jumpVelocityToAdd;
             }
         }
+
+    }
+    public void Jump()
+    {
+        if (Time.timeScale == 1 && !shieldActive)
+        {
+            //rb.AddForce(new Vector2(rb.velocity.x, jumpSpeedY));
+            if (!myBodyFeet.IsTouchingLayers(LayerMask.GetMask("Ground")))
+            {
+                return;
+            }
+            Vector2 jumpVelocityToAdd = new Vector2(0f, jumpSpeed);
+            rb.velocity += jumpVelocityToAdd;
+        }
+    }
+
+    private void Flip()
+    {
+        
+        if(speed > 0 && !facingRight || speed < 0 && facingRight)
+        {
+            facingRight = !facingRight;
+            Vector3 temp = transform.localScale;
+            temp.x *= -1;
+            transform.localScale = temp;
+        }
+        
     }
 
     public void WalkLeft()
@@ -252,19 +271,7 @@ public class PlayerPhone : MonoBehaviour
         shieldActive = false;
         anim.SetBool("blocking", shieldActive);
     }
-    public void Jump()
-    {
-        if(!shieldActive)
-        {
-            //rb.AddForce(new Vector2(rb.velocity.x, jumpSpeedY));
-            if (!myBodyFeet.IsTouchingLayers(LayerMask.GetMask("Ground")))
-            {
-                return;
-            }
-            Vector2 jumpVelocityToAdd = new Vector2(0f, jumpSpeed);
-            rb.velocity += jumpVelocityToAdd;
-        }
-    }
+
 
 
 
