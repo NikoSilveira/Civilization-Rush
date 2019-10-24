@@ -162,14 +162,14 @@ public class PlayerPhone : MonoBehaviour
     {
         bool playerHasHorizontalSpeed = Mathf.Abs(rb.velocity.x) > Mathf.Epsilon;
         anim.SetBool("walking_left", playerHasHorizontalSpeed);
-        /*if (playerSpeed < 0 && playerSpeed > 0)
+        if (playerSpeed < 0 || playerSpeed > 0) //Habilité estos dos ifs para resolver el problema. Era or, no and
         {
             anim.SetBool("walking_left", true);
         }
         if(playerSpeed == 0)
         {
             anim.SetBool("walking_left", false);
-        }*/
+        }
         rb.velocity = new Vector3(speed, rb.velocity.y, 0);
     }
 
