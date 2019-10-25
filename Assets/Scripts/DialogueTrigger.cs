@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DialogueTrigger : MonoBehaviour
+public class DialogueTrigger : Singleton<DialogueTrigger>
 {
+    //Hereda Singleton
 
     public Dialogue dialogue;
 
     public void TriggerDialogue()
     {
-        //Aqui se puede implementar un singleton
         FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
     }
 
