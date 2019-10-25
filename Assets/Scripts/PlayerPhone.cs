@@ -17,9 +17,9 @@ public class PlayerPhone : MonoBehaviour
 
     //Health
     public int myHealth;
-    public int maxHealth = 100;
+    public int maxHealth = 9;
     public int myH;
-    public int maxH = 5;
+    public int maxH = 9;
 
     //Shield
     public bool shield = false;
@@ -333,23 +333,39 @@ public class PlayerPhone : MonoBehaviour
             myH = 5;
         }*/
 
-        if (myHealth > 80 && myHealth <= 100)
+        if (myHealth == 9)
+        {
+            myH = 9;
+        }
+        else if (myHealth == 8)
+        {
+            myH = 8;
+        }
+        else if (myHealth == 7)
+        {
+            myH = 7;
+        }
+        else if (myHealth == 6)
+        {
+            myH = 6;
+        }
+        else if (myHealth == 5)
         {
             myH = 5;
         }
-        else if (myHealth > 60 && myHealth <= 80)
+        else if(myHealth == 4)
         {
             myH = 4;
         }
-        else if (myHealth > 40 && myHealth <= 60)
+        else if(myHealth == 3)
         {
             myH = 3;
         }
-        else if (myHealth > 20 && myHealth <= 40)
+        else if(myHealth == 2)
         {
             myH = 2;
         }
-        else if (myHealth > 0 && myHealth <= 20)
+        else if (myHealth==1)
         {
             myH = 1;
         }
