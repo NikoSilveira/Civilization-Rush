@@ -58,16 +58,19 @@ public class PlayerAttack : MonoBehaviour
             attackTimer = attackCd;
 
             attackTrigger.enabled = true;
+
+           
+            
         }
 
     }
 
     public void dontAttackButtom()
     {
-       
-                attacking = false;
-                attackTrigger.enabled = false;
-            
+      
+        attacking = false;
+       attackTrigger.enabled = false;
+
     }
 
 }
