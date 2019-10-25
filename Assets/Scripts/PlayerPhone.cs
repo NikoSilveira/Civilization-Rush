@@ -25,6 +25,9 @@ public class PlayerPhone : MonoBehaviour
     public bool shield = false;
     public bool shieldActive = false;
 
+    //Respawn
+    public Vector3 respawnPoint;
+
     Animator anim;
     private Rigidbody2D rb;
     CapsuleCollider2D myBodyCollider2D;
@@ -286,7 +289,9 @@ public class PlayerPhone : MonoBehaviour
 
     public void Die()
     {
-        SceneManager.LoadScene("SampleScene");
+        //SceneManager.LoadScene("SampleScene");
+        transform.position = respawnPoint;
+        myHealth = maxHealth;
     }
 
     public void takeDamage(int damage)
@@ -372,6 +377,19 @@ public class PlayerPhone : MonoBehaviour
         }
     }
 
-     
+
+
+
+    //-----------------------------
+    //         CHECKPOINT
+    //-----------------------------
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Checkpoint"))
+        {
+            respawnPoint = collision.transform.position;
+        }
+    }
 }
 
