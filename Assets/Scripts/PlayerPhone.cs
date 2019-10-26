@@ -17,18 +17,22 @@ public class PlayerPhone : MonoBehaviour
 
     //Health
     public int myHealth;
-    public int maxHealth = 100;
+    public int maxHealth = 9;
     public int myH;
-    public int maxH = 5;
+    public int maxH = 9;
 
     //Shield
     public bool shield = false;
     public bool shieldActive = false;
 
+    //Respawn
+    public Vector3 respawnPoint;
+
     Animator anim;
     private Rigidbody2D rb;
     CapsuleCollider2D myBodyCollider2D;
     BoxCollider2D myBodyFeet;
+
 
     // Start is called before the first frame update
     void Start()
@@ -47,26 +51,53 @@ public class PlayerPhone : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        MovePlayer(speed);
-        Flip();
-        AnimationControl();
-        
+        if(Time.timeScale == 1)
+        {
+            MovePlayer(speed);
+            Flip();
+            AnimationControl();
 
+            controlSalud();
+
+            ControlConTeclado();
+        }
+
+
+        /*Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
+        if (Physics.Raycast(ray, out hit))
+        {
+            Debug.Log(hit.transform.name);
+        }*/
+
+
+
+    }
+
+
+
+    //---------------------------------
+    //     CONTROLES CON TECLADO
+    //---------------------------------
+
+    void ControlConTeclado()
+    {
         // Movimiento a la izquierda
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
             if (!anim.GetBool("run"))
             {
-                if(!shieldActive)
+                if (!shieldActive)
                 {
                     speed = -speedX;
-                } else
+                }
+                else
                 {
                     speed = 0;
                 }
             }
         }
-        if(Input.GetKeyUp(KeyCode.LeftArrow))
+        if (Input.GetKeyUp(KeyCode.LeftArrow))
         {
             speed = 0;
         }
@@ -74,12 +105,13 @@ public class PlayerPhone : MonoBehaviour
         // Movimiento a la derecha
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            if(!anim.GetBool("run"))
+            if (!anim.GetBool("run"))
             {
-                if(!shieldActive)
+                if (!shieldActive)
                 {
-                   speed = speedX;
-                } else
+                    speed = speedX;
+                }
+                else
                 {
                     speed = 0;
                 }
@@ -90,73 +122,19 @@ public class PlayerPhone : MonoBehaviour
             speed = 0;
         }
 
-       //Salto
-       if(Input.GetKeyDown(KeyCode.UpArrow))
+        //Salto
+        if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             //rb.AddForce(new Vector2(rb.velocity.x, jumpSpeedY));
             if (!myBodyFeet.IsTouchingLayers(LayerMask.GetMask("Ground")))
             {
                 return;
             }
-            if(!shieldActive)
+            if (!shieldActive)
             {
                 Vector2 jumpVelocityToAdd = new Vector2(0f, jumpSpeed);
                 rb.velocity += jumpVelocityToAdd;
             }
-        }
-
-        //Reiniciar
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            SceneManager.LoadScene("SampleScene");
-        }
-
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
-        if (Physics.Raycast(ray, out hit))
-        {
-            Debug.Log(hit.transform.name);
-        }
-
-        //Salud
-        if(myHealth > maxHealth)
-        {
-            myHealth = maxHealth;
-            myH = maxH;
-        }
-        if(myHealth <= 0)
-        {
-            Die();
-        }
-        /*
-        if (myHealth == 100)
-        {
-            myH = 5;
-        }*/
-
-        if (myHealth > 80 && myHealth <= 100)
-        {
-            myH = 5;
-        }
-        else if (myHealth > 60 && myHealth <= 80)
-        {
-            myH = 4;
-        }
-        else if (myHealth > 40 && myHealth <= 60)
-        {
-            myH = 3;
-        }
-        else if (myHealth > 20 && myHealth <= 40)
-        {
-            myH = 2;
-        }
-        else if (myHealth > 0 && myHealth <= 20)
-        {
-            myH = 1;
-        }
-        else if (myHealth <= 0)
-        {
-            myH = 0;
         }
 
         //Escudo
@@ -172,22 +150,31 @@ public class PlayerPhone : MonoBehaviour
             anim.SetBool("blocking", shieldActive);
         }
 
-        //Debug.Log("Estado: "+shieldActive);
-
+        //Reiniciar
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            SceneManager.LoadScene("SampleScene");
+        }
     }
+
+
+
+    //--------------------------
+    //        MOVIMIENTO
+    //--------------------------
 
     void MovePlayer(float playerSpeed)
     {
         bool playerHasHorizontalSpeed = Mathf.Abs(rb.velocity.x) > Mathf.Epsilon;
         anim.SetBool("walking_left", playerHasHorizontalSpeed);
-        /*if (playerSpeed < 0 && playerSpeed > 0)
+        if (playerSpeed < 0 || playerSpeed > 0) //Habilité estos dos ifs para resolver el problema. Era or, no and
         {
             anim.SetBool("walking_left", true);
         }
         if(playerSpeed == 0)
         {
             anim.SetBool("walking_left", false);
-        }*/
+        }
         rb.velocity = new Vector3(speed, rb.velocity.y, 0);
     }
 
@@ -203,28 +190,50 @@ public class PlayerPhone : MonoBehaviour
 
     private void jump()
     { 
-        if(!myBodyFeet.IsTouchingLayers(LayerMask.GetMask("Ground")))
-        {
-        return;
-        }
-        if(CrossPlatformInputManager.GetButtonDown("Jump"))
-        {
-        Vector2 jumpVelocityToAdd = new Vector2(0f, jumpSpeed);
-        rb.velocity += jumpVelocityToAdd;
-        }
-    }
-    private void Flip()
-    {
         if(Time.timeScale == 1)
         {
-            if(speed > 0 && !facingRight || speed < 0 && facingRight)
+            if (!myBodyFeet.IsTouchingLayers(LayerMask.GetMask("Ground")))
             {
-                facingRight = !facingRight;
-                Vector3 temp = transform.localScale;
-                temp.x *= -1;
-                transform.localScale = temp;
+                return;
+            }
+            if (CrossPlatformInputManager.GetButtonDown("Jump"))
+            {
+                Vector2 jumpVelocityToAdd = new Vector2(0f, jumpSpeed);
+                rb.velocity += jumpVelocityToAdd;
             }
         }
+
+    }
+    public void Jump()
+    {
+        if (Time.timeScale == 1 && !shieldActive)
+        {
+            //rb.AddForce(new Vector2(rb.velocity.x, jumpSpeedY));
+            if (myBodyFeet.IsTouchingLayers(LayerMask.GetMask("Ground")))
+            {
+                Vector2 jumpVelocityToAdd = new Vector2(0f, jumpSpeed);
+                rb.velocity += jumpVelocityToAdd;
+                return;
+            }
+        }
+    }
+
+    public void DontJump()
+    {
+        return;
+    }
+
+    private void Flip()
+    {
+        
+        if(speed > 0 && !facingRight || speed < 0 && facingRight)
+        {
+            facingRight = !facingRight;
+            Vector3 temp = transform.localScale;
+            temp.x *= -1;
+            transform.localScale = temp;
+        }
+        
     }
 
     public void WalkLeft()
@@ -249,10 +258,20 @@ public class PlayerPhone : MonoBehaviour
         speed = 0;
     }
 
+
+
+    //------------------------
+    //         ESCUDO
+    //------------------------
+
     public void playerBlock()
     {
-        shieldActive = true;
-        anim.SetBool("blocking", shieldActive);
+        if(!shieldActive)
+        {
+            shieldActive = true;
+            anim.SetBool("blocking", shieldActive);
+            speed = 0;
+        }
     }
 
     public void playerDontBlock()
@@ -260,23 +279,19 @@ public class PlayerPhone : MonoBehaviour
         shieldActive = false;
         anim.SetBool("blocking", shieldActive);
     }
-    public void Jump()
-    {
-        if(!shieldActive)
-        {
-            //rb.AddForce(new Vector2(rb.velocity.x, jumpSpeedY));
-            if (!myBodyFeet.IsTouchingLayers(LayerMask.GetMask("Ground")))
-            {
-                return;
-            }
-            Vector2 jumpVelocityToAdd = new Vector2(0f, jumpSpeed);
-            rb.velocity += jumpVelocityToAdd;
-        }
-    }
+
+
+
+
+    //-----------------------
+    //         SALUD
+    //-----------------------
 
     public void Die()
     {
-        SceneManager.LoadScene("SampleScene");
+        //SceneManager.LoadScene("SampleScene");
+        transform.position = respawnPoint;
+        myHealth = maxHealth;
     }
 
     public void takeDamage(int damage)
@@ -300,6 +315,72 @@ public class PlayerPhone : MonoBehaviour
         yield return 0;
     }
 
+    public void controlSalud()  //INTENTAR LIMPIAR UN POCO EL SISTEMA DE CONDICIONALES
+    {
+        //Salud
+        if (myHealth > maxHealth)
+        {
+            myHealth = maxHealth;
+            myH = maxH;
+        }
+        if (myHealth <= 0)
+        {
+            Die();
+        }
+        /*
+        if (myHealth == 100)
+        {
+            myH = 5;
+        }*/
+
+        if (myHealth == 9)
+        {
+            myH = 9;
+        }
+        else if (myHealth == 8)
+        {
+            myH = 8;
+        }
+        else if (myHealth == 7)
+        {
+            myH = 7;
+        }
+        else if (myHealth == 6)
+        {
+            myH = 6;
+        }
+        else if (myHealth == 5)
+        {
+            myH = 5;
+        }
+        else if(myHealth == 4)
+        {
+            myH = 4;
+        }
+        else if(myHealth == 3)
+        {
+            myH = 3;
+        }
+        else if(myHealth == 2)
+        {
+            myH = 2;
+        }
+        else if (myHealth==1)
+        {
+            myH = 1;
+        }
+        else if (myHealth <= 0)
+        {
+            myH = 0;
+        }
+    }
+
+
+
+    //----------------------------------
+    //    CONTROLADOR DE ANIMACIONES
+    //----------------------------------
+
     void AnimationControl()
     {
         if(shield == false)
@@ -312,6 +393,19 @@ public class PlayerPhone : MonoBehaviour
         }
     }
 
-     
+
+
+
+    //-----------------------------
+    //         CHECKPOINT
+    //-----------------------------
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Checkpoint"))
+        {
+            respawnPoint = collision.transform.position;
+        }
+    }
 }
 

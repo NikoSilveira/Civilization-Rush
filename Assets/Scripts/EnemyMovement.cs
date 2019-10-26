@@ -50,6 +50,8 @@ public class EnemyMovement : MonoBehaviour
         //Health
         maxHealth = 100;
         enemyHealth = maxHealth;
+
+        damageLevel = 1;
     }
 
     // Update is called once per frame

@@ -21,45 +21,56 @@ public class PlayerAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown("f") && !attacking)
+        if(Time.timeScale == 1)
         {
-            
-            attacking = true;
-            attackTimer = attackCd;
+            if (Input.GetKeyDown("f") && !attacking)
+            {
 
-            attackTrigger.enabled = true;
+                attacking = true;
+                attackTimer = attackCd;
+
+                attackTrigger.enabled = true;
+            }
+
+            if (attacking)
+            {
+                if (attackTimer > 0)
+                {
+                    attackTimer -= Time.deltaTime;
+                }
+                else
+                {
+                    attacking = false;
+                    attackTrigger.enabled = false;
+                }
+            }
+
+            anim.SetBool("attacking", attacking);
         }
 
-        if (attacking)
-        {
-            if(attackTimer > 0)
-            {
-                attackTimer -= Time.deltaTime;
-            }
-            else
-            {
-                attacking = false;
-                attackTrigger.enabled = false;
-            }
-        }
-
-        anim.SetBool("attacking", attacking);
     }
 
     public void attackButtom()
     {
-        attacking = true;
-        attackTimer = attackCd;
+        if(Time.timeScale == 1)
+        {
+            attacking = true;
+            attackTimer = attackCd;
 
-        attackTrigger.enabled = true;
+            attackTrigger.enabled = true;
+
+           
+            
+        }
+
     }
 
     public void dontAttackButtom()
     {
-       
-                attacking = false;
-                attackTrigger.enabled = false;
-            
+      
+        attacking = false;
+       attackTrigger.enabled = false;
+
     }
 
 }
