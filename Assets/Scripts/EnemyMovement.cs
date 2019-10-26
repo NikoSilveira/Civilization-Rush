@@ -31,11 +31,15 @@ public class EnemyMovement : MonoBehaviour
     //Instance Damage
     public int damageLevel;
 
+    //Score
+    public int Score;
+
     private PlayerPhone player;
     private void Awake()
     {
         anim = GetComponent<Animator>();
         rigiBody2D = GetComponent<Rigidbody2D>();
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerPhone>();
     }
 
     // Start is called before the first frame update
@@ -50,6 +54,9 @@ public class EnemyMovement : MonoBehaviour
         //Health
         maxHealth = 100;
         enemyHealth = maxHealth;
+
+        //Score
+        Score = 100;
 
         damageLevel = 1;
     }
@@ -98,6 +105,8 @@ public class EnemyMovement : MonoBehaviour
         if(enemyHealth <= 0)
         {
             Destroy(gameObject);
+            player.Score += Score;
+
         }
 
 

@@ -22,7 +22,7 @@ public class Trap_Spikes : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            player.takeDamage(20);
+            player.takeDamage(1);
 
             StartCoroutine(player.Knockback(0.2f, 250, player.transform.position));
         }
