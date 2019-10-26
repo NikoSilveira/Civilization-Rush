@@ -52,7 +52,7 @@ public class EnemyMovement : MonoBehaviour
         stop = new Vector2(0, 0);
 
         //Health
-        maxHealth = 100;
+        maxHealth = 2;
         enemyHealth = maxHealth;
 
         //Score

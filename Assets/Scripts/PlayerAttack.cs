@@ -12,16 +12,36 @@ public class PlayerAttack : MonoBehaviour
     public Collider2D attackTrigger;
     private Animator anim;
 
+    //Spear
+    public float spearAttackCd = 0.6f;
+    public Collider2D spearAttackTrigger;
+    public int weaponSelected = 1;
+
     void Awake()
     {
         anim = gameObject.GetComponent<Animator>();
         attackTrigger.enabled = false;
+        spearAttackTrigger.enabled = false;
+        weaponSelected = 1;
+
     }
 
     // Update is called once per frame
     void Update()
     {
         if(Time.timeScale == 1)
+        {
+            attack();
+            switchWeapon();
+        }
+            
+
+    }
+
+    //Funcion de ataque
+    public void attack()
+    {
+        if (weaponSelected == 1)
         {
             if (Input.GetKeyDown("f") && !attacking)
             {
@@ -47,9 +67,36 @@ public class PlayerAttack : MonoBehaviour
 
             anim.SetBool("attacking", attacking);
         }
+        else if (weaponSelected == 2)
+        {
+            if (Input.GetKeyDown("f") && !attacking)
+            {
 
+                attacking = true;
+                attackTimer = spearAttackCd;
+
+                spearAttackTrigger.enabled = true;
+            }
+
+            if (attacking)
+            {
+                if (attackTimer > 0)
+                {
+                    attackTimer -= Time.deltaTime;
+                }
+                else
+                {
+                    attacking = false;
+                    spearAttackTrigger.enabled = false;
+                }
+            }
+
+            anim.SetBool("attacking", attacking);
+        }
     }
 
+
+    // Boton de ataque
     public void attackButtom()
     {
         if(Time.timeScale == 1)
@@ -58,9 +105,6 @@ public class PlayerAttack : MonoBehaviour
             attackTimer = attackCd;
 
             attackTrigger.enabled = true;
-
-           
-            
         }
 
     }
@@ -73,4 +117,19 @@ public class PlayerAttack : MonoBehaviour
 
     }
 
+    //Cambio de arma
+    public void switchWeapon()
+    {
+        if (Input.GetKeyDown("c"))
+        {
+            if (weaponSelected == 1)
+            {
+                weaponSelected = 2;
+            }
+            else if(weaponSelected == 2)
+            {
+                weaponSelected = 1;
+            }
+        }
+    }
 }
