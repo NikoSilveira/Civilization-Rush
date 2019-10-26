@@ -31,6 +31,9 @@ public class PlayerPhone : MonoBehaviour
     //Score
     public int Score;
 
+    //Spear
+    public bool spearF = false;
+
     Animator anim;
     private Rigidbody2D rb;
     CapsuleCollider2D myBodyCollider2D;

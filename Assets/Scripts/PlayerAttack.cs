@@ -17,6 +17,8 @@ public class PlayerAttack : MonoBehaviour
     public Collider2D spearAttackTrigger;
     public int weaponSelected = 1;
 
+    private PlayerPhone player;
+
     void Awake()
     {
         anim = gameObject.GetComponent<Animator>();
@@ -24,6 +26,7 @@ public class PlayerAttack : MonoBehaviour
         spearAttackTrigger.enabled = false;
         weaponSelected = 1;
 
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerPhone>();
     }
 
     // Update is called once per frame
@@ -122,7 +125,7 @@ public class PlayerAttack : MonoBehaviour
     {
         if (Input.GetKeyDown("c"))
         {
-            if (weaponSelected == 1)
+            if (weaponSelected == 1 && player.spearF == true)
             {
                 weaponSelected = 2;
             }
