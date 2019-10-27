@@ -108,6 +108,9 @@ public class PlayerAttack : MonoBehaviour
             attackTimer = attackCd;
 
             attackTrigger.enabled = true;
+
+            //SFX
+            FindObjectOfType<AudioManager>().Play("Swing");
         }
 
     }
