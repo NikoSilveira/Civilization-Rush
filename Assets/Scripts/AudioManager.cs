@@ -51,9 +51,10 @@ public class AudioManager : MonoBehaviour
             return;
         }
 
-        /*if (PauseMenuUI.GameIsPaused)
+        /*if (PauseMenuUI.GameIsPaused) //Bajar volumen durante pausa
         {
-            s.source.pitch *= .5f;
+            s.source.pitch = .5f;
+            s.source.volume = .2f;
         }*/
 
         s.source.Play();
