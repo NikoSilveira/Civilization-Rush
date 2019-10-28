@@ -17,6 +17,10 @@ public class PlayerAttack : MonoBehaviour
     public Collider2D spearAttackTrigger;
     public int weaponSelected = 1;
 
+    //down attack
+    private bool downattacking = false;
+    public Collider2D downAttackTrigger;
+
     private PlayerPhone player;
 
     void Awake()
@@ -24,6 +28,7 @@ public class PlayerAttack : MonoBehaviour
         anim = gameObject.GetComponent<Animator>();
         attackTrigger.enabled = false;
         spearAttackTrigger.enabled = false;
+        downAttackTrigger.enabled = false;
         weaponSelected = 1;
 
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerPhone>();
@@ -34,8 +39,10 @@ public class PlayerAttack : MonoBehaviour
     {
         if(Time.timeScale == 1)
         {
+            downAttack();
             attack();
             switchWeapon();
+
         }
             
 
@@ -98,7 +105,41 @@ public class PlayerAttack : MonoBehaviour
         }
     }
 
-
+    //Funcion de ataque hacia abajo
+    public void downAttack()
+    {
+        if (weaponSelected == 1)
+        {
+            if (player.myBodyFeet.IsTouchingLayers(LayerMask.GetMask("Ground")) == false && Input.GetKeyDown("h") && !downattacking)
+            {
+                Vector2 downVelocityToAdd = new Vector2(0f, -10f);
+                player.rb.velocity += downVelocityToAdd;
+                downattacking = true;
+                attackTimer = attackCd;
+                downAttackTrigger.enabled = true;
+                Debug.Log("down");
+            }
+            if (player.myBodyFeet.IsTouchingLayers(LayerMask.GetMask("Enemy")) && downattacking == true)
+            {
+                Vector2 rejectVelocityToAdd = new Vector2(0.2f, 18f);
+                player.rb.velocity += rejectVelocityToAdd;
+            }
+            if (downattacking)
+            {
+                if (attackTimer > 0)
+                {
+                    attackTimer -= Time.deltaTime;
+                }
+                else
+                {
+                    downattacking = false;
+                    downAttackTrigger.enabled = false;
+                    //StartCoroutine(player.Knockback(0.01f, 50, player.transform.position));
+                }
+            }
+            anim.SetBool("attacking_down", downattacking);
+        }
+    }
 
     // Boton de ataque funciones logicas
     public void attackingButton()
@@ -169,6 +210,49 @@ public class PlayerAttack : MonoBehaviour
         }
     }
 
+    //boton de ataque hacia abajo funciones logicas
+    public void downAttackingButton()
+    {
+        if(weaponSelected == 1)
+        {
+            if (player.myBodyFeet.IsTouchingLayers(LayerMask.GetMask("Ground")) == false && !downattacking)
+            {
+                Vector2 downVelocityToAdd = new Vector2(0f, -10f);
+                player.rb.velocity += downVelocityToAdd;
+                downattacking = true;
+                attackTimer = attackCd;
+                downAttackTrigger.enabled = true;
+                Debug.Log("down");
+
+            }
+            if (player.myBodyFeet.IsTouchingLayers(LayerMask.GetMask("Enemy")) && downattacking == true)
+            {
+                Vector2 rejectVelocityToAdd = new Vector2(0.2f, 18f);
+                player.rb.velocity += rejectVelocityToAdd;
+            }
+            anim.SetBool("attacking_down", downattacking);
+        }
+    }
+
+    public void dontdownAttackingButton()
+    {
+        if(weaponSelected == 1)
+        {
+            if (downattacking)
+            {
+                if (attackTimer > 0)
+                {
+                    attackTimer -= Time.deltaTime;
+                }
+                else
+                {
+                    downattacking = false;
+                    downAttackTrigger.enabled = false;
+                }
+            }
+            anim.SetBool("attacking_down", downattacking);
+        }
+    }
 
     // Boton de ataque
     public void attackButtom()
@@ -193,6 +277,20 @@ public class PlayerAttack : MonoBehaviour
         //attackTrigger.enabled = false;
         dontAttackingButton();
 
+    }
+
+    //Boton hacia abajo
+    public void downAttackButtow()
+    {
+        if(Time.timeScale == 1)
+        {
+            downAttackingButton();
+        }
+    }
+
+    public void dontDownAttakButtow()
+    {
+        dontdownAttackingButton();
     }
 
     //Cambio de arma

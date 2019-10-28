@@ -35,9 +35,9 @@ public class PlayerPhone : MonoBehaviour
     public bool spearF = false;
 
     Animator anim;
-    private Rigidbody2D rb;
+    public Rigidbody2D rb;
     CapsuleCollider2D myBodyCollider2D;
-    BoxCollider2D myBodyFeet;
+    public BoxCollider2D myBodyFeet;
 
 
     // Start is called before the first frame update
