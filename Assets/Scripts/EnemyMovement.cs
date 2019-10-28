@@ -9,7 +9,7 @@ public class EnemyMovement : MonoBehaviour
 
     public Transform target;
     private float distancePlayer;
-    private Animator anim;
+    public Animator anim;
     private Rigidbody2D rigiBody2D;
     private float maxSpeed = 5f;
     private Vector2 runRight;
@@ -85,14 +85,7 @@ public class EnemyMovement : MonoBehaviour
         } */
 
         // Camine sin ver al jugador
-        if (IsFacingRight())
-        {
-            rigiBody2D.velocity = new Vector2(moveSpeed, 0);
-        }
-        else
-        {
-            rigiBody2D.velocity = new Vector2(-moveSpeed, 0);
-        }
+        Move(rigiBody2D);
 
         //enemy die
         if(enemyHealth <= 0)
@@ -115,7 +108,7 @@ public class EnemyMovement : MonoBehaviour
         theScale.x *= -1;
         transform.localScale = theScale;
     }
-    bool IsFacingRight()
+    private bool IsFacingRight()
     {
         return transform.localScale.x > 0;
     }
@@ -167,5 +160,28 @@ public class EnemyMovement : MonoBehaviour
         enemyHealth -= damage;
     }
 
+    public void Move(Rigidbody2D body)
+    {
+        if (IsFacingRight())
+        {
+            body.velocity = new Vector2(moveSpeed, 0);
+        }
+        else
+        {
+            body.velocity = new Vector2(-moveSpeed, 0);
+        }
+    }
+    public void setAnimator(Animator animator)
+    {
+        this.anim = animator;
+    }
+    public void setTarget(Transform target)
+    {
+        this.target = target;
+    }
+    public void setBody(Rigidbody2D rigidbody2D)
+    {
+        this.rigiBody2D = rigidbody2D;
+    }
 
 }

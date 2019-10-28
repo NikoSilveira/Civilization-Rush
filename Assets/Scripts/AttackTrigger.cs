@@ -10,8 +10,14 @@ public class AttackTrigger : MonoBehaviour
     {
         if(collision.isTrigger != true && collision.CompareTag("Enemy"))
         {
-            collision.SendMessageUpwards("Damage", dmg);
-            enemy.Damage(dmg);
+            try
+            {
+                collision.SendMessageUpwards("Damage", dmg);
+                enemy.Damage(dmg);
+            } catch(System.NullReferenceException ex)
+            {
+
+            }
         }
     }
 }
