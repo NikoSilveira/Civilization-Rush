@@ -23,6 +23,7 @@ public class NPCSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Debug.Log("Hola");
         enemies = new Enemy[enemiesQuantity];
         sr = new GameObject[enemiesQuantity];
         EnemyFactory enemyFactory = new EnemyFactory();
