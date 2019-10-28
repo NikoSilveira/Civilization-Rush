@@ -34,6 +34,10 @@ public class PlayerPhone : MonoBehaviour
     //Spear
     public bool spearF = false;
 
+    //Resistance
+    public int maxResistance = 5;
+    public int myResistance;
+
     Animator anim;
     public Rigidbody2D rb;
     CapsuleCollider2D myBodyCollider2D;
@@ -55,6 +59,9 @@ public class PlayerPhone : MonoBehaviour
 
         //Score
         Score = 0;
+
+        //Resistance
+        myResistance = maxResistance;
     }
 
     // Update is called once per frame

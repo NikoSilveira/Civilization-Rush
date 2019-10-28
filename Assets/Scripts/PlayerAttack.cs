@@ -79,16 +79,16 @@ public class PlayerAttack : MonoBehaviour
         }
         else if (weaponSelected == 2)
         {
-            if (Input.GetKeyDown("f") && !attacking)
+            if (Input.GetKeyDown("f") && !attacking && player.myResistance >=0)
             {
 
                 attacking = true;
                 attackTimer = spearAttackCd;
-
+                player.myResistance -= 1;
                 spearAttackTrigger.enabled = true;
             }
 
-            if (attacking)
+            if (attacking && player.myResistance >= 0)
             {
                 if (attackTimer > 0)
                 {
@@ -99,6 +99,16 @@ public class PlayerAttack : MonoBehaviour
                     attacking = false;
                     spearAttackTrigger.enabled = false;
                 }
+            }
+            else if(player.myResistance < 0)
+            {
+                if (attackTimer > 0)
+                {
+                    attackTimer -= Time.deltaTime;
+                }
+                player.myResistance = 0;
+                attacking = false;
+                spearAttackTrigger.enabled = false;
             }
 
             anim.SetBool("attacking", attacking);
