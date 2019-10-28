@@ -28,10 +28,16 @@ public class PlayerPhone : MonoBehaviour
     //Respawn
     public Vector3 respawnPoint;
 
+    //Score
+    public int Score;
+
+    //Spear
+    public bool spearF = false;
+
     Animator anim;
-    private Rigidbody2D rb;
+    public Rigidbody2D rb;
     CapsuleCollider2D myBodyCollider2D;
-    BoxCollider2D myBodyFeet;
+    public BoxCollider2D myBodyFeet;
 
 
     // Start is called before the first frame update
@@ -46,6 +52,9 @@ public class PlayerPhone : MonoBehaviour
         //Health
         myHealth = maxHealth;
         myH = maxH;
+
+        //Score
+        Score = 0;
     }
 
     // Update is called once per frame
@@ -407,5 +416,7 @@ public class PlayerPhone : MonoBehaviour
             respawnPoint = collision.transform.position;
         }
     }
+
+
 }
 

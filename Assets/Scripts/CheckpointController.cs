@@ -24,10 +24,13 @@ public class CheckpointController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.CompareTag("Player") && checkpointSpriteRenderer.sprite == redFlag)
         {
             checkpointSpriteRenderer.sprite = blueFlag;
             checkpointReached = true;
+
+            //SFX
+            FindObjectOfType<AudioManager>().Play("Checkpoint");
         }
     }
 }

@@ -16,11 +16,11 @@ public class TutorialPickup : MonoBehaviour
 
         if (collision.CompareTag("Player"))
         {
-            /*DialogueTrigger dTrigger = GameObject.FindGameObjectWithTag("Info").GetComponent<DialogueTrigger>();
-            dTrigger.TriggerDialogue();*/
-
             //gameObject minuscula agarra el objeto en cuestión
             gameObject.GetComponent<DialogueTrigger>().TriggerDialogue();
+
+            //SFX
+            FindObjectOfType<AudioManager>().Play("Book");
 
             Destroy(gameObject);
         }
