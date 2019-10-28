@@ -51,6 +51,11 @@ public class AudioManager : MonoBehaviour
             return;
         }
 
+        /*if (PauseMenuUI.GameIsPaused)
+        {
+            s.source.pitch *= .5f;
+        }*/
+
         s.source.Play();
     }
 }
