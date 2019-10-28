@@ -99,16 +99,87 @@ public class PlayerAttack : MonoBehaviour
     }
 
 
+
+    // Boton de ataque funciones logicas
+    public void attackingButton()
+    {
+        if (weaponSelected == 1)
+        {
+            if (!attacking)
+            {
+
+                attacking = true;
+                attackTimer = attackCd;
+
+                attackTrigger.enabled = true;
+            }
+
+            anim.SetBool("attacking", attacking);
+        }
+        else if (weaponSelected == 2)
+        {
+            if (!attacking)
+            {
+
+                attacking = true;
+                attackTimer = spearAttackCd;
+
+                spearAttackTrigger.enabled = true;
+            }
+
+            anim.SetBool("attacking", attacking);
+        }
+    }
+
+    public void dontAttackingButton()
+    {
+        if (weaponSelected == 1)
+        {
+            if (attacking)
+            {
+                if (attackTimer > 0)
+                {
+                    attackTimer -= Time.deltaTime;
+                }
+                else
+                {
+                    attacking = false;
+                    attackTrigger.enabled = false;
+                }
+            }
+
+            anim.SetBool("attacking", attacking);
+        }
+        else if (weaponSelected == 2)
+        {
+            if (attacking)
+            {
+                if (attackTimer > 0)
+                {
+                    attackTimer -= Time.deltaTime;
+                }
+                else
+                {
+                    attacking = false;
+                    spearAttackTrigger.enabled = false;
+                }
+            }
+
+            anim.SetBool("attacking", attacking);
+        }
+    }
+
+
     // Boton de ataque
     public void attackButtom()
     {
         if(Time.timeScale == 1)
         {
-            attacking = true;
-            attackTimer = attackCd;
+            //attacking = true;
+            // attackTimer = attackCd;
 
-            attackTrigger.enabled = true;
-
+            //attackTrigger.enabled = true;
+            attackingButton();
             //SFX
             FindObjectOfType<AudioManager>().Play("Swing");
         }
@@ -117,9 +188,10 @@ public class PlayerAttack : MonoBehaviour
 
     public void dontAttackButtom()
     {
-      
-        attacking = false;
-       attackTrigger.enabled = false;
+
+        // attacking = false;
+        //attackTrigger.enabled = false;
+        dontAttackingButton();
 
     }
 
@@ -137,5 +209,23 @@ public class PlayerAttack : MonoBehaviour
                 weaponSelected = 1;
             }
         }
+    }
+
+    //Cambio de arma boton
+    public void buttonSwitchWeapon()
+    {
+        if (weaponSelected == 1 && player.spearF == true)
+        {
+            weaponSelected = 2;
+        }
+        else if (weaponSelected == 2)
+        {
+            weaponSelected = 1;
+        }
+    }
+
+    public void dontSwitchWeaponButton()
+    {
+        return;
     }
 }
