@@ -58,6 +58,8 @@ public class EnemyMovement : MonoBehaviour
         //Score
         Score = 100;
 
+
+
         damageLevel = 1;
     }
 
@@ -158,8 +160,10 @@ public class EnemyMovement : MonoBehaviour
         {
             if (collision.CompareTag("Player"))
             {
+
                 collision.GetComponent<PlayerPhone>().takeDamage(damageLevel);
-      
+                
+
             }
         }
     }
