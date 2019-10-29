@@ -45,7 +45,7 @@ public class PauseMenuUI : MonoBehaviour
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1;
         GameIsPaused = false;
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene(1);
     }
 
     public void Quit()
@@ -53,9 +53,7 @@ public class PauseMenuUI : MonoBehaviour
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1;
         GameIsPaused = false;
-        Debug.Log("uno");
         SceneManager.LoadScene(0);
-        Debug.Log("dos");
     }
     //Agregar funcion por cada boton
 }
