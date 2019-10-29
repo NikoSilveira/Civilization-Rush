@@ -8,6 +8,7 @@ public class portalTrigger : MonoBehaviour
 
     private PlayerPhone player;
     private int PlayerScore;
+    private bool levelCleared = false;
 
     void Start()
     {
@@ -21,14 +22,15 @@ public class portalTrigger : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if(PlayerScore >= 100)
+        if(PlayerScore >= 1500 && levelCleared == false)    //score minimo
         {
+            levelCleared = true;
             FindObjectOfType<AudioManager>().Stop("Theme");
             FindObjectOfType<AudioManager>().Play("Victory");
 
             Invoke("nextScene", 6);
         }
-        else
+        else if(PlayerScore < 1500)                         //score minimo
         {
             gameObject.GetComponent<DialogueTrigger>().TriggerDialogue();
         }
