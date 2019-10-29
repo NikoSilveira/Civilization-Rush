@@ -7,10 +7,16 @@ public class portalTrigger : MonoBehaviour
 {
     [SerializeField] float SceneLoadTime = 1f;
 
-    // Start is called before the first frame update
     void OnTriggerEnter2D(Collider2D collision)
     {
+        FindObjectOfType<AudioManager>().Stop("Theme");
         FindObjectOfType<AudioManager>().Play("Victory");
+
+        Invoke("nextScene",6);
+    }
+
+    void nextScene()
+    {
         SceneManager.LoadScene(0);
     }
 
