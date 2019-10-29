@@ -17,6 +17,10 @@ public class SpearPick : MonoBehaviour
         {
             player.spearF = true;
             Destroy(gameObject);
+
+            //SFX
+            FindObjectOfType<AudioManager>().Play("Metal");
         }
+
     }
 }

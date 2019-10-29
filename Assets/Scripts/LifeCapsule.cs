@@ -26,6 +26,9 @@ public class LifeCapsule : MonoBehaviour
                 player.myHealth += lifeObtained;
                 Destroy(gameObject);
             }
+
+            //SFX
+            FindObjectOfType<AudioManager>().Play("Drink");
         }
     }
 }

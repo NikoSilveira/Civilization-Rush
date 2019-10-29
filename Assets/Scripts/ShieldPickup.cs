@@ -19,6 +19,9 @@ public class ShieldPickup : MonoBehaviour
         {
             PlayerP.shield = true;
             Destroy(gameObject);
+
+            //SFX
+            FindObjectOfType<AudioManager>().Play("Metal");
         }
     }
 
