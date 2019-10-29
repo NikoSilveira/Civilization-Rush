@@ -16,6 +16,7 @@ public class PlayerPhone : MonoBehaviour
     float speed;
 
     //Health
+    private int hurtTime;
     public int myHealth;
     public int maxHealth = 9;
     public int myH;
@@ -76,6 +77,8 @@ public class PlayerPhone : MonoBehaviour
             controlSalud();
 
             ControlConTeclado();
+
+            CheckHurtingState();
         }
 
 
@@ -315,6 +318,19 @@ public class PlayerPhone : MonoBehaviour
         if(shield == false || (shield == true && shieldActive == false)) //Condiciones para recibir daño
         {
             myHealth -= damage;
+            anim.SetBool("hurting",true);
+            hurtTime = (int)Time.time;
+        }
+    }
+
+    public void CheckHurtingState()
+    {
+        if(anim.GetBool("hurting") == true)
+        {
+            if((int)Time.time - hurtTime == 1)
+            {
+                anim.SetBool("hurting", false);
+            }
         }
     }
 
