@@ -11,17 +11,20 @@ public class TutorialPickup : MonoBehaviour
 
     }
 
+
+    //Colisión Jugador - LibroTutorial
     private void OnTriggerEnter2D(Collider2D collision)
     {
 
         if (collision.CompareTag("Player"))
         {
-            //gameObject minuscula agarra el objeto en cuestión
+            //Activar cuadro de diálogo
             gameObject.GetComponent<DialogueTrigger>().TriggerDialogue();
 
             //SFX
             FindObjectOfType<AudioManager>().Play("Book");
 
+            //Destruir el sprite
             Destroy(gameObject);
         }
     }
