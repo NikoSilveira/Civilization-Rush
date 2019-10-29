@@ -28,6 +28,7 @@ public class PlayerPhone : MonoBehaviour
 
     //Respawn
     public Vector3 respawnPoint;
+    public bool checkpointActivated = false;
 
     //Score
     public int Score;
@@ -311,6 +312,11 @@ public class PlayerPhone : MonoBehaviour
         //SceneManager.LoadScene("SampleScene");
         transform.position = respawnPoint;
         myHealth = maxHealth;
+
+        if (!checkpointActivated)
+        {
+            Score = 0;
+        }
     }
 
     public void takeDamage(int damage)
@@ -437,6 +443,7 @@ public class PlayerPhone : MonoBehaviour
         if (collision.CompareTag("Checkpoint"))
         {
             respawnPoint = collision.transform.position;
+            checkpointActivated = true;
         }
     }
 
