@@ -13,9 +13,10 @@ public class PlayerAttack : MonoBehaviour
     private Animator anim;
 
     //Spear
-    public float spearAttackCd = 0.6f;
+    public float spearAttackCd = 0.1f;
     public Collider2D spearAttackTrigger;
     public int weaponSelected = 1;
+    private bool spearAttacking = false;
 
     //down attack
     private bool downattacking = false;
@@ -79,16 +80,16 @@ public class PlayerAttack : MonoBehaviour
         }
         else if (weaponSelected == 2)
         {
-            if (Input.GetKeyDown("f") && !attacking && player.myResistance >=0)
+            if (Input.GetKeyDown("f") && !spearAttacking && player.myResistance >=0)
             {
 
-                attacking = true;
+                spearAttacking = true;
                 attackTimer = spearAttackCd;
                 player.myResistance -= 1;
                 spearAttackTrigger.enabled = true;
             }
 
-            if (attacking && player.myResistance >= 0)
+            if (spearAttacking && player.myResistance >= 0)
             {
                 if (attackTimer > 0)
                 {
@@ -96,7 +97,7 @@ public class PlayerAttack : MonoBehaviour
                 }
                 else
                 {
-                    attacking = false;
+                    spearAttacking = false;
                     spearAttackTrigger.enabled = false;
                 }
             }
@@ -107,11 +108,11 @@ public class PlayerAttack : MonoBehaviour
                     attackTimer -= Time.deltaTime;
                 }
                 player.myResistance = 0;
-                attacking = false;
+                spearAttacking = false;
                 spearAttackTrigger.enabled = false;
             }
 
-            anim.SetBool("attacking", attacking);
+            anim.SetBool("attacking_spear", spearAttacking);
         }
     }
 
@@ -167,18 +168,28 @@ public class PlayerAttack : MonoBehaviour
 
             anim.SetBool("attacking", attacking);
         }
-        else if (weaponSelected == 2)
+        else if (weaponSelected == 2 )
         {
-            if (!attacking)
+            if (!spearAttacking && player.myResistance >= 0)
             {
 
-                attacking = true;
+                spearAttacking = true;
                 attackTimer = spearAttackCd;
-
+                player.myResistance -= 1;
                 spearAttackTrigger.enabled = true;
             }
+            else if (player.myResistance < 0)
+            {
+                if (attackTimer > 0)
+                {
+                    attackTimer -= Time.deltaTime;
+                }
+                player.myResistance = 0;
+                spearAttacking = false;
+                spearAttackTrigger.enabled = false;
+            }
 
-            anim.SetBool("attacking", attacking);
+            anim.SetBool("attacking_spear", spearAttacking);
         }
     }
 
@@ -201,9 +212,9 @@ public class PlayerAttack : MonoBehaviour
 
             anim.SetBool("attacking", attacking);
         }
-        else if (weaponSelected == 2)
+        else if (weaponSelected == 2 && player.myResistance >= 0)
         {
-            if (attacking)
+            if (spearAttacking)
             {
                 if (attackTimer > 0)
                 {
@@ -211,12 +222,22 @@ public class PlayerAttack : MonoBehaviour
                 }
                 else
                 {
-                    attacking = false;
+                    spearAttacking = false;
                     spearAttackTrigger.enabled = false;
                 }
             }
+            else if (player.myResistance < 0)
+            {
+                if (attackTimer > 0)
+                {
+                    attackTimer -= Time.deltaTime;
+                }
+                player.myResistance = 0;
+                spearAttacking = false;
+                spearAttackTrigger.enabled = false;
+            }
 
-            anim.SetBool("attacking", attacking);
+            anim.SetBool("attacking_spear", spearAttacking);
         }
     }
 
