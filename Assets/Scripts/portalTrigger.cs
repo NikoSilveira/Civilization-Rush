@@ -10,15 +10,8 @@ public class portalTrigger : MonoBehaviour
     // Start is called before the first frame update
     void OnTriggerEnter2D(Collider2D collision)
     {
-        StartCoroutine(LoadNextScene());
-        Destroy(gameObject);
+        FindObjectOfType<AudioManager>().Play("Victory");
+        SceneManager.LoadScene(0);
     }
 
-    IEnumerator LoadNextScene()
-    {
-        yield return new WaitForSecondsRealtime(SceneLoadTime);
-
-        var currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-        SceneManager.LoadScene("MainMenu");
-    }
 }
