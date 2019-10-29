@@ -5,15 +5,17 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+
+    //Cada función corresponde a un botón, asignar en el inspector
     
     public void PlayGame()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene(1);
     }
 
     public void QuitGame()
     {
-        Debug.Log("Quit");
+        //Cerrar la app (solo funciona en teléfono)
         Application.Quit();
     }
 
