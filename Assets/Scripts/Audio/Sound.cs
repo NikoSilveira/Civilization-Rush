@@ -1,6 +1,12 @@
 ﻿using UnityEngine.Audio;
 using UnityEngine;
 
+/*
+ -Este script genera variables para control de audio (volume, pitch, loop)
+ -Se elimina Monobehaviour y se cambia a Serializable para incorporar estas 
+    variables en el inspector del AudioController
+ */
+
 [System.Serializable]
 public class Sound
 {

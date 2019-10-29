@@ -6,13 +6,12 @@ public class AudioManager : MonoBehaviour
 {
 
     public Sound[] sounds;
-
     public static AudioManager instance;
 
     void Awake()
     {
 
-        //Singleton manual
+        //Singleton (solo existe un audio manager en cualquier momento)
         if(instance == null)
         {
             instance = this;
@@ -23,8 +22,7 @@ public class AudioManager : MonoBehaviour
             return;
         }
 
-        //DontDestroyOnLoad(gameObject);
-
+        //Obtener valores de volumen, pitch y loop asignados en el inspector
         foreach (Sound s in sounds)
         {
             s.source = gameObject.AddComponent<AudioSource>();
@@ -41,25 +39,23 @@ public class AudioManager : MonoBehaviour
         Play("Theme");
     }
 
+
+    //Play soundtrack - recibe nombre del audio file como parametro
     public void Play (string name)
     {
         Sound s = Array.Find(sounds, sound => sound.name == name);
-        
-        if (s == null) //Validación - si hay error con asignación de track, que no trate de hacer play
+
+        //Si hay error con asignación de track, finalizar función
+        if (s == null) 
         {
             Debug.LogWarning("Sound: " + name + " not found!");
             return;
         }
 
-        /*if (PauseMenuUI.GameIsPaused) //Bajar volumen durante pausa
-        {
-            s.source.pitch = .5f;
-            s.source.volume = .2f;
-        }*/
-
         s.source.Play();
     }
 
+    //Stop soundtrack - recibe nombre del audio file a detener como parametro
     public void Stop(String name)
     {
         Sound s = Array.Find(sounds, sound => sound.name == name);
