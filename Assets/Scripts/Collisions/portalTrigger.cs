@@ -33,22 +33,24 @@ public class portalTrigger : MonoBehaviour
     //Colisión Player - Portal
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if(PlayerScore >= 1500 && levelCleared == false)    //score mínimo
+        if (collision.CompareTag("Player"))
         {
-            //Pasar de nivel + cambio de música
-            levelCleared = true;
-            FindObjectOfType<AudioManager>().Stop("Theme");
-            FindObjectOfType<AudioManager>().Play("Victory");
+            if (PlayerScore >= 1500 && levelCleared == false)    //score mínimo
+            {
+                //Pasar de nivel + cambio de música
+                levelCleared = true;
+                FindObjectOfType<AudioManager>().Stop("Theme");
+                FindObjectOfType<AudioManager>().Play("Victory");
 
-            //Siguiente escena + delay (seg)
-            Invoke("nextScene", 6);
+                //Siguiente escena + delay (seg)
+                Invoke("nextScene", 6);
+            }
+            else if (PlayerScore < 1500)                         //score mínimo
+            {
+                //Diálogo para indicar que faltan puntos
+                gameObject.GetComponent<DialogueTrigger>().TriggerDialogue();
+            }
         }
-        else if(PlayerScore < 1500)                         //score mínimo
-        {
-            //Diálogo para indicar que faltan puntos
-            gameObject.GetComponent<DialogueTrigger>().TriggerDialogue();
-        }
-
     }
 
     void nextScene()

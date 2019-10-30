@@ -353,7 +353,7 @@ public class PlayerPhone : MonoBehaviour
         yield return 0;
     }
 
-    public void controlSalud()  //INTENTAR LIMPIAR UN POCO EL SISTEMA DE CONDICIONALES
+    public void controlSalud()
     {
         //Salud
         if (myHealth > maxHealth)
@@ -365,52 +365,9 @@ public class PlayerPhone : MonoBehaviour
         {
             Die();
         }
-        /*
-        if (myHealth == 100)
-        {
-            myH = 5;
-        }*/
-        
-        ////if (myHealth == 9)
-        ////{
-        ////    myH = 9;
-        ////}
-        ////else if (myHealth == 8)
-        ////{
-        ////    myH = 8;
-        ////}
-        ////else if (myHealth == 7)
-        ////{
-        ////    myH = 7;
-        ////}
-        ////else if (myHealth == 6)
-        ////{
-        ////    myH = 6;
-        ////}
-        ////else if (myHealth == 5)
-        ////{
-        ////    myH = 5;
-        ////}
-        ////else if(myHealth == 4)
-        ////{
-        ////    myH = 4;
-        ////}
-        ////else if(myHealth == 3)
-        ////{
-        ////    myH = 3;
-        ////}
-        ////else if(myHealth == 2)
-        ////{
-        ////    myH = 2;
-        ////}
-        ////else if (myHealth==1)
-        ////{
-        ////    myH = 1;
-        ////}
-        ////else if (myHealth <= 0)
-        ////{
-        ////    myH = 0;
-        ////}
+
+        myH = myHealth;
+
     }
 
 
