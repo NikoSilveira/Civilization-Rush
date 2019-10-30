@@ -2,25 +2,44 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//------------------------------------
+//    CONTROL Y LÓGICA DEL ENEMIGO
+//------------------------------------
+
+/*
+    -Este script crea un objeto de tipo playerPhone para poder
+    obtener al jugador como objeto y poder establecer una lógica
+    entre el enemigo y el jugador
+ */
+
 public class EnemyMovement : MonoBehaviour
 {
+    //--------------------------
+    //        VARIABLES
+    //--------------------------
+
+
     [SerializeField] float moveSpeed = 1f;
     Rigidbody2D myRigiBody;
 
-    public Transform target;
-    private float distancePlayer;
     public Animator anim;
     private Rigidbody2D rigiBody2D;
+    private PlayerPhone player;
+
+    //Variables de posición, dirección y movimiento
+    public Transform target;
+    private float distancePlayer;
     private float maxSpeed = 5f;
     private Vector2 runRight;
     private Vector2 runLeft;
     private Vector2 stop;
     private bool facingRight = true;
 
-    //health
+    //Health
     public int enemyHealth;
     public int maxHealth = 100;
 
+    //Attack
     public float attackSpeed = 100;
     public float attacktimer;
     public float attackInterval;
@@ -34,7 +53,11 @@ public class EnemyMovement : MonoBehaviour
     //Score
     public int Score;
 
-    private PlayerPhone player;
+
+    //----------------------------------------
+    //    MÉTODOS PREDETERMINADOS DE UNITY
+    //----------------------------------------
+    
     private void Awake()
     {
         anim = GetComponent<Animator>();
@@ -47,19 +70,19 @@ public class EnemyMovement : MonoBehaviour
     {
         myRigiBody = GetComponent<Rigidbody2D>();
 
+        //Inicializar vectores de movimiento
         runRight = new Vector2(maxSpeed, 0);
         runLeft = new Vector2(-maxSpeed, 0);
         stop = new Vector2(0, 0);
 
-        //Health
+        //Inicializar vida
         maxHealth = 2;
         enemyHealth = maxHealth;
 
-        //Score
+        //Valor del enemigo
         Score = 100;
 
-
-
+        //Daño de ataque
         damageLevel = 1;
     }
 
@@ -67,10 +90,9 @@ public class EnemyMovement : MonoBehaviour
     void Update()
     {
 
-     
-
         // Al ver al jugador
         distancePlayer = target.position.x - transform.position.x;
+
         /*if(distancePlayer > 0 && !facingRight)
         {
             Flip();
@@ -93,10 +115,10 @@ public class EnemyMovement : MonoBehaviour
             myRigiBody.velocity = stop;
         } */
 
-        // Camine sin ver al jugador
+        //Camine sin ver al jugador
         Move(rigiBody2D);
 
-        //enemy die
+        //Muerte del enemigo
         if(enemyHealth <= 0)
         {
             Destroy(gameObject);
@@ -104,14 +126,19 @@ public class EnemyMovement : MonoBehaviour
 
         }
 
-
     }
+
+
+    //----------------------
+    //       MÉTODOS
+    //----------------------
 
     private void FixedUpdate()
     {
         anim.SetFloat("Distance", Mathf.Abs(distancePlayer));
     }
 
+    //Cambiar dirección
     private void Flip()
     {
         facingRight = !facingRight;
@@ -119,11 +146,13 @@ public class EnemyMovement : MonoBehaviour
         theScale.x *= -1;
         transform.localScale = theScale;
     }
+
     private bool IsFacingRight()
     {
         return transform.localScale.x > 0;
     }
 
+    //Colisión del enemigo con un objeto
     private void OnTriggerExit2D(Collider2D collision)
     {
         transform.localScale = new Vector2(-(Mathf.Sign(myRigiBody.velocity.x)), 1f);
@@ -154,25 +183,22 @@ public class EnemyMovement : MonoBehaviour
         }
     }*/
 
+    //Recibir daño del jugador
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.isTrigger != true)
+        if(collision.isTrigger != true && collision.CompareTag("Player"))
         {
-            if (collision.CompareTag("Player"))
-            {
-
-                collision.GetComponent<PlayerPhone>().takeDamage(damageLevel);
-                
-
-            }
+            collision.GetComponent<PlayerPhone>().takeDamage(damageLevel);
         }
     }
 
+    //Cálculo de vida y daño
     public void Damage(int damage)
     {
         enemyHealth -= damage;
     }
 
+    //Movimiento
     public void Move(Rigidbody2D body)
     {
         if (IsFacingRight())
@@ -184,14 +210,19 @@ public class EnemyMovement : MonoBehaviour
             body.velocity = new Vector2(-moveSpeed, 0);
         }
     }
+
+    //Funciones para el animador y el rigidbody
+
     public void setAnimator(Animator animator)
     {
         this.anim = animator;
     }
+
     public void setTarget(Transform target)
     {
         this.target = target;
     }
+
     public void setBody(Rigidbody2D rigidbody2D)
     {
         this.rigiBody2D = rigidbody2D;
