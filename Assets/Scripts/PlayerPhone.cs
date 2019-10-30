@@ -353,7 +353,7 @@ public class PlayerPhone : MonoBehaviour
         yield return 0;
     }
 
-    public void controlSalud()
+    public void controlSalud()  //INTENTAR LIMPIAR UN POCO EL SISTEMA DE CONDICIONALES
     {
         //Salud
         if (myHealth > maxHealth)
@@ -367,7 +367,7 @@ public class PlayerPhone : MonoBehaviour
         }
 
         myH = myHealth;
-
+ 
     }
 
 
