@@ -382,14 +382,14 @@ public class PlayerPhone : MonoBehaviour
     //         CHECKPOINT
     //-----------------------------
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    /*private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Checkpoint"))
         {
             respawnPoint = collision.transform.position;
             checkpointActivated = true;
         }
-    }
+    }*/
 
 }
 

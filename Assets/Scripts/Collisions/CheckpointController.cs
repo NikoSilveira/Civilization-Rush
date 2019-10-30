@@ -13,6 +13,8 @@ using UnityEngine;
 public class CheckpointController : MonoBehaviour
 {
 
+    private PlayerPhone player;
+
     //Control dinámico del sprite
     public Sprite redFlag;
     public Sprite blueFlag;
@@ -27,6 +29,7 @@ public class CheckpointController : MonoBehaviour
     void Start()
     {
         checkpointSpriteRenderer = GetComponent<SpriteRenderer>();
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerPhone>();
     }
 
     // Update is called once per frame
@@ -44,6 +47,10 @@ public class CheckpointController : MonoBehaviour
             //Activar checkpoint
             checkpointSpriteRenderer.sprite = blueFlag;
             checkpointReached = true;
+
+            //Registrar posición en variables de player
+            player.respawnPoint = collision.transform.position;
+            player.checkpointActivated = true;
 
             //SFX
             FindObjectOfType<AudioManager>().Play("Checkpoint");
