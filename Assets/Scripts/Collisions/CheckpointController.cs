@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
 /*
     -Este script es utilizado por PlayerPhone para 
     obtener la variable de control del checkpoint
-    -PlayerPhone responde guardando un vector3 de la posición
-    del jugador durante la colisión con el checkpoint
+    -Cuando se registra una colisión con el chackpoint,
+    se alamacena en el jugador la posición donde se activó
+    con un vector3
 */
 
 public class CheckpointController : MonoBehaviour

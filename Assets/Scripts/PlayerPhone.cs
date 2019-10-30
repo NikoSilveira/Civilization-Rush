@@ -174,11 +174,6 @@ public class PlayerPhone : MonoBehaviour
             anim.SetBool("blocking", shieldActive);
         }
 
-        //Reiniciar
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            SceneManager.LoadScene("SampleScene");
-        }
     }
 
 
@@ -267,11 +262,11 @@ public class PlayerPhone : MonoBehaviour
     }
 
 
-    //sacar
     //------------------------
     //         ESCUDO
     //------------------------
 
+    //Defender
     public void playerBlock()
     {
         if(!shieldActive)
@@ -282,12 +277,12 @@ public class PlayerPhone : MonoBehaviour
         }
     }
 
+    //Al dejar de defender
     public void playerDontBlock()
     {
         shieldActive = false;
         anim.SetBool("blocking", shieldActive);
     }
-
 
 
 
@@ -340,7 +335,7 @@ public class PlayerPhone : MonoBehaviour
         yield return 0;
     }
 
-    public void controlSalud()  //INTENTAR LIMPIAR UN POCO EL SISTEMA DE CONDICIONALES
+    public void controlSalud()
     {
         //Salud
         if (myHealth > maxHealth)
@@ -358,7 +353,6 @@ public class PlayerPhone : MonoBehaviour
     }
 
 
-
     //----------------------------------
     //    CONTROLADOR DE ANIMACIONES
     //----------------------------------
@@ -367,29 +361,15 @@ public class PlayerPhone : MonoBehaviour
     {
         if(shield == false)
         {
+            //Activar animaciones estándar
             anim.SetLayerWeight(1,0);
         }
         else if(shield == true)
         {
+            //Activar animaciones con escudo
             anim.SetLayerWeight(1,1);
         }
     }
-
-
-
-    //sacar
-    //-----------------------------
-    //         CHECKPOINT
-    //-----------------------------
-
-    /*private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Checkpoint"))
-        {
-            respawnPoint = collision.transform.position;
-            checkpointActivated = true;
-        }
-    }*/
 
 }
 
