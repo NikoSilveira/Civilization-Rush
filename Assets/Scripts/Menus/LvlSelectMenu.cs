@@ -1,18 +1,21 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
+/*
+    -Script de control del menú de selección de niveles
+ */
+
 public class LvlSelectMenu : MonoBehaviour
 {
-    
-    public void SelectLevel()
+    //Pasar de nivel (paso de parametro por inspector)
+    public void SelectLevel(int levelID)
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(levelID);
     }
-    
 
+    //Volver al menú principal
     public void Back()
     {
-        //DontDestroyOnLoad();
         SceneManager.LoadScene(0);
     }
 }
