@@ -54,6 +54,11 @@ public class PauseMenuUI : MonoBehaviour
         GameIsPaused = true;
     }
 
+    public void Settings()
+    {
+
+    }
+
     public void Restart()
     {
         pauseMenuUI.SetActive(false);
