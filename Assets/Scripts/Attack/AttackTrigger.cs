@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//------------------------------
+//      ATAQUE CON ESPADA
+//------------------------------
+
 public class AttackTrigger : MonoBehaviour
 {
     public int dmg = 1;
