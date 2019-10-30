@@ -2,15 +2,27 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+    -Este script crea una variable de tipo playerPhone
+    para poder establecer la lógica de ataque entre el
+    jugador y los enemigos
+*/
+
 public class PlayerAttack : MonoBehaviour
 {
 
-    private bool attacking = false;
-    private float attackTimer = 0;
-    public float attackCd = 0.2f;
+    //------------------------------
+    //          VARIABLES
+    //------------------------------
 
     public Collider2D attackTrigger;
     private Animator anim;
+    private PlayerPhone player;
+
+    //Variables de control del ataque
+    private bool attacking = false;
+    private float attackTimer = 0;
+    public float attackCd = 0.2f;
 
     //Spear
     public float spearAttackCd = 0.1f;
@@ -18,14 +30,18 @@ public class PlayerAttack : MonoBehaviour
     public int weaponSelected = 1;
     private bool spearAttacking = false;
 
-    //down attack
+    //Downward attack
     private bool downattacking = false;
     public Collider2D downAttackTrigger;
 
-    private PlayerPhone player;
+
+    //-------------------------------------------
+    //     MÉTODOS PREDETERMINADOS DE UNITY
+    //-------------------------------------------
 
     void Awake()
     {
+        //Inicializar variables
         anim = gameObject.GetComponent<Animator>();
         attackTrigger.enabled = false;
         spearAttackTrigger.enabled = false;
@@ -38,25 +54,27 @@ public class PlayerAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Control del ataque, solo corre si el juego no está pausado
         if(Time.timeScale == 1)
         {
             downAttack();
             attack();
             switchWeapon();
-
         }
-            
-
     }
 
-    //Funcion de ataque
+
+    //-----------------------------------
+    //    LÓGICA DE CONTROL DE ATAQUE
+    //-----------------------------------
+
+    //Ataque
     public void attack()
     {
         if (weaponSelected == 1)
         {
             if (Input.GetKeyDown("f") && !attacking)
             {
-
                 attacking = true;
                 attackTimer = attackCd;
 
@@ -76,13 +94,13 @@ public class PlayerAttack : MonoBehaviour
                 }
             }
 
+            //Animación de ataque
             anim.SetBool("attacking", attacking);
         }
         else if (weaponSelected == 2)
         {
             if (Input.GetKeyDown("f") && !spearAttacking && player.myResistance >=0)
             {
-
                 spearAttacking = true;
                 attackTimer = spearAttackCd;
                 player.myResistance -= 1;
@@ -112,11 +130,12 @@ public class PlayerAttack : MonoBehaviour
                 spearAttackTrigger.enabled = false;
             }
 
+            //Animación de ataque
             anim.SetBool("attacking_spear", spearAttacking);
         }
     }
 
-    //Funcion de ataque hacia abajo
+    //Ataque hacia abajo
     public void downAttack()
     {
         if (weaponSelected == 1)
@@ -152,7 +171,12 @@ public class PlayerAttack : MonoBehaviour
         }
     }
 
-    // Boton de ataque funciones logicas
+
+    //-------------------------------
+    //      LÓGICA DE BOTONES
+    //-------------------------------
+
+    //Botón de ataque - lógica
     public void attackingButton()
     {
         if (weaponSelected == 1)
@@ -241,7 +265,7 @@ public class PlayerAttack : MonoBehaviour
         }
     }
 
-    //boton de ataque hacia abajo funciones logicas
+    //Botón de ataque hacia abajo - lógica
     public void downAttackingButton()
     {
         if(weaponSelected == 1)
@@ -295,6 +319,7 @@ public class PlayerAttack : MonoBehaviour
 
             //attackTrigger.enabled = true;
             attackingButton();
+
             //SFX
             FindObjectOfType<AudioManager>().Play("Swing");
         }
@@ -303,7 +328,6 @@ public class PlayerAttack : MonoBehaviour
 
     public void dontAttackButtom()
     {
-
         // attacking = false;
         //attackTrigger.enabled = false;
         dontAttackingButton();
