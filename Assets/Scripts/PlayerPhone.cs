@@ -4,16 +4,26 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityStandardAssets.CrossPlatformInput;
 
+//-------------------------------
+//      SCRIPT DEL JUGADOR
+//-------------------------------
+
 public class PlayerPhone : MonoBehaviour
 {
-    public float speedX;
-    //public float jumpSpeedY;
-    [SerializeField] float jumpSpeed = 5f;
 
-    bool isAlive = true;
+    //-------------------
+    //     VARIABLES
+    //-------------------
+
+    public float speedX;
+    
+    [SerializeField] float jumpSpeed = 5f;
 
     bool facingRight, jumping;
     float speed;
+    //public float jumpSpeedY;
+
+    bool isAlive = true;
 
     //Health
     private int hurtTime;
@@ -46,6 +56,10 @@ public class PlayerPhone : MonoBehaviour
     public BoxCollider2D myBodyFeet;
 
 
+    //--------------------------------------------
+    //      MÉTODOS PREDETERMINADOS DE UNITY
+    //--------------------------------------------
+
     // Start is called before the first frame update
     void Start()
     {
@@ -69,6 +83,7 @@ public class PlayerPhone : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Las funciones corren si el juego no está pausado
         if(Time.timeScale == 1)
         {
             MovePlayer(speed);
@@ -81,17 +96,6 @@ public class PlayerPhone : MonoBehaviour
 
             CheckHurtingState();
         }
-
-
-        /*Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
-        if (Physics.Raycast(ray, out hit))
-        {
-            Debug.Log(hit.transform.name);
-        }*/
-
-
-
     }
 
 
@@ -187,7 +191,7 @@ public class PlayerPhone : MonoBehaviour
     {
         bool playerHasHorizontalSpeed = Mathf.Abs(rb.velocity.x) > Mathf.Epsilon;
         anim.SetBool("walking_left", playerHasHorizontalSpeed);
-        if (playerSpeed < 0 || playerSpeed > 0) //Habilité estos dos ifs para resolver el problema. Era or, no and
+        if (playerSpeed < 0 || playerSpeed > 0)
         {
             anim.SetBool("walking_left", true);
         }
@@ -208,22 +212,6 @@ public class PlayerPhone : MonoBehaviour
         anim.SetBool("walking_left", playerHasHorizontalSpeed);
     }*/
 
-    private void jump()
-    { 
-        if(Time.timeScale == 1)
-        {
-            if (!myBodyFeet.IsTouchingLayers(LayerMask.GetMask("Ground")))
-            {
-                return;
-            }
-            if (CrossPlatformInputManager.GetButtonDown("Jump"))
-            {
-                Vector2 jumpVelocityToAdd = new Vector2(0f, jumpSpeed);
-                rb.velocity += jumpVelocityToAdd;
-            }
-        }
-
-    }
     public void Jump()
     {
         if (Time.timeScale == 1 && !shieldActive)
@@ -279,7 +267,7 @@ public class PlayerPhone : MonoBehaviour
     }
 
 
-
+    //sacar
     //------------------------
     //         ESCUDO
     //------------------------
@@ -309,7 +297,6 @@ public class PlayerPhone : MonoBehaviour
 
     public void Die()
     {
-        //SceneManager.LoadScene("SampleScene");
         transform.position = respawnPoint;
         myHealth = maxHealth;
 
@@ -390,7 +377,7 @@ public class PlayerPhone : MonoBehaviour
 
 
 
-
+    //sacar
     //-----------------------------
     //         CHECKPOINT
     //-----------------------------
