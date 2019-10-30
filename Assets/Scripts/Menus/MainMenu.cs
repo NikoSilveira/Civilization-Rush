@@ -10,7 +10,8 @@ public class MainMenu : MonoBehaviour
     
     public void PlayGame()
     {
-        SceneManager.LoadScene(1);
+        //Menú selección de nivel
+        SceneManager.LoadScene(2);
     }
 
     public void QuitGame()

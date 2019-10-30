@@ -495,7 +495,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'NIVEL 3
 
-    MONGOLIA'
+'
 --- !u!222 &143443632
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -751,6 +751,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2067346865}
+        m_MethodName: Destroy
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &294279875
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -943,6 +954,80 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 434729355}
   m_CullTransparentMesh: 0
+--- !u!1001 &683809205
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1094088583325388768, guid: 48f7851a9c77f574bbc76ac1532ff40a,
+        type: 3}
+      propertyPath: m_Name
+      value: AudioManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 636707163161373368, guid: 48f7851a9c77f574bbc76ac1532ff40a,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 636707163161373368, guid: 48f7851a9c77f574bbc76ac1532ff40a,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 636707163161373368, guid: 48f7851a9c77f574bbc76ac1532ff40a,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 636707163161373368, guid: 48f7851a9c77f574bbc76ac1532ff40a,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 636707163161373368, guid: 48f7851a9c77f574bbc76ac1532ff40a,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 636707163161373368, guid: 48f7851a9c77f574bbc76ac1532ff40a,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 636707163161373368, guid: 48f7851a9c77f574bbc76ac1532ff40a,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 636707163161373368, guid: 48f7851a9c77f574bbc76ac1532ff40a,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 636707163161373368, guid: 48f7851a9c77f574bbc76ac1532ff40a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 636707163161373368, guid: 48f7851a9c77f574bbc76ac1532ff40a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 636707163161373368, guid: 48f7851a9c77f574bbc76ac1532ff40a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7360599688585612736, guid: 48f7851a9c77f574bbc76ac1532ff40a,
+        type: 3}
+      propertyPath: sounds.Array.data[0].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 63b56151a0fecee459ddcf3317082c2f, type: 3}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 48f7851a9c77f574bbc76ac1532ff40a, type: 3}
 --- !u!1 &929538882
 GameObject:
   m_ObjectHideFlags: 0
@@ -1447,7 +1532,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'NIVEL 2
 
-    EGIPTO'
+'
 --- !u!222 &1174011515
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1746,7 +1831,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: 'NIVEL 5
+
+'
 --- !u!222 &1950068786
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1823,7 +1910,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: 'NIVEL 4
+
+'
 --- !u!222 &1956593563
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1832,6 +1921,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1956593560}
   m_CullTransparentMesh: 0
+--- !u!114 &2067346865 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7360599688585612736, guid: 48f7851a9c77f574bbc76ac1532ff40a,
+    type: 3}
+  m_PrefabInstance: {fileID: 683809205}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00e6d964c74204145aa3c923b525044d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2116038742
 GameObject:
   m_ObjectHideFlags: 0
