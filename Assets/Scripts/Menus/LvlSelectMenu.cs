@@ -9,6 +9,7 @@ using UnityEngine.SceneManagement;
 
 public class LvlSelectMenu : MonoBehaviour
 {
+    //Variables que almacenan los paneles de la escena (asignar en inspector)
     public GameObject MainMenuPanel;
     public GameObject LevelPanel;
 
