@@ -16,6 +16,7 @@ public class LvlSelectMenu : MonoBehaviour
 
     //Array para almacenar los botones
     public Button[] levelButtons;
+    public Button[] infoButtons;
 
 
     void Start()
@@ -29,6 +30,7 @@ public class LvlSelectMenu : MonoBehaviour
             if(i + 1 > levelReached)
             {
                 levelButtons[i].interactable = false;
+                infoButtons[i].interactable = false;
             }
         }
     }
