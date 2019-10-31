@@ -23,8 +23,6 @@ public class AudioManager : MonoBehaviour
             return;
         }
 
-        //DontDestroyOnLoad(gameObject);
-
         //Obtener valores de volumen, pitch y loop asignados en el inspector
         foreach (Sound s in sounds)
         {

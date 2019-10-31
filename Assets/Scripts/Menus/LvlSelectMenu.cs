@@ -9,6 +9,10 @@ using UnityEngine.SceneManagement;
 
 public class LvlSelectMenu : MonoBehaviour
 {
+    public GameObject MainMenuPanel;
+    public GameObject LevelPanel;
+
+
     //Pasar de nivel
     public void SelectLevel(int levelID)
     {
@@ -18,6 +22,7 @@ public class LvlSelectMenu : MonoBehaviour
     //Volver al menú principal
     public void Back()
     {
-        SceneManager.LoadScene(0);
+        LevelPanel.SetActive(false);
+        MainMenuPanel.SetActive(true);
     }
 }

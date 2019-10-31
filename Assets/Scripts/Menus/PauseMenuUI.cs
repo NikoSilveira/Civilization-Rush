@@ -64,7 +64,7 @@ public class PauseMenuUI : MonoBehaviour
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1;
         GameIsPaused = false;
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(1); //ajustar despues con varios niveles
     }
 
     public void Quit()
