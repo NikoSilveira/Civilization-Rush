@@ -7,6 +7,9 @@ using UnityEngine.SceneManagement;
 /*
     -Este script crea un objeto que instancia a 
     PlayerPhone para obtener el score del jugador
+    -Este script se comunica con el manejador
+    de selección de nivel para control de niveles
+    bloqueados y desbloqueados
  */
 
 public class portalTrigger : MonoBehaviour
@@ -17,6 +20,11 @@ public class portalTrigger : MonoBehaviour
 
     //Bool de control para finalizar nivel
     private bool levelCleared = false;
+
+    //Variables para desbloqueo de siguiente nivel
+    public string nextLevel = "Level2";
+    public int nextLevelToUnlock = 2;
+
 
     void Start()
     {
@@ -42,6 +50,9 @@ public class portalTrigger : MonoBehaviour
                 FindObjectOfType<AudioManager>().Stop("Theme");
                 FindObjectOfType<AudioManager>().Play("Victory");
 
+                //Desbloquear proximo nivel
+                Unlock();
+
                 //Siguiente escena + delay (seg)
                 Invoke("nextScene", 6);
             }
@@ -58,4 +69,10 @@ public class portalTrigger : MonoBehaviour
         SceneManager.LoadScene(0);
     }
 
+    //Desbloquear nivel (actualizar input en el inspector)
+    public void Unlock()
+    {
+        //Actualizar el archivo de texto local
+        PlayerPrefs.SetInt("levelReached", nextLevelToUnlock);
+    }
 }
