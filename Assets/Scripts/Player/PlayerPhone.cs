@@ -78,6 +78,11 @@ public class PlayerPhone : MonoBehaviour
 
         //Resistance
         myResistance = maxResistance;
+
+        //Guardar default values de atributos del jugador
+        PlayerPrefs.SetInt("CurrentScore", 0);
+        PlayerPrefs.SetInt("CurrentStamina", 5);
+        PlayerPrefs.SetInt("CurrentHealth", 9);
     }
 
     // Update is called once per frame
@@ -292,13 +297,13 @@ public class PlayerPhone : MonoBehaviour
 
     public void Die()
     {
+        //Reaparecer
         transform.position = respawnPoint;
-        myHealth = maxHealth;
 
-        if (!checkpointActivated)
-        {
-            Score = 0;
-        }
+        //Recuperar los ultimos atributos guardados
+        myHealth = PlayerPrefs.GetInt("CurrentHealth");
+        Score = PlayerPrefs.GetInt("CurrentScore");
+        myResistance = PlayerPrefs.GetInt("CurrentStamina");
     }
 
     public void takeDamage(int damage)

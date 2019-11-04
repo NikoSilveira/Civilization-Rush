@@ -8,6 +8,8 @@ using UnityEngine;
     -Cuando se registra una colisión con el chackpoint,
     se alamacena en el jugador la posición donde se activó
     con un vector3
+    -Se almacena en un archivo local los atributos del jugador
+    al momento de activar el checkpoint
 */
 
 public class CheckpointController : MonoBehaviour
@@ -25,6 +27,8 @@ public class CheckpointController : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerPhone>();
+
+
     }
 
     // Update is called once per frame
@@ -43,6 +47,9 @@ public class CheckpointController : MonoBehaviour
             animator.SetBool("Activated",true);
             checkpointReached = true;
 
+            //Guardar atributos actuales en doc local
+            SaveProgress();
+
             //Registrar posición en variables de player
             player.respawnPoint = collision.transform.position;
             player.checkpointActivated = true;
@@ -50,5 +57,13 @@ public class CheckpointController : MonoBehaviour
             //SFX
             FindObjectOfType<AudioManager>().Play("Checkpoint");
         }
+    }
+
+    //Guardar progreso al activar checkpoint
+    private void SaveProgress()
+    {
+        PlayerPrefs.SetInt("CurrentScore", player.Score);
+        PlayerPrefs.SetInt("CurrentStamina", player.myResistance);
+        PlayerPrefs.SetInt("CurrentHealth", player.myHealth);
     }
 }
