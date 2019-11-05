@@ -10,6 +10,8 @@ using UnityEngine.SceneManagement;
     -Este script se comunica con el manejador
     de selección de nivel para control de niveles
     bloqueados y desbloqueados
+    -SI SE NECESITA MODIFICAR SCORE PARA PASAR POR PORTAL
+    HAY QUE CAMBIAR EN AMBAS CONDICIONES DE LA COLISION
  */
 
 public class portalTrigger : MonoBehaviour
@@ -56,7 +58,7 @@ public class portalTrigger : MonoBehaviour
                 Unlock();
 
                 //Siguiente escena + delay (seg)
-                Invoke("nextScene", 6);
+                Invoke("nextScene", 4);
             }
             else if (PlayerScore < 1500)                         //score mínimo
             {
@@ -76,7 +78,8 @@ public class portalTrigger : MonoBehaviour
 
     void nextScene()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        //Activar la función de transición del controlador de niveles
+        FindObjectOfType<LevelChanger>().FadeToNextLevel();
     }
 
     //Desbloquear nivel (actualizar input en el inspector)
