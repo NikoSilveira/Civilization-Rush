@@ -166,6 +166,7 @@ PlayerSettings:
   applicationIdentifier:
     Android: com.rigoberto.CivilizationRush
     Standalone: com.Company.ProductName
+    iPhone: com.Rigoberto.CivilizationRush
   buildNumber: {}
   AndroidBundleVersionCode: 1
   AndroidMinSdkVersion: 16

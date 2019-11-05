@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
+  - Checkpoint
+  - Tutorial
   layers:
   - Default
   - TransparentFX
@@ -17,7 +19,7 @@ TagManager:
   - Ground
   - Player
   - Enemy
-  - 
+  - Objects
   - 
   - 
   - 
@@ -59,4 +61,7 @@ TagManager:
     locked: 0
   - name: Button
     uniqueID: 1789930167
+    locked: 0
+  - name: Objects
+    uniqueID: 2215256015
     locked: 0
