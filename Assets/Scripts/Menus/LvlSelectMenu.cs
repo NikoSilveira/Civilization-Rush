@@ -1,11 +1,13 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using System.Collections;
 
 /*
     -Script de control del menú de selección de niveles
     -Se asigna este script al Onclick() del botón deseado
     junto con el ID del nivel
+    -Se controla la barra de carga desde este script
  */
 
 public class LvlSelectMenu : MonoBehaviour
@@ -18,13 +20,17 @@ public class LvlSelectMenu : MonoBehaviour
     public Button[] levelButtons;
     public Button[] infoButtons;
 
+    //Variables para loading bar
+    public GameObject loadingScreen;
+    public Slider slider;
+
 
     void Start()
     {
-        //Recibir el nivel alcanzado de un archivo local
+        //Recibir el nivel alcanzado de archivo local
         int levelReached = PlayerPrefs.GetInt("levelReached", 1);
 
-        //Desactivar todos los botones al empezar
+        //Desactivar botones, habilitar para niveles disponibles
         for (int i = 0; i < levelButtons.Length; i++)
         {
             if(i + 1 > levelReached)
@@ -36,10 +42,32 @@ public class LvlSelectMenu : MonoBehaviour
     }
 
 
-    //Entrar a un nivel
+
+    //----------------------------------
+    //      FUNCIONES PARA BOTONES
+    //----------------------------------
+
+    //Funcion para selección de nivel
     public void SelectLevel(int levelID)
     {
-        SceneManager.LoadScene(levelID);
+        StartCoroutine(LoadAsync(levelID));
+    }
+
+    //Funcion asincrona para cargar nivel
+    IEnumerator LoadAsync (int levelID)
+    {
+        AsyncOperation operation = SceneManager.LoadSceneAsync(levelID);
+
+        loadingScreen.SetActive(true);
+
+        while (!operation.isDone)
+        {
+            //Obtener el progreso y pasarlo a la barra
+            float progress = Mathf.Clamp01(operation.progress / .9f);
+            slider.value = progress;
+
+            yield return null;
+        }
     }
 
     //Volver al menú principal
