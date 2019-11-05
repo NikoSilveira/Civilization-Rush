@@ -27,8 +27,6 @@ public class CheckpointController : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerPhone>();
-
-
     }
 
     // Update is called once per frame
@@ -52,7 +50,6 @@ public class CheckpointController : MonoBehaviour
 
             //Registrar posición en variables de player
             player.respawnPoint = collision.transform.position;
-            player.checkpointActivated = true;
 
             //SFX
             FindObjectOfType<AudioManager>().Play("Checkpoint");

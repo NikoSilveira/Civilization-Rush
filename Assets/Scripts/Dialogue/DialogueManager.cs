@@ -24,7 +24,6 @@ public class DialogueManager : MonoBehaviour
     //Objeto jugador
     private PlayerPhone player;
 
-
     // Start is called before the first frame update
     void Start()
     {
@@ -57,7 +56,6 @@ public class DialogueManager : MonoBehaviour
         }
 
         DisplayNextSentence();
-
     }
 
     //Llamar la siguiente oración en la cola
@@ -66,11 +64,12 @@ public class DialogueManager : MonoBehaviour
         //Finalizar si no quedan mas oraciones
         if (sentences.Count == 0)
         {
+            Debug.Log("aqui");
             Time.timeScale = 1;
             EndDialogue();
+            Debug.Log("jajaja");
             return;
         }
-
         string sentence = sentences.Dequeue();
         dialogueText.text = sentence;
     }
@@ -82,10 +81,11 @@ public class DialogueManager : MonoBehaviour
     }
 
     //Pausar el juego al mostrar cuadro de dialogo
-    void Delay()
+    public void Delay()
     {
         Time.timeScale = 0;
         player.StopMoving();
+        Debug.Log("loco");
     }
 
 }

@@ -38,7 +38,6 @@ public class PlayerPhone : MonoBehaviour
 
     //Respawn
     public Vector3 respawnPoint;
-    public bool checkpointActivated = false;
 
     //Score
     public int Score;

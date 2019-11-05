@@ -25,6 +25,8 @@ public class portalTrigger : MonoBehaviour
     public string nextLevel = "Level2";
     public int nextLevelToUnlock = 2;
 
+    //Bool de control de colisión con portal
+    public bool validateCollision = true;
 
     void Start()
     {
@@ -58,21 +60,28 @@ public class portalTrigger : MonoBehaviour
             }
             else if (PlayerScore < 1500)                         //score mínimo
             {
-                //Diálogo para indicar que faltan puntos
-                gameObject.GetComponent<DialogueTrigger>().TriggerDialogue();
+                //SFX
+                FindObjectOfType<AudioManager>().Play("Error");
+
+                if (validateCollision)
+                {
+                    //Activar dialogo de alerta
+                    validateCollision = false;
+                    gameObject.GetComponent<DialogueTrigger>().TriggerDialogue();
+                }
+                
             }
         }
     }
 
     void nextScene()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     //Desbloquear nivel (actualizar input en el inspector)
     public void Unlock()
     {
-        //Actualizar el archivo de texto local
         PlayerPrefs.SetInt("levelReached", nextLevelToUnlock);
     }
 }
