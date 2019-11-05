@@ -303,6 +303,9 @@ public class PlayerPhone : MonoBehaviour
         myHealth = PlayerPrefs.GetInt("CurrentHealth");
         Score = PlayerPrefs.GetInt("CurrentScore");
         myResistance = PlayerPrefs.GetInt("CurrentStamina");
+
+        //SFX
+        FindObjectOfType<AudioManager>().Play("Death");
     }
 
     public void takeDamage(int damage)

@@ -64,10 +64,8 @@ public class DialogueManager : MonoBehaviour
         //Finalizar si no quedan mas oraciones
         if (sentences.Count == 0)
         {
-            Debug.Log("aqui");
             Time.timeScale = 1;
             EndDialogue();
-            Debug.Log("jajaja");
             return;
         }
         string sentence = sentences.Dequeue();
@@ -85,7 +83,6 @@ public class DialogueManager : MonoBehaviour
     {
         Time.timeScale = 0;
         player.StopMoving();
-        Debug.Log("loco");
     }
 
 }
