@@ -15,11 +15,30 @@ public class SettingsMenu : MonoBehaviour
     public AudioMixer audioMixer;
 
 
-    public void SetVolume(float volume)
+
+    //---------------------
+    //       SLIDERS
+    //---------------------
+
+    public void SetVolumeMaster(float volume)
+    {
+        audioMixer.SetFloat("volume", volume);
+    }
+
+    public void SetVolumeMusic(float volume)
     {
         audioMixer.SetFloat("musicVol", volume);
     }
 
+    public void SetVolumeSfx(float volume)
+    {
+        audioMixer.SetFloat("sfxVol", volume);
+    }
+
+
+    //------------------------
+    //        BOTONES
+    //------------------------
 
     //Resetear los niveles desbloqueados
     public void resetProgress()
