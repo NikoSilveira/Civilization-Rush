@@ -45,6 +45,9 @@ public class PauseMenuUI : MonoBehaviour
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1;
         GameIsPaused = false;
+
+        //SFX
+        FindObjectOfType<AudioManager>().Play("Pause");
     }
 
     public void Pause()
@@ -52,6 +55,9 @@ public class PauseMenuUI : MonoBehaviour
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0;
         GameIsPaused = true;
+
+        //SFX
+        FindObjectOfType<AudioManager>().Play("Pause");
     }
 
     public void Settings()
@@ -64,6 +70,11 @@ public class PauseMenuUI : MonoBehaviour
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1;
         GameIsPaused = false;
+
+        //SFX
+        FindObjectOfType<AudioManager>().Play("Pause");
+
+        //Recargar nivel
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
@@ -72,6 +83,11 @@ public class PauseMenuUI : MonoBehaviour
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1;
         GameIsPaused = false;
+
+        //SFX
+        FindObjectOfType<AudioManager>().Play("Pause");
+
+        //Volver a menú principal
         SceneManager.LoadScene(0);
     }
     

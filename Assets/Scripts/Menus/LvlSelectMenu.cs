@@ -51,10 +51,4 @@ public class LvlSelectMenu : MonoBehaviour
         FindObjectOfType<AudioManager>().Play("Switch");
     }
 
-    //Resetear los niveles desbloqueados
-    public void resetProgress()
-    {
-        PlayerPrefs.SetInt("levelReached", 1);
-        SceneManager.LoadScene(0);
-    }
 }
