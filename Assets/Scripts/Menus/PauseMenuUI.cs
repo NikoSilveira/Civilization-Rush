@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 /*
     -Este script crea un objeto pauseMenuUI para
@@ -10,14 +11,27 @@ using UnityEngine.SceneManagement;
     cuando se abre o se cierra
 */
 
+
+[RequireComponent(typeof(Button))]
 public class PauseMenuUI : MonoBehaviour
 {
+
+    public GameObject pauseMenuUI;
 
     //Bool de control para la pausa
     public static bool GameIsPaused = false;
 
-    public GameObject pauseMenuUI;
+    //Variables para control del sprite del boton mute
+    public Sprite unmuted;
+    public Sprite muted;
 
+    public Button muteButton;
+
+
+    void Start()
+    {
+        
+    }
 
     // Update is called once per frame
     void Update()
@@ -45,7 +59,7 @@ public class PauseMenuUI : MonoBehaviour
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1;
         GameIsPaused = false;
-
+        
         //SFX
         FindObjectOfType<AudioManager>().Play("Pause");
     }
@@ -60,9 +74,22 @@ public class PauseMenuUI : MonoBehaviour
         FindObjectOfType<AudioManager>().Play("Pause");
     }
 
-    public void Settings()
+    public void ToggleAudio()
     {
+        //Activar o descativar master audio
 
+        if(AudioListener.volume == 0f)
+        {
+            //unmute
+            AudioListener.volume = 1f;
+            muteButton.image.overrideSprite = unmuted;
+        }
+        else if(AudioListener.volume == 1f)
+        {
+            //mute
+            AudioListener.volume = 0f;
+            muteButton.image.overrideSprite = muted;
+        }
     }
 
     public void Restart()
