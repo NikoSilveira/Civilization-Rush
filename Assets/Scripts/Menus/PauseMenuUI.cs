@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 /*
     -Este script crea un objeto pauseMenuUI para
-    poder controlar el status del menu de pausa
+    poder controlar el menu de pausa
     -SetActive permite activar o desactivar el Menú
     cuando se abre o se cierra
 */
@@ -24,7 +24,6 @@ public class PauseMenuUI : MonoBehaviour
     //Variables para control del sprite del boton mute
     public Sprite unmuted;
     public Sprite muted;
-
     public Button muteButton;
 
 
