@@ -164,7 +164,6 @@ public class PlayerAttack : MonoBehaviour
                 {
                     downattacking = false;
                     downAttackTrigger.enabled = false;
-                    //StartCoroutine(player.Knockback(0.01f, 50, player.transform.position));
                 }
             }
             anim.SetBool("attacking_down", downattacking);
@@ -196,7 +195,6 @@ public class PlayerAttack : MonoBehaviour
         {
             if (!spearAttacking && player.myResistance >= 0)
             {
-
                 spearAttacking = true;
                 attackTimer = spearAttackCd;
                 player.myResistance -= 1;

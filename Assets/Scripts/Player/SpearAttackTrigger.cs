@@ -8,6 +8,11 @@ public class SpearAttackTrigger : MonoBehaviour
     public int damage = 3;
     private EnemyMovement enemy;
 
+    private void Awake()
+    {
+        enemy = GameObject.FindGameObjectWithTag("Enemy").GetComponent<EnemyMovement>();
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.isTrigger != true && collision.CompareTag("Enemy"))

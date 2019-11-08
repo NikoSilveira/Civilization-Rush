@@ -23,12 +23,12 @@ public class EnemyMovement : MonoBehaviour
     Rigidbody2D myRigiBody;
 
     public Animator anim;
-    private Rigidbody2D rigiBody2D;
+    public Rigidbody2D rigiBody2D;
     private PlayerPhone player;
 
     //Variables de posición, dirección y movimiento
     public Transform target;
-    private float distancePlayer;
+    public float distancePlayer;
     private float maxSpeed = 5f;
     private Vector2 runRight;
     private Vector2 runLeft;
