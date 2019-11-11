@@ -189,6 +189,15 @@ public class EnemyMovement : MonoBehaviour
         if (collision.isTrigger != true && collision.CompareTag("Player"))
         {
             collision.GetComponent<PlayerPhone>().takeDamage(damageLevel);
+            player.knockbackCount = player.knockbackLength;
+            if(player.transform.position.x < transform.position.x)
+            {
+                player.knockbackRight = true;
+            }
+            else
+            {
+                player.knockbackRight = false;
+            }
         }
     }
 

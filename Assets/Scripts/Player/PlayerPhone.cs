@@ -59,6 +59,12 @@ public class PlayerPhone : MonoBehaviour
     CapsuleCollider2D myBodyCollider2D;
     public BoxCollider2D myBodyFeet;
 
+    //Retroceso al ser golpeado
+    public float knockback;
+    public float knockbackLength;
+    public float knockbackCount;
+    public bool knockbackRight;
+
 
     //--------------------------------------------
     //      MÉTODOS PREDETERMINADOS DE UNITY
@@ -96,13 +102,28 @@ public class PlayerPhone : MonoBehaviour
         //Las funciones corren si el juego no está pausado
         if(Time.timeScale == 1)
         {
-            MovePlayer(speed);
+            if(knockbackCount <= 0)
+            {
+                MovePlayer(speed);
+                ControlConTeclado();
+            }else
+            {
+                if (knockbackRight)
+                {
+                    rb.velocity = new Vector2(-knockback, knockback);
+                }
+                if (!knockbackRight)
+                {
+                    rb.velocity = new Vector2(knockback, knockback);
+                }
+                knockbackCount -= Time.deltaTime;
+            }
 
             Flip();
 
             controlSalud();
 
-            ControlConTeclado();
+            
 
             CheckHurtingState();
         }
