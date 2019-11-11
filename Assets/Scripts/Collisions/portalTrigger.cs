@@ -54,8 +54,9 @@ public class portalTrigger : MonoBehaviour
                 FindObjectOfType<AudioManager>().Stop("Theme");
                 FindObjectOfType<AudioManager>().Play("Victory");
 
-                //Desbloquear proximo nivel
+                //Desbloquear proximo nivel y guardar nuevo record
                 Unlock();
+                SetRecord();
 
                 //Siguiente escena + delay (seg)
                 Invoke("nextScene", 4);
@@ -86,5 +87,14 @@ public class portalTrigger : MonoBehaviour
     public void Unlock()
     {
         PlayerPrefs.SetInt("levelReached", nextLevelToUnlock);
+    }
+
+    //Almacenar record en documento
+    public void SetRecord()
+    {
+        if(PlayerPrefs.GetInt("ScoreRecord", 0) < player.Score)
+        {
+            PlayerPrefs.SetInt("ScoreRecord"+SceneManager.GetActiveScene().buildIndex, player.Score);
+        }
     }
 }

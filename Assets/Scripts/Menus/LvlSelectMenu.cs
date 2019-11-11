@@ -15,6 +15,7 @@ public class LvlSelectMenu : MonoBehaviour
     //Variables que almacenan los paneles de la escena (asignar en inspector)
     public GameObject MainMenuPanel;
     public GameObject LevelPanel;
+    public GameObject InfoPanel;
 
     //Array para almacenar los botones
     public Button[] levelButtons;
@@ -45,10 +46,24 @@ public class LvlSelectMenu : MonoBehaviour
         MainMenuPanel.SetActive(true);
     }
 
+    //Menú de info
+    public void Info()
+    {
+        LevelPanel.SetActive(false);
+        InfoPanel.SetActive(true);
+    }
+
+    //Volver al menú de niveles
+    public void Back2()
+    {
+        InfoPanel.SetActive(false);
+        LevelPanel.SetActive(true);
+    }
+
     //Efecto de sonido al pisar boton
     public void SoundEffect()
     {
-        FindObjectOfType<AudioManager>().Play("Switch");
+        FindObjectOfType<AudioManager>().Play("Press");
     }
 
 }
