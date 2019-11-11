@@ -36,6 +36,9 @@ public class PlayerPhone : MonoBehaviour
     public bool shield = false;
     public bool shieldActive = false;
 
+    //Iframes
+    private bool IframesActive = false;
+
     //Respawn
     public Vector3 respawnPoint;
 
@@ -49,7 +52,9 @@ public class PlayerPhone : MonoBehaviour
     public int maxResistance = 5;
     public int myResistance;
 
+    //Animadores
     Animator anim;
+
     public Rigidbody2D rb;
     CapsuleCollider2D myBodyCollider2D;
     public BoxCollider2D myBodyFeet;
@@ -62,6 +67,7 @@ public class PlayerPhone : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //Elementos del inspector - inicializar
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         myBodyCollider2D = GetComponent<CapsuleCollider2D>();
@@ -91,8 +97,8 @@ public class PlayerPhone : MonoBehaviour
         if(Time.timeScale == 1)
         {
             MovePlayer(speed);
+
             Flip();
-            AnimationControl();
 
             controlSalud();
 
@@ -186,6 +192,8 @@ public class PlayerPhone : MonoBehaviour
     //        MOVIMIENTO
     //--------------------------
 
+        //Funciones: MovePlayer, Jump, DontJump, Flip, WalkLeft, WalkRight, StopMoving (setter)
+
     void MovePlayer(float playerSpeed)
     {
         bool playerHasHorizontalSpeed = Mathf.Abs(rb.velocity.x) > Mathf.Epsilon;
@@ -227,6 +235,7 @@ public class PlayerPhone : MonoBehaviour
 
     public void DontJump()
     {
+        Debug.Log("cancel test");
         return;
     }
 
@@ -266,38 +275,17 @@ public class PlayerPhone : MonoBehaviour
     }
 
 
-    //------------------------
-    //         ESCUDO
-    //------------------------
-
-    //Defender
-    public void playerBlock()
-    {
-        if(!shieldActive)
-        {
-            shieldActive = true;
-            anim.SetBool("blocking", shieldActive);
-            speed = 0;
-        }
-    }
-
-    //Al dejar de defender
-    public void playerDontBlock()
-    {
-        shieldActive = false;
-        anim.SetBool("blocking", shieldActive);
-    }
-
-
 
     //-----------------------
     //         SALUD
     //-----------------------
 
+    //Funciones: Die, Respawn, TakeDamage, CheckHurtingState, DeactivateIFrames, Knockback, controlSalud
+
     public void Die()
     {
-        //Reaparecer
-        transform.position = respawnPoint;
+        //Desacelerar tiempo
+        Time.timeScale = 0.3f;
 
         //Recuperar los ultimos atributos guardados
         myHealth = PlayerPrefs.GetInt("CurrentHealth");
@@ -306,16 +294,48 @@ public class PlayerPhone : MonoBehaviour
 
         //SFX
         FindObjectOfType<AudioManager>().Play("Death");
+
+        //Llamar funcion para revivir y normalizar tiempo
+        Invoke("Respawn",0.5f);
+        StopMoving();
+    }
+
+    //Revivir
+    public void Respawn()
+    {
+        Time.timeScale = 1;
+        transform.position = respawnPoint;
+        StopMoving();
     }
 
     public void takeDamage(int damage)
     {
-        if(shield == false || (shield == true && shieldActive == false)) //Condiciones para recibir daño
+        if (IframesActive)  //Si hay iframes activos, retornar
         {
+            Debug.Log("No puedes recibir daño aun");
+            return;
+        }
+
+        if(shield == false || (shield == true && shieldActive == false)) //Condiciones para recibir daño (escudo)
+        {
+            //Recibir daño
             myHealth -= damage;
             anim.SetBool("hurting",true);
             hurtTime = (int)Time.time;
+
+            //SFX
+            FindObjectOfType<AudioManager>().Play("Auch");
+
+            //Activar Iframes
+            IframesActive = true;
+            Invoke("DeactivateIFrames", 1.1f);
         }
+    }
+
+    //Llamar esta funcion con un invoke para generar un delay
+    public void DeactivateIFrames()
+    {
+        IframesActive = false;
     }
 
     public void CheckHurtingState()
@@ -357,25 +377,6 @@ public class PlayerPhone : MonoBehaviour
 
         myH = myHealth;
  
-    }
-
-
-    //----------------------------------
-    //    CONTROLADOR DE ANIMACIONES
-    //----------------------------------
-
-    void AnimationControl()
-    {
-        if(shield == false)
-        {
-            //Activar animaciones estándar
-            anim.SetLayerWeight(1,0);
-        }
-        else if(shield == true)
-        {
-            //Activar animaciones con escudo
-            anim.SetLayerWeight(1,1);
-        }
     }
 
 }
