@@ -15,7 +15,7 @@ public class LargeDistanceEnemy : MonoBehaviour
     public float arrowTimer;
 
     public bool range = false;
-    public bool attacking = false;
+    public bool attacking = true;
 
     public GameObject arrow;
     public Transform target;
@@ -107,6 +107,7 @@ public class LargeDistanceEnemy : MonoBehaviour
                 arrowClone.GetComponent<Rigidbody2D>().velocity = direction * arrowSpead;
 
                 arrowTimer = 0;
+                attacking = true;
             }
             else if (attackRight)
             {
@@ -115,8 +116,10 @@ public class LargeDistanceEnemy : MonoBehaviour
                 arrowClone.GetComponent<Rigidbody2D>().velocity = direction * arrowSpead;
 
                 arrowTimer = 0;
+                attacking = true;
             }
         }
+        attacking = false;
     }
 
     //Cálculo de vida y daño
