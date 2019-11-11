@@ -151,7 +151,7 @@ public class PlayerAttack : MonoBehaviour
             }
             if (player.myBodyFeet.IsTouchingLayers(LayerMask.GetMask("Enemy")) && downattacking == true)
             {
-                Vector2 rejectVelocityToAdd = new Vector2(0.2f, 18f);
+                Vector2 rejectVelocityToAdd = new Vector2(10, 0);
                 player.rb.velocity += rejectVelocityToAdd;
             }
             if (downattacking)
@@ -379,4 +379,6 @@ public class PlayerAttack : MonoBehaviour
     {
         return;
     }
+
+
 }

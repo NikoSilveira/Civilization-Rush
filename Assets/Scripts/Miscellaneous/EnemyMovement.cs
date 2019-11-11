@@ -28,7 +28,7 @@ public class EnemyMovement : MonoBehaviour
 
     //Variables de posición, dirección y movimiento
     public Transform target;
-    public float distancePlayer;
+    private float distancePlayer;
     private float maxSpeed = 5f;
     private Vector2 runRight;
     private Vector2 runLeft;
@@ -186,7 +186,7 @@ public class EnemyMovement : MonoBehaviour
     //Recibir daño del jugador
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.isTrigger != true && collision.CompareTag("Player"))
+        if (collision.isTrigger != true && collision.CompareTag("Player"))
         {
             collision.GetComponent<PlayerPhone>().takeDamage(damageLevel);
         }

@@ -14,7 +14,7 @@ public class EnemyAttack : MonoBehaviour
     private float attackDuration;
     private float attackDurationCd = 0.4f;
     private bool enemyAttacking;
-   // public Transform playerTarget;
+    // public Transform playerTarget;
     //public Transform enemyTransform;
 
     // Start is called before the first frame update
@@ -25,6 +25,7 @@ public class EnemyAttack : MonoBehaviour
         enemyAttackTrigger.enabled = false;
         anim = GetComponent<Animator>();
         attackIntervale = 0;
+        enemyAttacking = false;
     }
 
     // Update is called once per frame
@@ -36,21 +37,20 @@ public class EnemyAttack : MonoBehaviour
 
     private void enemyAttack()
     {
-        if(attackIntervale > 0)
-        {
-            attackIntervale -= Time.deltaTime;
-        }
-        if (enemy.rigiBody2D.IsTouchingLayers(LayerMask.GetMask("Player")) && attackIntervale == 0)
-        {
-            enemyAttackTrigger.enabled = true;
-            attackIntervale = attackCD;
-            Vector2 rejectVelocityToAdd = new Vector2(-3f, 0.4f);
-            player.rb.velocity += rejectVelocityToAdd;
-            enemyAttacking = true;
-            attackDuration = attackDurationCd;
-        }
+        if (enemy.rigiBody2D.IsTouchingLayers(LayerMask.GetMask("Player")))
+            {
+                Debug.Log("player");
+                enemyAttackTrigger.enabled = true;
+                attackIntervale = attackCD;
+                Vector2 rejectVelocityToAdd = new Vector2((player.transform.position.x -100 )* -0.6f, 10f);
+                player.rb.velocity += rejectVelocityToAdd;
+           // player.rb.AddForce(new Vector2(-18f, 10f));
+                enemyAttacking = true;
+                attackDuration = attackDurationCd;
+            }
         if (enemyAttacking)
         {
+            Debug.Log("desactivado");
             if (attackDuration > 0)
             {
                 attackDuration -= Time.deltaTime;
