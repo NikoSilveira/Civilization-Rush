@@ -37,30 +37,37 @@ public class EnemyAttack : MonoBehaviour
 
     private void enemyAttack()
     {
-        if (enemy.rigiBody2D.IsTouchingLayers(LayerMask.GetMask("Player")))
+        if(attackIntervale > 0)
+        {
+            anim.SetFloat("Distance", 4);
+            attackIntervale -= Time.deltaTime;
+
+        }
+        else
+        {
+            if (enemy.rigiBody2D.IsTouchingLayers(LayerMask.GetMask("Player")))
             {
                 Debug.Log("player");
                 enemyAttackTrigger.enabled = true;
-                attackIntervale = attackCD;
-                Vector2 rejectVelocityToAdd = new Vector2((player.transform.position.x -100 )* -0.6f, 10f);
-                player.rb.velocity += rejectVelocityToAdd;
-           // player.rb.AddForce(new Vector2(-18f, 10f));
                 enemyAttacking = true;
                 attackDuration = attackDurationCd;
             }
-        if (enemyAttacking)
-        {
-            Debug.Log("desactivado");
-            if (attackDuration > 0)
+            if (enemyAttacking)
             {
-                attackDuration -= Time.deltaTime;
+                if (attackDuration > 0)
+                {
+                    attackDuration -= Time.deltaTime;
+                }
+                else
+                {
+                    enemyAttacking = false;
+                    enemyAttackTrigger.enabled = false;
+                    
+                    attackIntervale = attackCD;
+                }
             }
-            else
-            {
-                enemyAttacking = false;
-                enemyAttackTrigger.enabled = false;
-            }
+            anim.SetFloat("Distance", Mathf.Abs(distancePlayer));
+
         }
-        anim.SetFloat("Distance", Mathf.Abs(distancePlayer));
     }
 }

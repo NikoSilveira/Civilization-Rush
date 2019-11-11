@@ -155,7 +155,10 @@ public class EnemyMovement : MonoBehaviour
     //Colisión del enemigo con un objeto
     private void OnTriggerExit2D(Collider2D collision)
     {
-        transform.localScale = new Vector2(-(Mathf.Sign(myRigiBody.velocity.x)), 1f);
+        if (!collision.CompareTag("Player"))
+        {
+            transform.localScale = new Vector2(-(Mathf.Sign(myRigiBody.velocity.x)), 1f);
+        }
     }
 
 
@@ -184,7 +187,7 @@ public class EnemyMovement : MonoBehaviour
     }*/
 
     //Recibir daño del jugador
-    private void OnTriggerEnter2D(Collider2D collision)
+    /*private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.isTrigger != true && collision.CompareTag("Player"))
         {
@@ -199,7 +202,7 @@ public class EnemyMovement : MonoBehaviour
                 player.knockbackRight = false;
             }
         }
-    }
+    }*/
 
     //Cálculo de vida y daño
     public void Damage(int damage)
