@@ -109,7 +109,7 @@ public class LargeDistanceEnemy : MonoBehaviour
                 arrowTimer = 0;
                 attacking = true;
             }
-            else if (attackRight)
+     else if (attackRight)
             {
                 GameObject arrowClone;
                 arrowClone = Instantiate(arrow, shootPointRight.transform.position, shootPointRight.transform.rotation) as GameObject;

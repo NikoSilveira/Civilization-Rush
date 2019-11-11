@@ -34,6 +34,14 @@ public class PlayerAttack : MonoBehaviour
     private bool downattacking = false;
     public Collider2D downAttackTrigger;
 
+    //Archer
+    public float shootInterval;
+    public float shootIntervalCd = 0.3f;
+    public float arrowSpead = 100;
+    public float arrowTimer;
+    public GameObject arrow;
+    public Transform shootPoint;
+    private bool archerAttacking = false;
 
     //-------------------------------------------
     //     MÉTODOS PREDETERMINADOS DE UNITY
@@ -132,6 +140,35 @@ public class PlayerAttack : MonoBehaviour
 
             //Animación de ataque
             anim.SetBool("attacking_spear", spearAttacking);
+        }
+        else if(weaponSelected == 3)
+        {
+            Vector2 direction;
+                direction = shootPoint.transform.position - player.transform.position;
+
+
+             
+            direction.Normalize();
+
+           if(Input.GetKeyDown("f") && !archerAttacking)
+            {
+                GameObject arrowClone;
+                arrowClone = Instantiate(arrow, shootPoint.transform.position, shootPoint.transform.rotation) as GameObject;
+                arrowClone.GetComponent<Rigidbody2D>().velocity = direction * arrowSpead;
+                shootInterval = shootIntervalCd;
+                archerAttacking = true;
+            }
+           if(archerAttacking)
+            {
+                if(shootInterval > 0)
+                {
+                    shootInterval -= Time.deltaTime;
+                }
+                else
+                {
+                    archerAttacking = false;
+                }
+            }
         }
     }
 
@@ -356,6 +393,14 @@ public class PlayerAttack : MonoBehaviour
                 weaponSelected = 2;
             }
             else if(weaponSelected == 2)
+            {
+                weaponSelected = 1;
+            }
+            else if(weaponSelected == 1 || weaponSelected ==2)
+            {
+                weaponSelected = 3;
+            }
+            else if(weaponSelected == 3)
             {
                 weaponSelected = 1;
             }
