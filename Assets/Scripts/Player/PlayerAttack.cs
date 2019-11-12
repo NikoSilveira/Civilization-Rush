@@ -111,7 +111,7 @@ public class PlayerAttack : MonoBehaviour
             {
                 spearAttacking = true;
                 attackTimer = spearAttackCd;
-                player.myResistance -= 1;
+                //player.myResistance -= 1;
                 spearAttackTrigger.enabled = true;
             }
 
@@ -388,17 +388,27 @@ public class PlayerAttack : MonoBehaviour
     {
         if (Input.GetKeyDown("c"))
         {
-            if (weaponSelected == 1 && player.spearF == true)
+            if (weaponSelected == 1)
             {
-                weaponSelected = 2;
+                if(player.spearF == true)
+                {
+                    weaponSelected = 2;
+                }else if(player.spearF == false && player.archerP == true)
+                {
+                    weaponSelected = 3;
+                }
+
             }
             else if(weaponSelected == 2)
             {
-                weaponSelected = 1;
-            }
-            else if(weaponSelected == 1 || weaponSelected ==2)
-            {
-                weaponSelected = 3;
+                if(player.archerP == false)
+                {
+                    weaponSelected = 1;
+                }
+                else if(player.archerP == true)
+                {
+                    weaponSelected = 3;
+                }
             }
             else if(weaponSelected == 3)
             {

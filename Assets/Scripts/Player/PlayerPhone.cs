@@ -48,6 +48,9 @@ public class PlayerPhone : MonoBehaviour
     //Spear
     public bool spearF = false;
 
+    //Archer
+    public bool archerP = false;
+
     //Resistance
     public int maxResistance = 5;
     public int myResistance;
