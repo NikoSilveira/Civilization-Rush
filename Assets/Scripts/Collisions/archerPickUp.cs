@@ -5,6 +5,7 @@ using UnityEngine;
 public class archerPickUp : MonoBehaviour
 {
     private PlayerPhone player;
+    
 
     // Start is called before the first frame update
     void Start()
