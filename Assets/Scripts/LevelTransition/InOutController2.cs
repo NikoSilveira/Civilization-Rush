@@ -29,8 +29,8 @@ public class InOutController2 : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerPhone>();
 
         //Inicializar datos del UI
-        puntos.text = player.Score.ToString();
-        record.text = PlayerPrefs.GetInt("ScoreRecord" + SceneManager.GetActiveScene().buildIndex,0).ToString();
+        puntos.text = "Puntos: "+player.Score.ToString();
+        record.text = "Record: "+PlayerPrefs.GetInt("ScoreRecord" + SceneManager.GetActiveScene().buildIndex).ToString();
     }
 
 
