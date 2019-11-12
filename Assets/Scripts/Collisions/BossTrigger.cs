@@ -28,4 +28,13 @@ public class BossTrigger : MonoBehaviour
             animator.SetBool("BattleActive", true);
         }
     }
+
+    public void StopBossBattle()
+    {
+        //bajar timescale, reiniciar valor de vida en checkpoint
+        //pasar gate para aca
+        FindObjectOfType<AudioManager>().Stop("Boss");
+        FindObjectOfType<AudioManager>().Play("Theme");
+        animator.SetBool("BattleActive", false);
+    }
 }

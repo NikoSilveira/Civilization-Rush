@@ -16,8 +16,10 @@ using UnityEngine.SceneManagement;
 
 public class portalTrigger : MonoBehaviour
 {
-
+    
     private PlayerPhone player;
+    public InOutController2 controller2;
+
     private int PlayerScore;
 
     //Bool de control para finalizar nivel
@@ -47,7 +49,7 @@ public class portalTrigger : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            if (PlayerScore >= 1500 && levelCleared == false)    //score mínimo
+            if (PlayerScore >= 0 && levelCleared == false)    //score mínimo
             {
                 //Pasar de nivel + cambio de música
                 levelCleared = true;
@@ -58,10 +60,13 @@ public class portalTrigger : MonoBehaviour
                 Unlock();
                 SetRecord();
 
+                //Display info de victoria
+                controller2.ShowFinishInfo();
+
                 //Siguiente escena + delay (seg)
                 Invoke("nextScene", 4);
             }
-            else if (PlayerScore < 1500)                         //score mínimo
+            else if (PlayerScore < 0)                         //score mínimo
             {
                 //SFX
                 FindObjectOfType<AudioManager>().Play("Error");
@@ -92,9 +97,10 @@ public class portalTrigger : MonoBehaviour
     //Almacenar record en documento
     public void SetRecord()
     {
-        if(PlayerPrefs.GetInt("ScoreRecord", 0) < player.Score)
+        if(PlayerPrefs.GetInt("ScoreRecord" + SceneManager.GetActiveScene().buildIndex, 0) < player.Score)
         {
             PlayerPrefs.SetInt("ScoreRecord"+SceneManager.GetActiveScene().buildIndex, player.Score);
         }
     }
+
 }
