@@ -22,6 +22,7 @@ public class LargeDistanceEnemy : MonoBehaviour
     public Animator enemyAnimator;
     public Transform shootPointLeft;
     public Transform shootPointRight;
+    public BoxCollider2D box;
 
     //Score
     public int Score;
