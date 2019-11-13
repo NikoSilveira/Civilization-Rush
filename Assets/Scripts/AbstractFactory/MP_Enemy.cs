@@ -8,6 +8,7 @@ public class MediumPowerEnemy : Enemy
     {
         this.attPow = 2;
         this.health = 6;
+        this.score = 150;
         this.tag = "Medium Power Enemy";
     }
     public override int getAttPow()
@@ -21,5 +22,9 @@ public class MediumPowerEnemy : Enemy
     public override string getTag()
     {
         return this.tag;
+    }
+    public override int getScore()
+    {
+        return this.score;
     }
 }

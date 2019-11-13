@@ -4,11 +4,11 @@ using UnityEngine;
 
 public abstract class NPCFactory
 {
-    public abstract Enemy getEnemy(GameObject obj, EnemyTypes type);
+    public abstract Enemy getEnemy(EnemyTypes type);
 }
 public class EnemyFactory : NPCFactory
 {
-    public override Enemy getEnemy(GameObject obj, EnemyTypes type)
+    public override Enemy getEnemy(EnemyTypes type)
     {
         switch (type)
         {

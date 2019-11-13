@@ -53,6 +53,8 @@ public class EnemyMovement : MonoBehaviour
     //Score
     public int Score;
 
+    private Enemy enemy;
+
 
     //----------------------------------------
     //    MÉTODOS PREDETERMINADOS DE UNITY
@@ -75,15 +77,17 @@ public class EnemyMovement : MonoBehaviour
         runLeft = new Vector2(-maxSpeed, 0);
         stop = new Vector2(0, 0);
 
-        //Inicializar vida
-        maxHealth = 2;
-        enemyHealth = maxHealth;
-
-        //Valor del enemigo
-        Score = 100;
 
         //Daño de ataque
-        damageLevel = 1;
+        EnemyFactory factory = new EnemyFactory();
+        enemy = factory.getEnemy(EnemyTypes.medium);
+        damageLevel = enemy.getAttPow();
+
+        //Inicializar vida
+        enemyHealth = enemy.getHealth();
+
+        //Valor del enemigo
+        Score = enemy.getScore();
     }
 
     // Update is called once per frame

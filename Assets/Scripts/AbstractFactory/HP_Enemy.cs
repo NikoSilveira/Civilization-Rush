@@ -19,4 +19,8 @@ public class HighPowerEnemy : Enemy
     {
         return this.tag;
     }
+    public override int getScore()
+    {
+        return this.score;
+    }
 }

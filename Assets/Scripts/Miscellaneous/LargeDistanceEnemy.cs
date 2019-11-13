@@ -32,6 +32,8 @@ public class LargeDistanceEnemy : MonoBehaviour
     private float distancePlayer;
     private bool facingRight = false;
 
+    private Enemy enemy;
+
 
     private void Awake()
     {
@@ -41,8 +43,10 @@ public class LargeDistanceEnemy : MonoBehaviour
 
     private void Start()
     {
-        enemyHealth = maxEnemyHealth;
-        Score = 150;
+        EnemyFactory factory = new EnemyFactory();
+        enemy = factory.getEnemy(EnemyTypes.low);
+        enemyHealth = enemy.getHealth();
+        Score = enemy.getScore();
 
     }
 

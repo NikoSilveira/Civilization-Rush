@@ -5,11 +5,14 @@ using UnityEngine;
 public class arrowEnemy : MonoBehaviour
 {
     private PlayerPhone player;
-    public int dmg;
+    private int dmg;
 
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerPhone>();
+        EnemyFactory factory = new EnemyFactory();
+        Enemy enemy = factory.getEnemy(EnemyTypes.low);
+        dmg = enemy.getAttPow();
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {

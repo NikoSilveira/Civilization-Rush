@@ -11,4 +11,6 @@ public abstract class Enemy
     public abstract int getAttPow();
     public abstract int getHealth();
     public abstract string getTag();
+
+    public abstract int getScore();
 }
