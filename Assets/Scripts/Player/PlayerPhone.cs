@@ -302,13 +302,14 @@ public class PlayerPhone : MonoBehaviour
         
         if(speed > 0 && !facingRight || speed < 0 && facingRight)
         {
-            Vector3 theScale1 = arrowPlayer.transform.localScale;
-            theScale1.x *= -1;
-            arrowPlayer.transform.localScale = theScale1;
             facingRight = !facingRight;
             Vector3 temp = transform.localScale;
             temp.x *= -1;
             transform.localScale = temp;
+            Vector3 theScale1 = arrowPlayer.transform.localScale;
+            theScale1.x *= -1;
+            arrowPlayer.transform.localScale = theScale1;
+            
         }
         
     }
