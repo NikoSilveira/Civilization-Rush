@@ -72,6 +72,11 @@ public class PlayerPhone : MonoBehaviour
     public float knockbackCount;
     public bool knockbackRight;
 
+    //jump
+    private float jumpCd = 0.3f;
+    private float jumpTime;
+    private bool jumpbool = false;
+
 
     //--------------------------------------------
     //      MÉTODOS PREDETERMINADOS DE UNITY
@@ -190,6 +195,7 @@ public class PlayerPhone : MonoBehaviour
         //Salto
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
+
             //rb.AddForce(new Vector2(rb.velocity.x, jumpSpeedY));
             if (!myBodyFeet.IsTouchingLayers(LayerMask.GetMask("Ground")))
             {
@@ -199,7 +205,14 @@ public class PlayerPhone : MonoBehaviour
             {
                 Vector2 jumpVelocityToAdd = new Vector2(0f, jumpSpeed);
                 rb.velocity += jumpVelocityToAdd;
+                anim.SetBool("jumping", true);
+                if (myBodyFeet.IsTouchingLayers(LayerMask.GetMask("Ground")))
+                {
+                    anim.SetBool("jumping", false);
+                }
             }
+
+
         }
 
         //Escudo
@@ -254,20 +267,33 @@ public class PlayerPhone : MonoBehaviour
     {
         if (Time.timeScale == 1 && !shieldActive)
         {
+            
             //rb.AddForce(new Vector2(rb.velocity.x, jumpSpeedY));
-            if (myBodyFeet.IsTouchingLayers(LayerMask.GetMask("Ground")))
+            if (myBodyFeet.IsTouchingLayers(LayerMask.GetMask("Ground")) && !jumpbool)
             {
+                
+                jumpbool = true;
+                jumpTime = jumpCd;
                 Vector2 jumpVelocityToAdd = new Vector2(0f, jumpSpeed);
                 rb.velocity += jumpVelocityToAdd;
-                return;
+                
+                //return;
             }
+            anim.SetBool("jumping", jumpbool);
+
         }
     }
 
     public void DontJump()
     {
         Debug.Log("cancel test");
-        return;
+        if (jumpbool)
+        {
+            
+                jumpbool = false;
+        }
+        anim.SetBool("jumping", jumpbool);
+        //return;
     }
 
     private void Flip()
