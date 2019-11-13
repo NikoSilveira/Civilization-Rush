@@ -49,7 +49,7 @@ public class portalTrigger : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            if (PlayerScore >= 0 && levelCleared == false)    //score mínimo
+            if (PlayerScore >= 1500 && levelCleared == false)    //score mínimo
             {
                 //Pasar de nivel + cambio de música
                 levelCleared = true;
@@ -66,7 +66,7 @@ public class portalTrigger : MonoBehaviour
                 //Siguiente escena + delay (seg)
                 Invoke("nextScene", 4);
             }
-            else if (PlayerScore < 0)                         //score mínimo
+            else if (PlayerScore < 1500)                         //score mínimo
             {
                 //SFX
                 FindObjectOfType<AudioManager>().Play("Error");

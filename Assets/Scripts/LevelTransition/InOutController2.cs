@@ -29,8 +29,7 @@ public class InOutController2 : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerPhone>();
 
         //Inicializar datos del UI
-        puntos.text = "Puntos: "+player.Score.ToString();
-        record.text = "Record: "+PlayerPrefs.GetInt("ScoreRecord" + SceneManager.GetActiveScene().buildIndex).ToString();
+
     }
 
 
@@ -40,6 +39,8 @@ public class InOutController2 : MonoBehaviour
 
     public void ShowFinishInfo()
     {
+        puntos.text = "Puntos: "+player.Score.ToString();
+        record.text = "Record: "+PlayerPrefs.GetInt("ScoreRecord" + SceneManager.GetActiveScene().buildIndex).ToString();
         animator.SetTrigger("ShowFinish");
         Invoke("RemoveFinishInfo", 3);
     }
