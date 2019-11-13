@@ -46,7 +46,7 @@ public class arrowPlayer : MonoBehaviour
             }
             
 
-            //Destroy(gameObject);
+            Destroy(gameObject);
 
         }
     }

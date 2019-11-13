@@ -150,7 +150,7 @@ public class PlayerAttack : MonoBehaviour
            if(Input.GetKeyDown("f") && !archerAttacking && player.arrowCan > 0)
             {
                 GameObject arrowClone;
-                arrowClone = Instantiate(arrow, shootPoint.transform.position, shootPoint.transform.rotation) as GameObject;
+                arrowClone = Instantiate(player.arrowPlayer, shootPoint.transform.position, shootPoint.transform.rotation) as GameObject;
                 arrowClone.GetComponent<Rigidbody2D>().velocity = direction * arrowSpead;
                 shootInterval = shootIntervalCd;
                 archerAttacking = true;
