@@ -166,7 +166,7 @@ public class PlayerAttack : MonoBehaviour
                 {
                     archerAttacking = false;
                 }
-            }else if(player.arrowCan <0)
+            }else if(player.arrowCan <= 0)
             {
                 if (shootInterval > 0)
                 {
@@ -283,6 +283,37 @@ public class PlayerAttack : MonoBehaviour
 
             anim.SetBool("attacking_spear", spearAttacking);
         }
+        else if (weaponSelected == 3)
+        {
+            Vector2 direction;
+            direction = shootPoint.transform.position - player.transform.position;
+            direction.Normalize();
+
+            if (!archerAttacking && player.arrowCan > 0)
+            {
+                GameObject arrowClone;
+                arrowClone = Instantiate(player.arrowPlayer, shootPoint.transform.position, shootPoint.transform.rotation) as GameObject;
+                arrowClone.GetComponent<Rigidbody2D>().velocity = direction * arrowSpead;
+                shootInterval = shootIntervalCd;
+                archerAttacking = true;
+                player.arrowCan -= 1;
+            }
+            else if (player.arrowCan <= 0)
+            {
+                if (shootInterval > 0)
+                {
+                    shootInterval -= Time.deltaTime;
+                }
+                else
+                {
+                    player.arrowCan = 0;
+                    archerAttacking = false;
+                }
+            }
+            anim.SetBool("archer", archerAttacking);
+
+        }
+
     }
 
     public void dontAttackingButton()
@@ -344,6 +375,33 @@ public class PlayerAttack : MonoBehaviour
             }
 
             anim.SetBool("attacking_spear", spearAttacking);
+        }
+        else if (weaponSelected == 3)
+        {
+            if (archerAttacking && player.arrowCan > 0)
+            {
+                if (shootInterval > 0)
+                {
+                    shootInterval -= Time.deltaTime;
+                }
+                else
+                {
+                    archerAttacking = false;
+                }
+            }
+            else if (player.arrowCan <= 0)
+            {
+                if (shootInterval > 0)
+                {
+                    shootInterval -= Time.deltaTime;
+                }
+                else
+                {
+                    player.arrowCan = 0;
+                    archerAttacking = false;
+                }
+            }
+            anim.SetBool("archer", archerAttacking);
         }
     }
 

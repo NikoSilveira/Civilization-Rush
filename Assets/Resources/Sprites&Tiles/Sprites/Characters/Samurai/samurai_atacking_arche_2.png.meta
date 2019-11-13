@@ -1,0 +1,619 @@
+fileFormatVersion: 2
+guid: 4dcd7d6c2b8660c4982ed3e7fa56bbb2
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8034982500069428690
+    second: samurai_atacking_arche_2_0
+  - first:
+      213: 7611335437148740574
+    second: samurai_atacking_arche_2_1
+  - first:
+      213: -329895485995034072
+    second: samurai_atacking_arche_2_2
+  - first:
+      213: 990915850386342803
+    second: samurai_atacking_arche_2_3
+  - first:
+      213: 3002762343341698859
+    second: samurai_atacking_arche_2_4
+  - first:
+      213: -5043199985484212246
+    second: samurai_atacking_arche_2_5
+  - first:
+      213: 7425798882514379286
+    second: samurai_atacking_arche_2_6
+  - first:
+      213: 606232232743971896
+    second: samurai_atacking_arche_2_7
+  - first:
+      213: -3538565929587291988
+    second: samurai_atacking_arche_2_8
+  - first:
+      213: 2532303236239179283
+    second: samurai_atacking_arche_2_9
+  - first:
+      213: 5112159532828879764
+    second: samurai_atacking_arche_2_10
+  - first:
+      213: -165200325748414989
+    second: samurai_atacking_arche_2_11
+  - first:
+      213: 7770292431274973492
+    second: samurai_atacking_arche_2_12
+  - first:
+      213: -8341830729261621207
+    second: samurai_atacking_arche_2_13
+  - first:
+      213: -5471561583096810751
+    second: samurai_atacking_arche_2_14
+  - first:
+      213: -8453698179651474153
+    second: samurai_atacking_arche_2_15
+  - first:
+      213: 3731554565707636941
+    second: samurai_atacking_arche_2_16
+  - first:
+      213: -1219897384542192404
+    second: samurai_atacking_arche_2_17
+  - first:
+      213: 6340839824208090725
+    second: samurai_atacking_arche_2_18
+  - first:
+      213: 1743555967202678839
+    second: samurai_atacking_arche_2_19
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 200
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: samurai_atacking_arche_2_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2000.8
+        width: 500
+        height: 500.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da94c372facd1a34fb5662858d2097ac
+      internalID: 8034982500069428690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: samurai_atacking_arche_2_1
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 2000.8
+        width: 500
+        height: 500.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c0c574b7276ca24e93347e46f9e1e49
+      internalID: 7611335437148740574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: samurai_atacking_arche_2_2
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 2000.8
+        width: 500
+        height: 500.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5727ccae11954147bc3c179488274c3
+      internalID: -329895485995034072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: samurai_atacking_arche_2_3
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 2000.8
+        width: 500
+        height: 500.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b6acc3a1713eae4c8e854700922c1a9
+      internalID: 990915850386342803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: samurai_atacking_arche_2_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1500.8
+        width: 500
+        height: 500.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b796dfee38bc90429c8d8ed2917ea14
+      internalID: 3002762343341698859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: samurai_atacking_arche_2_5
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 1500.8
+        width: 500
+        height: 500.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76e38caf83e093f4990b7fa6f4c41871
+      internalID: -5043199985484212246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: samurai_atacking_arche_2_6
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 1500.8
+        width: 500
+        height: 500.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11c608d4cae2a1844ace36c06e0df3e7
+      internalID: 7425798882514379286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: samurai_atacking_arche_2_7
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 1500.8
+        width: 500
+        height: 500.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fdf3c8f5ce03f2945b4c373f132e1a55
+      internalID: 606232232743971896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: samurai_atacking_arche_2_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1000.8
+        width: 500
+        height: 500.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4384279d68579648808bad86d551150
+      internalID: -3538565929587291988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: samurai_atacking_arche_2_9
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 1000.8
+        width: 500
+        height: 500.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb40ca7a4baa31546b786da58e53c240
+      internalID: 2532303236239179283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: samurai_atacking_arche_2_10
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 1000.8
+        width: 500
+        height: 500.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1bfb687c7e5c6ae488e405501b182599
+      internalID: 5112159532828879764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: samurai_atacking_arche_2_11
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 1000.8
+        width: 500
+        height: 500.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89d5eb6df17fa7c48bf3b7713af24c89
+      internalID: -165200325748414989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: samurai_atacking_arche_2_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 500.8
+        width: 500
+        height: 500.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5025651d0f1da724ca02774a04cc5e13
+      internalID: 7770292431274973492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: samurai_atacking_arche_2_13
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 500.8
+        width: 500
+        height: 500.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1f721aa1d5040c4a8acbd2f3d05a020
+      internalID: -8341830729261621207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: samurai_atacking_arche_2_14
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 500.8
+        width: 500
+        height: 500.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09337cc0f10f2354d90dadd76209390d
+      internalID: -5471561583096810751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: samurai_atacking_arche_2_15
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 500.8
+        width: 500
+        height: 500.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8dcb4b4021ddc245b3546e0eef8aa24
+      internalID: -8453698179651474153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: samurai_atacking_arche_2_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0.7999878
+        width: 500
+        height: 500.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 019ab1cf2ddc1054eb88f634606f9016
+      internalID: 3731554565707636941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: samurai_atacking_arche_2_17
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 0.7999878
+        width: 500
+        height: 500.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3540799ba55071e43b817631e3a1f487
+      internalID: -1219897384542192404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: samurai_atacking_arche_2_18
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 0.7999878
+        width: 500
+        height: 500.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32b89eb5ae374bf45819ba639e404868
+      internalID: 6340839824208090725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: samurai_atacking_arche_2_19
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 0.7999878
+        width: 500
+        height: 500.2
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbc98ddba524a9441895295320159e64
+      internalID: 1743555967202678839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
