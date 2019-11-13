@@ -55,6 +55,10 @@ public class PlayerPhone : MonoBehaviour
     public int maxResistance = 5;
     public int myResistance;
 
+    //Arrows
+    public int arrowCanIn;
+    public int arrowCan;
+
     //Animadores
     Animator anim;
 
@@ -92,6 +96,9 @@ public class PlayerPhone : MonoBehaviour
 
         //Resistance
         myResistance = maxResistance;
+
+        //Arrow
+        arrowCan = arrowCanIn;
 
         //Guardar default values de atributos del jugador
         PlayerPrefs.SetInt("CurrentScore", 0);

@@ -150,15 +150,16 @@ public class PlayerAttack : MonoBehaviour
              
             direction.Normalize();
 
-           if(Input.GetKeyDown("f") && !archerAttacking)
+           if(Input.GetKeyDown("f") && !archerAttacking && player.arrowCan > 0)
             {
                 GameObject arrowClone;
                 arrowClone = Instantiate(arrow, shootPoint.transform.position, shootPoint.transform.rotation) as GameObject;
                 arrowClone.GetComponent<Rigidbody2D>().velocity = direction * arrowSpead;
                 shootInterval = shootIntervalCd;
                 archerAttacking = true;
+                player.arrowCan -= 1;
             }
-           if(archerAttacking)
+           if(archerAttacking && player.arrowCan > 0)
             {
                 if(shootInterval > 0)
                 {
@@ -166,6 +167,17 @@ public class PlayerAttack : MonoBehaviour
                 }
                 else
                 {
+                    archerAttacking = false;
+                }
+            }else if(player.arrowCan <0)
+            {
+                if (shootInterval > 0)
+                {
+                    shootInterval -= Time.deltaTime;
+                }
+                else
+                {
+                    player.arrowCan = 0;
                     archerAttacking = false;
                 }
             }
@@ -234,7 +246,7 @@ public class PlayerAttack : MonoBehaviour
             {
                 spearAttacking = true;
                 attackTimer = spearAttackCd;
-                player.myResistance -= 1;
+                //player.myResistance -= 1;
                 spearAttackTrigger.enabled = true;
             }
             else if (player.myResistance < 0)

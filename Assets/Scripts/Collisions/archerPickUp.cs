@@ -19,7 +19,8 @@ public class archerPickUp : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            //Obtener arco, destruir objeto arco
+            //Obtener arco, destruir objeto arco y la cantidad de flechas iniciales son de 3
+            player.arrowCan = 3;
             player.archerP = true;
             Destroy(gameObject);
 
