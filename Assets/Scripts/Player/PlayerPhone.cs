@@ -75,9 +75,10 @@ public class PlayerPhone : MonoBehaviour
 
     //jump
     private float jumpCd = 0.3f;
-    private float jumpTime;
+    private float jumpTime = 2f;
     private bool jumpbool = false;
 
+    private float jumpStart = 0f;
 
     //--------------------------------------------
     //      MÉTODOS PREDETERMINADOS DE UNITY
@@ -133,6 +134,17 @@ public class PlayerPhone : MonoBehaviour
                     rb.velocity = new Vector2(knockback, knockback);
                 }
                 knockbackCount -= Time.deltaTime;
+
+            }
+
+            if (jumpStart != 0f)
+            {
+                //Debug.Log(Time.time - jumpStart);
+                if (Time.time - jumpStart >= jumpTime)
+                {
+                    anim.SetBool("jumping", false);
+                    jumpStart = 0f;
+                }
             }
 
             Flip();
@@ -268,7 +280,6 @@ public class PlayerPhone : MonoBehaviour
     {
         if (Time.timeScale == 1 && !shieldActive)
         {
-            
             //rb.AddForce(new Vector2(rb.velocity.x, jumpSpeedY));
             if (myBodyFeet.IsTouchingLayers(LayerMask.GetMask("Ground")) && !jumpbool)
             {
@@ -279,15 +290,16 @@ public class PlayerPhone : MonoBehaviour
                 rb.velocity += jumpVelocityToAdd;
                 
                 //return;
+                anim.SetBool("jumping", jumpbool);
+                jumpStart = Time.time; // The time when player starts jumping
             }
-            anim.SetBool("jumping", jumpbool);
 
         }
     }
 
     public void DontJump()
     {
-        Debug.Log("cancel test");
+        //Debug.Log("cancel test");
         if (jumpbool)
         {
             
