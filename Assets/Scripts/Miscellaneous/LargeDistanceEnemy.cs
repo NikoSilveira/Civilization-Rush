@@ -43,12 +43,13 @@ public class LargeDistanceEnemy : MonoBehaviour
     {
         enemyHealth = maxEnemyHealth;
         Score = 150;
+
     }
 
     private void Update()
     {
         //enemyAnimator.SetBool("walk", range);
-        enemyAnimator.SetBool("shoot", attacking);
+        //enemyAnimator.SetBool("shoot", attacking);
 
         TargetInRange();
         distancePlayer = target.position.x - transform.position.x;
@@ -59,6 +60,7 @@ public class LargeDistanceEnemy : MonoBehaviour
         }
         else if (distancePlayer < 0 && facingRight)
         {
+
             Flip();
         }
 
@@ -76,11 +78,17 @@ public class LargeDistanceEnemy : MonoBehaviour
     }
     private void Flip()
     {
+        Vector3 theScale1 = arrow.transform.localScale;
+        theScale1.x *= -1;
+        arrow.transform.localScale = theScale1;
         facingRight = !facingRight;
         Vector3 theScale = transform.localScale;
         theScale.x *= -1;
         transform.localScale = theScale;
     }
+
+
+  
     private void TargetInRange()
     {
         distance = Vector3.Distance(transform.position, target.transform.position);
@@ -97,30 +105,34 @@ public class LargeDistanceEnemy : MonoBehaviour
     public void attack(bool attackRight)
     {
         arrowTimer += Time.deltaTime;
+
         if(arrowTimer >= shootInterval)
         {
             Vector2 direction = target.transform.position - transform.position;
             direction.Normalize();
             if (!attackRight)
             {
+
                 GameObject arrowClone;
                 arrowClone = Instantiate(arrow, shootPointLeft.transform.position, shootPointLeft.transform.rotation) as GameObject;
                 arrowClone.GetComponent<Rigidbody2D>().velocity = direction * arrowSpead;
-
-                arrowTimer = 0;
                 attacking = true;
+                enemyAnimator.SetBool("shoot", attacking);
+                arrowTimer = 0;
+
             }
      else if (attackRight)
             {
                 GameObject arrowClone;
                 arrowClone = Instantiate(arrow, shootPointRight.transform.position, shootPointRight.transform.rotation) as GameObject;
                 arrowClone.GetComponent<Rigidbody2D>().velocity = direction * arrowSpead;
-
-                arrowTimer = 0;
                 attacking = true;
+                enemyAnimator.SetBool("shoot", attacking);
+                arrowTimer = 0;
             }
         }
         attacking = false;
+        enemyAnimator.SetBool("shoot", attacking);
     }
 
     //Cálculo de vida y daño
