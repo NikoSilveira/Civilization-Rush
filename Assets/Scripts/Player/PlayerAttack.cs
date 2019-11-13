@@ -178,6 +178,8 @@ public class PlayerAttack : MonoBehaviour
                     archerAttacking = false;
                 }
             }
+            anim.SetBool("archer", archerAttacking);
+            
         }
     }
 

@@ -79,6 +79,7 @@ public class PlayerPhone : MonoBehaviour
     private bool jumpbool = false;
 
     private float jumpStart = 0f;
+    private Vector2 ccOffset;
 
     //--------------------------------------------
     //      MÉTODOS PREDETERMINADOS DE UNITY
@@ -91,6 +92,7 @@ public class PlayerPhone : MonoBehaviour
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         myBodyCollider2D = GetComponent<CapsuleCollider2D>();
+        ccOffset = myBodyCollider2D.offset;
         myBodyFeet = GetComponent<BoxCollider2D>();
         facingRight = true;
 
@@ -146,6 +148,13 @@ public class PlayerPhone : MonoBehaviour
                     jumpStart = 0f;
                 }
             }
+            /*if(anim.GetBool("archer"))
+            {
+                myBodyCollider2D.offset = new Vector2(ccOffset.x, -1.22f);
+            } else
+            {
+                myBodyCollider2D.offset = ccOffset;
+            }*/
 
             Flip();
 
