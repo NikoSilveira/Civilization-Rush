@@ -16,6 +16,9 @@ public class InOutController : MonoBehaviour
     public Text title;
     public Text objective;
 
+    //Objetos control UI (botones) - pasar por inspector
+    public Button[] buttons;
+
     //Strings para modificar contenido de UI (modificar en inspector)
     public string inputTitle;
     public string inputObjective;
@@ -26,6 +29,12 @@ public class InOutController : MonoBehaviour
         //Inicializar datos el UI
         title.text = inputTitle;
         objective.text = inputObjective;
+
+        //Arrancar con botones deshabilitados
+        for (int i = 0; i < buttons.Length; i++)
+        {
+            buttons[i].interactable = false;
+        }
 
         //Activar la animaciones
         Invoke("ShowInitialInfo",0.3f);
@@ -45,5 +54,14 @@ public class InOutController : MonoBehaviour
     public void RemoveInitialInfo()
     {
         animator.SetTrigger("RemoveEntering");
+        Invoke("EnableButtons",1);
+    }
+
+    public void EnableButtons()
+    {
+        for (int i = 0; i < buttons.Length; i++)
+        {
+            buttons[i].interactable = true;
+        }
     }
 }

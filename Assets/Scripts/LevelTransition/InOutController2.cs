@@ -23,6 +23,9 @@ public class InOutController2 : MonoBehaviour
     public Text puntos;
     public Text record;
 
+    //Botones UI - pasar por inspector
+    public Button[] buttons;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -39,6 +42,10 @@ public class InOutController2 : MonoBehaviour
 
     public void ShowFinishInfo()
     {
+        //Deshabilitar botones al terminar nivel
+        DisableButtons();   
+
+        //Establecer y mostrar la info
         puntos.text = "Puntos: "+player.Score.ToString();
         record.text = "Record: "+PlayerPrefs.GetInt("ScoreRecord" + SceneManager.GetActiveScene().buildIndex).ToString();
         animator.SetTrigger("ShowFinish");
@@ -48,5 +55,14 @@ public class InOutController2 : MonoBehaviour
     public void RemoveFinishInfo()
     {
         animator.SetTrigger("HideFinish");
+    }
+
+    public void DisableButtons()
+    {
+        //Deshbilitar todos los botones del UI
+        for (int i = 0; i < buttons.Length; i++)
+        {
+            buttons[i].interactable = false;
+        }
     }
 }
