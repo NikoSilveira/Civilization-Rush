@@ -4057,9 +4057,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'NIVEL 2
-
-    MONGOLIA'
+  m_Text: "NIVEL 2\nJAP\xD3N"
 --- !u!222 &1174011515
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6156,11 +6154,12 @@ MonoBehaviour:
     varObjetivo: 2500
     varRecord: 0
     varDificultad: Normal
-    varInformacion: "El Imperio mongol fue el segundo imperio m\xE1s extenso de la
-      historia y el mayor de los imperios constituidos por territorios continuos.\n\nFue
-      fundado por Gengis Kan en el a\xF1o 1206.\n\nLleg\xF3 a incluir algunas regiones
-      tan ricas e importantes como China, Mesopotamia, Persia, Europa Oriental, parte
-      de la India, Rusia, entre otros."
+    varInformacion: "Las invasiones a Jap\xF3n por el Imperio mongol, realizadas entre
+      1274 y 1281, fueron hechos relevantes de importancia macrohist\xF3rica, a pesar
+      de que fracasaron.\n\nEstos intentos de invasi\xF3n son probablemente los eventos
+      m\xE1s famosos en la historia japonesa y repercutieron en la historia de toda
+      la regi\xF3n, debido al efecto que lograron, al detener la expansi\xF3n del
+      Imperio Mongol."
 --- !u!1 &1817148730
 GameObject:
   m_ObjectHideFlags: 0

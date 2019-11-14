@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 //------------------------------------
 //    CONTROL Y LÓGICA DEL ENEMIGO
@@ -25,6 +26,11 @@ public class EnemyMovement : MonoBehaviour
     public Animator anim;
     public Rigidbody2D rigiBody2D;
     private PlayerPhone player;
+
+    //Variables para el jefe
+    public Slider enemyBar;
+    public GameObject gate;
+    public BossTrigger bossTrigger;
 
     //Variables de posición, dirección y movimiento
     public Transform target;
@@ -128,6 +134,19 @@ public class EnemyMovement : MonoBehaviour
             Destroy(gameObject);
             player.Score += Score;
 
+            //Muerte del jefe
+            if(gate != null)
+            {
+                gate.SetActive(false);
+                bossTrigger.StopBossBattle();
+                FindObjectOfType<AudioManager>().Play("Scream");
+            }
+        }
+
+        //Bara de vida del jefe
+        if(enemyBar != null)
+        {
+            enemyBar.SetValueWithoutNotify(enemyHealth);
         }
 
     }
@@ -212,6 +231,7 @@ public class EnemyMovement : MonoBehaviour
     public void Damage(int damage)
     {
         enemyHealth -= damage;
+        FindObjectOfType<AudioManager>().Play("Inflict");
     }
 
     //Movimiento
