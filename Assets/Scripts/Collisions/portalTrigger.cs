@@ -22,6 +22,10 @@ public class portalTrigger : MonoBehaviour
 
     private int PlayerScore;
 
+    //Control de score minimo
+    private int minimumScore;
+    private int sceneIndex;
+
     //Bool de control para finalizar nivel
     private bool levelCleared = false;
 
@@ -35,6 +39,17 @@ public class portalTrigger : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerPhone>();
+        sceneIndex = SceneManager.GetActiveScene().buildIndex;
+
+        //Asignar minimum score según nivel
+        if(sceneIndex == 1)
+            minimumScore = 1500;
+
+        else if (sceneIndex == 2)
+            minimumScore = 2500;
+
+        else if(sceneIndex == 3)
+            minimumScore = 5000;
     }
 
     void Update()
@@ -49,7 +64,7 @@ public class portalTrigger : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            if (PlayerScore >= 1500 && levelCleared == false)    //score mínimo
+            if (PlayerScore >= minimumScore && levelCleared == false)    //score mínimo
             {
                 //Pasar de nivel + cambio de música
                 levelCleared = true;
@@ -66,7 +81,7 @@ public class portalTrigger : MonoBehaviour
                 //Siguiente escena + delay (seg)
                 Invoke("nextScene", 4);
             }
-            else if (PlayerScore < 1500)                         //score mínimo
+            else if (minimumScore < 1500)                         //score mínimo
             {
                 //SFX
                 FindObjectOfType<AudioManager>().Play("Error");
