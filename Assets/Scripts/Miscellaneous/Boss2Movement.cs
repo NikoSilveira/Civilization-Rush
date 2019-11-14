@@ -3,6 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+//------------------------------------
+//    CONTROL Y LÓGICA DEL ENEMIGO
+//------------------------------------
+
+/*
+    -Este script crea un objeto de tipo playerPhone para poder
+    obtener al jugador como objeto y poder establecer una lógica
+    entre el enemigo y el jugador
+ */
+
 public class Boss2Movement : MonoBehaviour
 {
     //--------------------------
@@ -17,6 +27,7 @@ public class Boss2Movement : MonoBehaviour
     public Rigidbody2D rigiBody2D;
     private PlayerPhone player;
 
+    //Variables para el jefe
     public Slider enemyBar;
     public GameObject gate;
     public BossTrigger bossTrigger;
@@ -32,7 +43,7 @@ public class Boss2Movement : MonoBehaviour
 
     //Health
     public int enemyHealth;
-    public int maxHealth;
+    public int maxHealth = 100;
 
     //Attack
     public float attackSpeed = 100;
@@ -47,6 +58,8 @@ public class Boss2Movement : MonoBehaviour
 
     //Score
     public int Score;
+
+    private Enemy enemy;
 
 
     //----------------------------------------
@@ -70,13 +83,17 @@ public class Boss2Movement : MonoBehaviour
         runLeft = new Vector2(-maxSpeed, 0);
         stop = new Vector2(0, 0);
 
+
+        //Daño de ataque
+        EnemyFactory factory = new EnemyFactory();
+        enemy = factory.getEnemy(EnemyTypes.medium);
+        damageLevel = enemy.getAttPow();
+
         //Inicializar vida
-        enemyHealth = maxHealth;
+        enemyHealth = enemy.getHealth();
 
         //Valor del enemigo
-        Score = 100;
-
-        
+        Score = enemy.getScore();
     }
 
     // Update is called once per frame
@@ -116,11 +133,22 @@ public class Boss2Movement : MonoBehaviour
         {
             Destroy(gameObject);
             player.Score += Score;
-            gate.SetActive(false);
-            bossTrigger.StopBossBattle();
+
+            //Muerte del jefe
+            if (gate != null)
+            {
+                gate.SetActive(false);
+                bossTrigger.StopBossBattle();
+                FindObjectOfType<AudioManager>().Play("Scream");
+            }
         }
 
-        enemyBar.SetValueWithoutNotify(enemyHealth);
+        //Bara de vida del jefe
+        if (enemyBar != null)
+        {
+            enemyBar.SetValueWithoutNotify(enemyHealth);
+        }
+
     }
 
 
@@ -203,6 +231,7 @@ public class Boss2Movement : MonoBehaviour
     public void Damage(int damage)
     {
         enemyHealth -= damage;
+        FindObjectOfType<AudioManager>().Play("Inflict");
     }
 
     //Movimiento
@@ -234,4 +263,5 @@ public class Boss2Movement : MonoBehaviour
     {
         this.rigiBody2D = rigidbody2D;
     }
+
 }
