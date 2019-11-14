@@ -6,6 +6,10 @@ public class HighPowerEnemy : Enemy
 {
     public HighPowerEnemy()
     {
+        this.attPow = 2;
+        this.health = 20;
+        this.score = 1000;
+        this.tag = "High Power Enemy";
     }
     public override int getAttPow()
     {

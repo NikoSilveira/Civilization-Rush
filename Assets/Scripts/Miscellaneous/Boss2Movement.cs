@@ -86,7 +86,7 @@ public class Boss2Movement : MonoBehaviour
 
         //Daño de ataque
         EnemyFactory factory = new EnemyFactory();
-        enemy = factory.getEnemy(EnemyTypes.medium);
+        enemy = factory.getEnemy(EnemyTypes.high);
         damageLevel = enemy.getAttPow();
 
         //Inicializar vida
