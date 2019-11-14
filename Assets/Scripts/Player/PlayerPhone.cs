@@ -41,6 +41,7 @@ public class PlayerPhone : MonoBehaviour
 
     //Respawn
     public Vector3 respawnPoint;
+    public bool checkpointReached;
 
     //Score
     public int Score;

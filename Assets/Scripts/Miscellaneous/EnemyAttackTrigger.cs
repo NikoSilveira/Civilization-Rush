@@ -18,7 +18,8 @@ public class EnemyAttackTrigger : MonoBehaviour
     {
         if (collision.isTrigger != true && collision.CompareTag("Player"))
         {
-            collision.GetComponent<PlayerPhone>().takeDamage(enemy.damageLevel);
+            //collision.GetComponent<PlayerPhone>().takeDamage(enemy.damageLevel);
+            player.takeDamage(enemy.damageLevel);
             player.knockbackCount = player.knockbackLength;
             if (player.transform.position.x < transform.position.x)
             {
