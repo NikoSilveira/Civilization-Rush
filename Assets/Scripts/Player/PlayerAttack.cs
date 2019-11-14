@@ -107,7 +107,7 @@ public class PlayerAttack : MonoBehaviour
         }
         else if (weaponSelected == 2)
         {
-            if (Input.GetKeyDown("f") && !spearAttacking && player.myResistance >=0)
+            if (Input.GetKeyDown("f") && !spearAttacking && player.myResistance > 0)
             {
                 spearAttacking = true;
                 attackTimer = spearAttackCd;
@@ -127,7 +127,7 @@ public class PlayerAttack : MonoBehaviour
                     spearAttackTrigger.enabled = false;
                 }
             }
-            else if(player.myResistance < 0)
+            else if(player.myResistance <= 0)
             {
                 if (attackTimer > 0)
                 {
@@ -263,14 +263,14 @@ public class PlayerAttack : MonoBehaviour
         }
         else if (weaponSelected == 2 )
         {
-            if (!spearAttacking && player.myResistance >= 0)
+            if (!spearAttacking && player.myResistance > 0)
             {
                 spearAttacking = true;
                 attackTimer = spearAttackCd;
                 //player.myResistance -= 1;
                 spearAttackTrigger.enabled = true;
             }
-            else if (player.myResistance < 0)
+            else if (player.myResistance <= 0)
             {
                 if (attackTimer > 0)
                 {
@@ -363,7 +363,7 @@ public class PlayerAttack : MonoBehaviour
                     spearAttackTrigger.enabled = false;
                 }
             }
-            else if (player.myResistance < 0)
+            else if (player.myResistance <= 0)
             {
                 if (attackTimer > 0)
                 {

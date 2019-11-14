@@ -7,7 +7,7 @@ public class LowPowerEnemy : Enemy
     public LowPowerEnemy()
     {
         this.attPow = 1;
-        this.health = 4;
+        this.health = 1;
         this.score = 100;
         this.tag = "Low Power Enemy";
     }
