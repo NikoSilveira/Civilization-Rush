@@ -6,7 +6,7 @@ public class EnemyAttack : MonoBehaviour
 {
     public Collider2D enemyAttackTrigger;
     private PlayerPhone player;
-    private EnemyMovement enemy;
+    public EnemyMovement enemy;
     private Animator anim;
     private float distancePlayer;
     private float attackCD = 1.5f;
@@ -21,7 +21,7 @@ public class EnemyAttack : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerPhone>();
-        enemy = GameObject.FindGameObjectWithTag("Enemy").GetComponent<EnemyMovement>();
+        //enemy = GameObject.FindGameObjectWithTag("Enemy").GetComponent<EnemyMovement>();
         enemyAttackTrigger.enabled = false;
         anim = GetComponent<Animator>();
         attackIntervale = 0;
