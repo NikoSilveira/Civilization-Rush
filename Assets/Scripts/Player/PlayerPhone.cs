@@ -41,7 +41,7 @@ public class PlayerPhone : MonoBehaviour
 
     //Respawn
     public Vector3 respawnPoint;
-    public bool checkpointReached;
+    public bool checkpointReached = false;
 
     //Score
     public int Score;
@@ -368,20 +368,25 @@ public class PlayerPhone : MonoBehaviour
 
     public void Die()
     {
-        //Desacelerar tiempo
-        Time.timeScale = 0.3f;
-
-        //Recuperar los ultimos atributos guardados
-        myHealth = PlayerPrefs.GetInt("CurrentHealth");
-        Score = PlayerPrefs.GetInt("CurrentScore");
-        myResistance = PlayerPrefs.GetInt("CurrentStamina");
-
         //SFX
         FindObjectOfType<AudioManager>().Play("Death");
 
         //Llamar funcion para revivir y normalizar tiempo
-        Invoke("Respawn",0.5f);
+        Invoke("Respawn", 0.5f);
         StopMoving();
+        //Desacelerar tiempo
+        Time.timeScale = 0.3f;
+        if(checkpointReached == false)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            Time.timeScale = 1f;
+        } else
+        {
+            //Recuperar los ultimos atributos guardados
+            myHealth = PlayerPrefs.GetInt("CurrentHealth");
+            Score = PlayerPrefs.GetInt("CurrentScore");
+            myResistance = PlayerPrefs.GetInt("CurrentStamina");
+        }
     }
 
     //Revivir

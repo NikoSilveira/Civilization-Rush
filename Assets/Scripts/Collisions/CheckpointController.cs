@@ -44,6 +44,7 @@ public class CheckpointController : MonoBehaviour
             //Activar checkpoint
             animator.SetBool("Activated",true);
             checkpointReached = true;
+            player.checkpointReached = checkpointReached;
 
             //Guardar atributos actuales en doc local
             SaveProgress();
