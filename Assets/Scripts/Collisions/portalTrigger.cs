@@ -23,7 +23,7 @@ public class portalTrigger : MonoBehaviour
     private int PlayerScore;
 
     //Control de score minimo
-    private int minimumScore;
+    public int minimumScore;
     private int sceneIndex;
 
     //Bool de control para finalizar nivel
@@ -40,16 +40,6 @@ public class portalTrigger : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerPhone>();
         sceneIndex = SceneManager.GetActiveScene().buildIndex;
-
-        //Asignar minimum score según nivel
-        if(sceneIndex == 1)
-            minimumScore = 1500;
-
-        else if (sceneIndex == 2)
-            minimumScore = 2500;
-
-        else if(sceneIndex == 3)
-            minimumScore = 5000;
     }
 
     void Update()

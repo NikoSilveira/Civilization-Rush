@@ -10,6 +10,7 @@ using UnityEngine.UI;
 
 public class InOutController : MonoBehaviour
 {
+    public GameObject mobileUI;
 
     //Objetos de control del UI
     public Animator animator;
@@ -30,15 +31,12 @@ public class InOutController : MonoBehaviour
         title.text = inputTitle;
         objective.text = inputObjective;
 
-        //Arrancar con botones deshabilitados
-        for (int i = 0; i < buttons.Length; i++)
-        {
-            buttons[i].interactable = false;
-        }
-
         //Activar la animaciones
         Invoke("ShowInitialInfo",0.3f);
         Invoke("RemoveInitialInfo", 3.0f);
+
+        //Arrancar con UI desactivado
+        mobileUI.SetActive(false);
     }
 
 
@@ -54,14 +52,12 @@ public class InOutController : MonoBehaviour
     public void RemoveInitialInfo()
     {
         animator.SetTrigger("RemoveEntering");
-        Invoke("EnableButtons",1);
+        Invoke("EnableButtons", 1.1f);
     }
 
+    //Habilitar botones del UI - Invoke
     public void EnableButtons()
     {
-        for (int i = 0; i < buttons.Length; i++)
-        {
-            buttons[i].interactable = true;
-        }
+        mobileUI.SetActive(true);
     }
 }

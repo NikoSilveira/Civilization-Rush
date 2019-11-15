@@ -39,7 +39,10 @@ public class DialogueManager : MonoBehaviour
     public void StartDialogue(Dialogue dialogue)
     {
         //Mostrar cuadro de diálogo
-        animator.SetBool("IsOpen", true);   
+        animator.SetBool("IsOpen", true);
+
+        //Detener timescale al salir dialogo
+        Invoke("StopTime",0.3f);
 
         nameText.text = dialogue.name;
 
@@ -72,6 +75,11 @@ public class DialogueManager : MonoBehaviour
     void EndDialogue()
     {
         animator.SetBool("IsOpen", false);  //Esconder cuadro de diálogo
+    }
+
+    private void StopTime()
+    {
+        Time.timeScale = 0;
     }
 
 }
