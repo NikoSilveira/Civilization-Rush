@@ -18,6 +18,7 @@ public class InOutController2 : MonoBehaviour
     
     private PlayerPhone player;
     public Animator animator;
+    public GameObject mobileUI;
 
     //Objetos de control del UI
     public Text puntos;
@@ -30,9 +31,6 @@ public class InOutController2 : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerPhone>();
-
-        //Inicializar datos del UI
-
     }
 
 
@@ -43,7 +41,7 @@ public class InOutController2 : MonoBehaviour
     public void ShowFinishInfo()
     {
         //Deshabilitar botones al terminar nivel
-        DisableButtons();   
+        mobileUI.SetActive(false);
 
         //Establecer y mostrar la info
         puntos.text = "Puntos: "+player.Score.ToString();
@@ -57,12 +55,4 @@ public class InOutController2 : MonoBehaviour
         animator.SetTrigger("HideFinish");
     }
 
-    public void DisableButtons()
-    {
-        //Deshbilitar todos los botones del UI
-        for (int i = 0; i < buttons.Length; i++)
-        {
-            buttons[i].interactable = false;
-        }
-    }
 }

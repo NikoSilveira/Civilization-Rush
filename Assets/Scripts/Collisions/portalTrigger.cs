@@ -10,8 +10,6 @@ using UnityEngine.SceneManagement;
     -Este script se comunica con el manejador
     de selección de nivel para control de niveles
     bloqueados y desbloqueados
-    -SI SE NECESITA MODIFICAR SCORE PARA PASAR POR PORTAL
-    HAY QUE CAMBIAR EN AMBAS CONDICIONES DE LA COLISION
  */
 
 public class portalTrigger : MonoBehaviour
@@ -96,7 +94,11 @@ public class portalTrigger : MonoBehaviour
     //Desbloquear nivel (actualizar input en el inspector)
     public void Unlock()
     {
-        PlayerPrefs.SetInt("levelReached", nextLevelToUnlock);
+        //If para evitar rebloqueo de niveles
+        if (PlayerPrefs.GetInt("levelReached") < nextLevelToUnlock)
+        {
+            PlayerPrefs.SetInt("levelReached", nextLevelToUnlock);
+        }
     }
 
     //Almacenar record en documento

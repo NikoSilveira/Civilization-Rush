@@ -29,12 +29,14 @@ public class LevelChanger : Singleton<LevelChanger>
     //Obtener el proximo nviel para transición
     public void FadeToNextLevel()
     {
-        if(SceneManager.GetActiveScene().buildIndex == 2)
+        if(SceneManager.GetActiveScene().buildIndex == 3)
         {
+            //Ultimo nivel - fade to title screen
             FadeToLevel(0);
         }
         else
         {
+            //next level
             FadeToLevel(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
