@@ -32,7 +32,7 @@ public class LevelChanger : Singleton<LevelChanger>
         if(SceneManager.GetActiveScene().buildIndex == 3)
         {
             //Ultimo nivel - fade to title screen
-            FadeToLevel(0);
+            FadeToLevel(4);
         }
         else
         {
