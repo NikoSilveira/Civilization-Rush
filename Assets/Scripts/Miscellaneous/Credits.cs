@@ -12,8 +12,8 @@ public class Credits : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //Llamado con delay
-        Invoke("FinishCredits",55.7f);
+        //Llamado con delay - 55.5s
+        Invoke("FinishCredits",55.5f);
     }
 
     public void FinishCredits()
