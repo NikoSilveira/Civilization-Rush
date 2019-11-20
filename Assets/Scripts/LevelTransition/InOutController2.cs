@@ -43,6 +43,9 @@ public class InOutController2 : MonoBehaviour
         //Deshabilitar botones al terminar nivel
         mobileUI.SetActive(false);
 
+        //Detener al jugador
+        player.StopMoving();
+
         //Establecer y mostrar la info
         puntos.text = "Puntos: "+player.Score.ToString();
         record.text = "Record: "+PlayerPrefs.GetInt("ScoreRecord" + SceneManager.GetActiveScene().buildIndex).ToString();
