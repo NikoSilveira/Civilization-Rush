@@ -6,10 +6,11 @@ public class EnemyAttackTrigger : MonoBehaviour
 {
     // Start is called before the first frame update
     private PlayerPhone player;
-    public EnemyMovement enemy;
-    private void Awake()
+    private EnemyMovement enemy;
+    private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerPhone>();
+        enemy = GetComponent<EnemyMovement>();
     }
 
     // Update is called once per frame
@@ -18,15 +19,21 @@ public class EnemyAttackTrigger : MonoBehaviour
         if (collision.isTrigger != true && collision.CompareTag("Player"))
         {
             //collision.GetComponent<PlayerPhone>().takeDamage(enemy.damageLevel);
-            player.takeDamage(enemy.damageLevel);
-            player.knockbackCount = player.knockbackLength;
-            if (player.transform.position.x < transform.position.x)
+            try
             {
-                player.knockbackRight = true;
-            }
-            else
+                player.takeDamage(enemy.damageLevel);
+                player.knockbackCount = player.knockbackLength;
+                if (player.transform.position.x < transform.position.x)
+                {
+                    player.knockbackRight = true;
+                }
+                else
+                {
+                    player.knockbackRight = false;
+                }
+            } catch (System.NullReferenceException)
             {
-                player.knockbackRight = false;
+
             }
         }
     }

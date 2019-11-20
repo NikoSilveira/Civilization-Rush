@@ -195,7 +195,6 @@ public class PlayerAttack : MonoBehaviour
                 downattacking = true;
                 attackTimer = attackCd;
                 downAttackTrigger.enabled = true;
-                Debug.Log("down");
             }
             if (player.myBodyFeet.IsTouchingLayers(LayerMask.GetMask("Enemy")) && downattacking == true)
             {

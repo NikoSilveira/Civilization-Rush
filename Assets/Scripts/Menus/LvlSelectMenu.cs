@@ -36,6 +36,7 @@ public class LvlSelectMenu : MonoBehaviour
                 infoButtons[i].interactable = false;
             }
         }
+        levelButtons[2].interactable = true;
     }
 
 

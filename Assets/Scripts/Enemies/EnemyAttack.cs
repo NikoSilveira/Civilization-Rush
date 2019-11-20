@@ -47,7 +47,6 @@ public class EnemyAttack : MonoBehaviour
         {
             if (enemy.rigiBody2D.IsTouchingLayers(LayerMask.GetMask("Player")))
             {
-                Debug.Log("player");
                 enemyAttackTrigger.enabled = true;
                 enemyAttacking = true;
                 attackDuration = attackDurationCd;

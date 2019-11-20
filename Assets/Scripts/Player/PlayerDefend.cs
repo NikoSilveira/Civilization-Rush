@@ -13,14 +13,16 @@ public class PlayerDefend : MonoBehaviour
 
     //public BoxCollider2D shieldCollider;
 
-    public Animator animator;
+    private Animator animator;
     private PlayerPhone player;
+    public bool shieldAnimatorLayerExists = true;
 
 
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerPhone>();
+        animator = GetComponent<Animator>();
         //shieldCollider.enabled = false;
     }
 
@@ -69,15 +71,18 @@ public class PlayerDefend : MonoBehaviour
 
     void AnimationControl()
     {
-        if (player.shield == false)
+        if(this.shieldAnimatorLayerExists)
         {
-            //Activar animaciones estándar
-            animator.SetLayerWeight(1, 0);
-        }
-        else if (player.shield == true)
-        {
-            //Activar animaciones con escudo
-            animator.SetLayerWeight(1, 1);
+            if (player.shield == false)
+            {
+                //Activar animaciones estándar
+                animator.SetLayerWeight(1, 0);
+            }
+            else if (player.shield == true)
+            {
+                //Activar animaciones con escudo
+                animator.SetLayerWeight(1, 1);
+            }
         }
     }
 

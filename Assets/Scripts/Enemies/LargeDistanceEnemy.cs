@@ -144,4 +144,9 @@ public class LargeDistanceEnemy : MonoBehaviour
     {
         enemyHealth -= damage;
     }
+
+    public Enemy getEnemy()
+    {
+        return this.enemy;
+    }
 }

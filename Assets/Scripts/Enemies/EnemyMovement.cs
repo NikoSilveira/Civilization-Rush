@@ -178,9 +178,14 @@ public class EnemyMovement : MonoBehaviour
     //Colisión del enemigo con un objeto
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (!collision.CompareTag("Player") && !collision.CompareTag("playerArrow"))
+        try
         {
-            transform.localScale = new Vector2(-(Mathf.Sign(myRigiBody.velocity.x)), 1f);
+            if (!collision.CompareTag("Player") && !collision.CompareTag("playerArrow"))
+            {
+                transform.localScale = new Vector2(-(Mathf.Sign(myRigiBody.velocity.x)), 1f);
+            }
+        } catch (System.NullReferenceException) {
+
         }
     }
 
@@ -264,4 +269,8 @@ public class EnemyMovement : MonoBehaviour
         this.rigiBody2D = rigidbody2D;
     }
 
+    public Enemy getEnemy()
+    {
+        return this.enemy;
+    }
 }

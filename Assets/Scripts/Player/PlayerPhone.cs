@@ -401,7 +401,6 @@ public class PlayerPhone : MonoBehaviour
     {
         if (IframesActive)  //Si hay iframes activos, retornar
         {
-            Debug.Log("No puedes recibir daño aun");
             return;
         }
 

@@ -29,15 +29,27 @@ public class arrowPlayer : MonoBehaviour
     {
         if (collision.isTrigger != true)
         {
-            Debug.Log("dano");
             if (collision.CompareTag("Enemy"))
             {
                 elimIntervale = elimCd;
-                //enemy.Damage(dmg);
-                //distanceEnemy.Damage(dmg);
-                collision.GetComponent<EnemyMovement>().Damage(dmg);
-                collision.GetComponent<LargeDistanceEnemy>().Damage(dmg);
-                //Destroy(gameObject);
+                if(collision.GetComponent<EnemyMovement>() != null)
+                {
+                    EnemyMovement currentEnemy = collision.GetComponent<EnemyMovement>();
+                    if(currentEnemy.isActiveAndEnabled)
+                    {
+                        currentEnemy.Damage(dmg);
+                    } else
+                    {
+                        Boss2Movement boss = collision.GetComponent<Boss2Movement>();
+                        if(boss != null)
+                        {
+                            boss.Damage(dmg);
+                        }
+                    }
+                } else
+                {
+                    collision.GetComponent<LargeDistanceEnemy>().Damage(dmg);
+                }
                 
             }
             if (!collision.CompareTag("Player"))

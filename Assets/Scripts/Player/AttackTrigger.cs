@@ -12,7 +12,7 @@ public class AttackTrigger : MonoBehaviour
     private EnemyMovement enemy;
     private LargeDistanceEnemy distanceEnemy;
 
-    private void Awake()
+    private void Start()
     {
         enemy = GameObject.FindGameObjectWithTag("Enemy").GetComponent<EnemyMovement>();
         distanceEnemy = GameObject.FindGameObjectWithTag("Enemy").GetComponent<LargeDistanceEnemy>();
@@ -21,9 +21,15 @@ public class AttackTrigger : MonoBehaviour
     {
         if(collision.isTrigger != true && collision.CompareTag("Enemy"))
         {
+            try
+            {
                 collision.SendMessageUpwards("Damage", dmg);
                 enemy.Damage(dmg);
                 distanceEnemy.Damage(dmg);
+            } catch (System.NullReferenceException)
+            {
+
+            }
         }
     }
 }

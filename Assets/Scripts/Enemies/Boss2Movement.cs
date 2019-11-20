@@ -106,28 +106,6 @@ public class Boss2Movement : MonoBehaviour
         // Al ver al jugador
         distancePlayer = target.position.x - transform.position.x;
 
-        /*if(distancePlayer > 0 && !facingRight)
-        {
-            Flip();
-        }
-        else if(distancePlayer < 0 && facingRight)
-        {
-         Flip();
-        }*/
-        /*
-        if(distancePlayer < -1f)
-        {
-            rigiBody2D.velocity = runLeft;
-        }
-        else if(distancePlayer > 1f)
-        {
-            rigiBody2D.velocity = runRight;
-        }
-        else
-        {
-            myRigiBody.velocity = stop;
-        } */
-
         //Camine sin ver al jugador
         Move(rigiBody2D);
 
@@ -187,49 +165,6 @@ public class Boss2Movement : MonoBehaviour
         }
     }
 
-
-    /*public void attack(bool attackingRight)
-    {
-        attacktimer += Time.deltaTime;
-
-        if(attacktimer >= attackInterval)
-        {
-            Vector2 direction = target.transform.position - transform.position;
-            direction.Normalize();
-
-            if (!attackingRight)
-            {
-
-            }
-        }
-    }
-
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Player"))
-        {
-
-        }
-    }*/
-
-    //Recibir daño del jugador
-    /*private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.isTrigger != true && collision.CompareTag("Player"))
-        {
-            collision.GetComponent<PlayerPhone>().takeDamage(damageLevel);
-            player.knockbackCount = player.knockbackLength;
-            if(player.transform.position.x < transform.position.x)
-            {
-                player.knockbackRight = true;
-            }
-            else
-            {
-                player.knockbackRight = false;
-            }
-        }
-    }*/
-
     //Cálculo de vida y daño
     public void Damage(int damage)
     {
@@ -277,5 +212,8 @@ public class Boss2Movement : MonoBehaviour
     {
         this.rigiBody2D = rigidbody2D;
     }
-
+    public Enemy getEnemy()
+    {
+        return this.enemy;
+    }
 }
