@@ -49,6 +49,7 @@ public class EnemyMovement : MonoBehaviour
     public float attackSpeed = 100;
     public float attacktimer;
     public float attackInterval;
+    private float attackStartedAt = 0;
 
     public bool attackActive;
     public Transform attackLeft, attacKRight;
@@ -103,27 +104,6 @@ public class EnemyMovement : MonoBehaviour
         // Al ver al jugador
         distancePlayer = target.position.x - transform.position.x;
 
-        /*if(distancePlayer > 0 && !facingRight)
-        {
-            Flip();
-        }
-        else if(distancePlayer < 0 && facingRight)
-        {
-         Flip();
-        }*/
-        /*
-        if(distancePlayer < -1f)
-        {
-            rigiBody2D.velocity = runLeft;
-        }
-        else if(distancePlayer > 1f)
-        {
-            rigiBody2D.velocity = runRight;
-        }
-        else
-        {
-            myRigiBody.velocity = stop;
-        } */
 
         //Camine sin ver al jugador
         Move(rigiBody2D);
@@ -180,57 +160,30 @@ public class EnemyMovement : MonoBehaviour
     {
         try
         {
-            if (!collision.CompareTag("Player") && !collision.CompareTag("playerArrow"))
+            if (!collision.CompareTag("playerWeapon") && !collision.CompareTag("Player"))
             {
                 transform.localScale = new Vector2(-(Mathf.Sign(myRigiBody.velocity.x)), 1f);
+            } else if(collision.CompareTag("playerWeapon"))
+            {
+                if(this.attackStartedAt == 0)
+                {
+                    attackStartedAt = Time.time;
+                } else
+                {
+                    if(Time.time - attackStartedAt >= 2)
+                    {
+                        attackStartedAt = 0;
+                        anim.SetFloat("Distance", 1);
+                    } else
+                    {
+                        anim.SetFloat("Distance", 3);
+                    }
+                }
             }
         } catch (System.NullReferenceException) {
 
         }
     }
-
-
-    /*public void attack(bool attackingRight)
-    {
-        attacktimer += Time.deltaTime;
-
-        if(attacktimer >= attackInterval)
-        {
-            Vector2 direction = target.transform.position - transform.position;
-            direction.Normalize();
-
-            if (!attackingRight)
-            {
-
-            }
-        }
-    }
-
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Player"))
-        {
-
-        }
-    }*/
-
-    //Recibir daño del jugador
-    /*private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.isTrigger != true && collision.CompareTag("Player"))
-        {
-            collision.GetComponent<PlayerPhone>().takeDamage(damageLevel);
-            player.knockbackCount = player.knockbackLength;
-            if(player.transform.position.x < transform.position.x)
-            {
-                player.knockbackRight = true;
-            }
-            else
-            {
-                player.knockbackRight = false;
-            }
-        }
-    }*/
 
     //Cálculo de vida y daño
     public void Damage(int damage)
