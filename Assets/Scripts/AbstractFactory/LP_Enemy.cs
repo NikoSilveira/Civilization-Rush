@@ -4,25 +4,12 @@ using UnityEngine;
 
 public class LowPowerEnemy : Enemy
 {
-
-    public void Awake()
-    {
-        moveController = GetComponent<EnemyMovement>();
-    }
-
     public LowPowerEnemy()
     {
-        enemyBody = new Rigidbody2D();
-        boxCollider = new BoxCollider2D();
-        setAttPow(1);
-        setHealth(5);
-    }
-    public override void Move()
-    {
-        moveController.Move(enemyBody);
-    }
-    public override void Attack()
-    {
+        this.attPow = 1;
+        this.health = 1;
+        this.score = 100;
+        this.tag = "Low Power Enemy";
     }
     public override int getAttPow()
     {
@@ -32,46 +19,12 @@ public class LowPowerEnemy : Enemy
     {
         return this.health;
     }
-    public override void setHealth(int health)
+    public override string getTag()
     {
-        this.health = health;
+        return this.tag;
     }
-    public override void setAttPow(int att)
+    public override int getScore()
     {
-        this.attPow = att;
-    }
-    public override void setEnemyPosition(float x, float y, float z)
-    {
-        this.enemyBody.position = new Vector3(x, y, z);
-        Debug.Log(this.enemyBody.position);
-    }
-    public override void setBodyType(RigidbodyType2D type)
-    {
-        this.enemyBody = GetComponent<Rigidbody2D>();
-        this.enemyBody.bodyType = type;
-    }
-    public override void initAnimator()
-    {
-        this.animator = GetComponent<Animator>();
-    }
-    public override void setSprite(SpriteRenderer spRenderer, Sprite sprite)
-    {
-        this.spriteRenderer = spRenderer;
-        this.spriteRenderer.sortingLayerName = "Enemy";
-        this.spriteRenderer.sprite = sprite;
-    }
-    public override void setEnemyCollider(CapsuleCollider2D collider)
-    {
-        this.enemyCollider = collider;
-        Debug.Log(enemyCollider.GetInstanceID());
-        this.enemyCollider.size = new Vector2(2.19f, 2.19f);
-    }
-    public override void setMoveController(EnemyMovement moveController)
-    {
-        this.moveController = moveController;
-    }
-    public override void setTarget(Transform target)
-    {
-        this.target = target;
+        return this.score;
     }
 }

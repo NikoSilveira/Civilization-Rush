@@ -34,6 +34,14 @@ public class PlayerAttack : MonoBehaviour
     private bool downattacking = false;
     public Collider2D downAttackTrigger;
 
+    //Archer
+    public float shootInterval;
+    public float shootIntervalCd = 0.3f;
+    public float arrowSpead = 100;
+    public float arrowTimer;
+    public GameObject arrow;
+    public Transform shootPoint;
+    private bool archerAttacking = false;
 
     //-------------------------------------------
     //     MÉTODOS PREDETERMINADOS DE UNITY
@@ -73,7 +81,7 @@ public class PlayerAttack : MonoBehaviour
     {
         if (weaponSelected == 1)
         {
-            if (Input.GetKeyDown("f") && !attacking)
+            if (player.myBodyFeet.IsTouchingLayers(LayerMask.GetMask("Ground")) == true && Input.GetKeyDown("f") && !attacking)
             {
                 attacking = true;
                 attackTimer = attackCd;
@@ -99,11 +107,11 @@ public class PlayerAttack : MonoBehaviour
         }
         else if (weaponSelected == 2)
         {
-            if (Input.GetKeyDown("f") && !spearAttacking && player.myResistance >=0)
+            if (Input.GetKeyDown("f") && !spearAttacking && player.myResistance > 0)
             {
                 spearAttacking = true;
                 attackTimer = spearAttackCd;
-                player.myResistance -= 1;
+                //player.myResistance -= 1;
                 spearAttackTrigger.enabled = true;
             }
 
@@ -119,7 +127,7 @@ public class PlayerAttack : MonoBehaviour
                     spearAttackTrigger.enabled = false;
                 }
             }
-            else if(player.myResistance < 0)
+            else if(player.myResistance <= 0)
             {
                 if (attackTimer > 0)
                 {
@@ -133,6 +141,46 @@ public class PlayerAttack : MonoBehaviour
             //Animación de ataque
             anim.SetBool("attacking_spear", spearAttacking);
         }
+        else if(weaponSelected == 3)
+        {
+            Vector2 direction;
+            direction = shootPoint.transform.position - player.transform.position;
+            direction.Normalize();
+
+           if(Input.GetKeyDown("f") && !archerAttacking && player.arrowCan > 0)
+            {
+                GameObject arrowClone;
+                arrowClone = Instantiate(player.arrowPlayer, shootPoint.transform.position, shootPoint.transform.rotation) as GameObject;
+                arrowClone.GetComponent<Rigidbody2D>().velocity = direction * arrowSpead;
+                shootInterval = shootIntervalCd;
+                archerAttacking = true;
+                player.arrowCan -= 1;
+            }
+           if(archerAttacking && player.arrowCan > 0)
+            {
+                if(shootInterval > 0)
+                {
+                    shootInterval -= Time.deltaTime;
+                }
+                else
+                {
+                    archerAttacking = false;
+                }
+            }else if(player.arrowCan <= 0)
+            {
+                if (shootInterval > 0)
+                {
+                    shootInterval -= Time.deltaTime;
+                }
+                else
+                {
+                    player.arrowCan = 0;
+                    archerAttacking = false;
+                }
+            }
+            anim.SetBool("archer", archerAttacking);
+            
+        }
     }
 
     //Ataque hacia abajo
@@ -140,18 +188,17 @@ public class PlayerAttack : MonoBehaviour
     {
         if (weaponSelected == 1)
         {
-            if (player.myBodyFeet.IsTouchingLayers(LayerMask.GetMask("Ground")) == false && Input.GetKeyDown("h") && !downattacking)
+            if (player.myBodyFeet.IsTouchingLayers(LayerMask.GetMask("Ground")) == false && Input.GetKeyDown("f") && !downattacking)
             {
                 Vector2 downVelocityToAdd = new Vector2(0f, -10f);
                 player.rb.velocity += downVelocityToAdd;
                 downattacking = true;
                 attackTimer = attackCd;
                 downAttackTrigger.enabled = true;
-                Debug.Log("down");
             }
             if (player.myBodyFeet.IsTouchingLayers(LayerMask.GetMask("Enemy")) && downattacking == true)
             {
-                Vector2 rejectVelocityToAdd = new Vector2(0.2f, 18f);
+                Vector2 rejectVelocityToAdd = new Vector2(0, 14.0f);
                 player.rb.velocity += rejectVelocityToAdd;
             }
             if (downattacking)
@@ -164,7 +211,6 @@ public class PlayerAttack : MonoBehaviour
                 {
                     downattacking = false;
                     downAttackTrigger.enabled = false;
-                    //StartCoroutine(player.Knockback(0.01f, 50, player.transform.position));
                 }
             }
             anim.SetBool("attacking_down", downattacking);
@@ -181,28 +227,49 @@ public class PlayerAttack : MonoBehaviour
     {
         if (weaponSelected == 1)
         {
-            if (!attacking)
+            if(player.myBodyFeet.IsTouchingLayers(LayerMask.GetMask("Ground")) == true)
             {
+                if (!attacking)
+                {
 
-                attacking = true;
-                attackTimer = attackCd;
+                    attacking = true;
+                    attackTimer = attackCd;
 
-                attackTrigger.enabled = true;
+                    attackTrigger.enabled = true;
+                }
+
+                anim.SetBool("attacking", attacking);
+            }else if(player.myBodyFeet.IsTouchingLayers(LayerMask.GetMask("Ground")) == false)
+            {
+                if (player.myBodyFeet.IsTouchingLayers(LayerMask.GetMask("Ground")) == false && !downattacking)
+                {
+                    Vector2 downVelocityToAdd = new Vector2(0f, -10f);
+                    player.rb.velocity += downVelocityToAdd;
+                    downattacking = true;
+                    attackTimer = attackCd;
+                    downAttackTrigger.enabled = true;
+                    Debug.Log("down");
+
+                }
+                if (player.myBodyFeet.IsTouchingLayers(LayerMask.GetMask("Enemy")) && downattacking == true)
+                {
+                    Vector2 rejectVelocityToAdd = new Vector2(0f, 8f);
+                    player.rb.velocity += rejectVelocityToAdd;
+                }
+                anim.SetBool("attacking_down", downattacking);
             }
-
-            anim.SetBool("attacking", attacking);
+            
         }
         else if (weaponSelected == 2 )
         {
-            if (!spearAttacking && player.myResistance >= 0)
+            if (!spearAttacking && player.myResistance > 0)
             {
-
                 spearAttacking = true;
                 attackTimer = spearAttackCd;
-                player.myResistance -= 1;
+                //player.myResistance -= 1;
                 spearAttackTrigger.enabled = true;
             }
-            else if (player.myResistance < 0)
+            else if (player.myResistance <= 0)
             {
                 if (attackTimer > 0)
                 {
@@ -215,6 +282,37 @@ public class PlayerAttack : MonoBehaviour
 
             anim.SetBool("attacking_spear", spearAttacking);
         }
+        else if (weaponSelected == 3)
+        {
+            Vector2 direction;
+            direction = shootPoint.transform.position - player.transform.position;
+            direction.Normalize();
+
+            if (!archerAttacking && player.arrowCan > 0)
+            {
+                GameObject arrowClone;
+                arrowClone = Instantiate(player.arrowPlayer, shootPoint.transform.position, shootPoint.transform.rotation) as GameObject;
+                arrowClone.GetComponent<Rigidbody2D>().velocity = direction * arrowSpead;
+                shootInterval = shootIntervalCd;
+                archerAttacking = true;
+                player.arrowCan -= 1;
+            }
+            else if (player.arrowCan <= 0)
+            {
+                if (shootInterval > 0)
+                {
+                    shootInterval -= Time.deltaTime;
+                }
+                else
+                {
+                    player.arrowCan = 0;
+                    archerAttacking = false;
+                }
+            }
+            anim.SetBool("archer", archerAttacking);
+
+        }
+
     }
 
     public void dontAttackingButton()
@@ -235,6 +333,20 @@ public class PlayerAttack : MonoBehaviour
             }
 
             anim.SetBool("attacking", attacking);
+
+            if (downattacking)
+            {
+                if (attackTimer > 0)
+                {
+                    attackTimer -= Time.deltaTime;
+                }
+                else
+                {
+                    downattacking = false;
+                    downAttackTrigger.enabled = false;
+                }
+            }
+            anim.SetBool("attacking_down", downattacking);
         }
         else if (weaponSelected == 2 && player.myResistance >= 0)
         {
@@ -250,7 +362,7 @@ public class PlayerAttack : MonoBehaviour
                     spearAttackTrigger.enabled = false;
                 }
             }
-            else if (player.myResistance < 0)
+            else if (player.myResistance <= 0)
             {
                 if (attackTimer > 0)
                 {
@@ -262,6 +374,33 @@ public class PlayerAttack : MonoBehaviour
             }
 
             anim.SetBool("attacking_spear", spearAttacking);
+        }
+        else if (weaponSelected == 3)
+        {
+            if (archerAttacking && player.arrowCan > 0)
+            {
+                if (shootInterval > 0)
+                {
+                    shootInterval -= Time.deltaTime;
+                }
+                else
+                {
+                    archerAttacking = false;
+                }
+            }
+            else if (player.arrowCan <= 0)
+            {
+                if (shootInterval > 0)
+                {
+                    shootInterval -= Time.deltaTime;
+                }
+                else
+                {
+                    player.arrowCan = 0;
+                    archerAttacking = false;
+                }
+            }
+            anim.SetBool("archer", archerAttacking);
         }
     }
 
@@ -353,11 +492,29 @@ public class PlayerAttack : MonoBehaviour
     {
         if (Input.GetKeyDown("c"))
         {
-            if (weaponSelected == 1 && player.spearF == true)
+            if (weaponSelected == 1)
             {
-                weaponSelected = 2;
+                if(player.spearF == true)
+                {
+                    weaponSelected = 2;
+                }else if(player.spearF == false && player.archerP == true)
+                {
+                    weaponSelected = 3;
+                }
+
             }
             else if(weaponSelected == 2)
+            {
+                if(player.archerP == false)
+                {
+                    weaponSelected = 1;
+                }
+                else if(player.archerP == true)
+                {
+                    weaponSelected = 3;
+                }
+            }
+            else if(weaponSelected == 3)
             {
                 weaponSelected = 1;
             }
@@ -367,11 +524,30 @@ public class PlayerAttack : MonoBehaviour
     //Cambio de arma boton
     public void buttonSwitchWeapon()
     {
-        if (weaponSelected == 1 && player.spearF == true)
+        if (weaponSelected == 1)
         {
-            weaponSelected = 2;
+            if (player.spearF == true)
+            {
+                weaponSelected = 2;
+            }
+            else if (player.spearF == false && player.archerP == true)
+            {
+                weaponSelected = 3;
+            }
+
         }
         else if (weaponSelected == 2)
+        {
+            if (player.archerP == false)
+            {
+                weaponSelected = 1;
+            }
+            else if (player.archerP == true)
+            {
+                weaponSelected = 3;
+            }
+        }
+        else if (weaponSelected == 3)
         {
             weaponSelected = 1;
         }
@@ -381,4 +557,6 @@ public class PlayerAttack : MonoBehaviour
     {
         return;
     }
+
+
 }

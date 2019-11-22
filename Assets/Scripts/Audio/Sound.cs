@@ -2,7 +2,7 @@
 using UnityEngine;
 
 /*
- -Este script genera variables para control de audio (volume, pitch, loop)
+ -Este script genera variables para control de audio (volume, pitch, loop, mixer)
  -Se elimina Monobehaviour y se cambia a Serializable para incorporar estas 
     variables en el inspector del AudioController
  */
@@ -13,6 +13,8 @@ public class Sound
     public string name;
 
     public AudioClip clip;
+
+    public AudioMixerGroup mixerGroup;
 
     [Range(0f,1f)]
     public float volume;

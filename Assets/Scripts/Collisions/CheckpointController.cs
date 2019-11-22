@@ -8,27 +8,24 @@ using UnityEngine;
     -Cuando se registra una colisión con el chackpoint,
     se alamacena en el jugador la posición donde se activó
     con un vector3
+    -Se almacena en un archivo local los atributos del jugador
+    al momento de activar el checkpoint
 */
 
 public class CheckpointController : MonoBehaviour
 {
 
     private PlayerPhone player;
-
-    //Control dinámico del sprite
-    public Sprite redFlag;
-    public Sprite blueFlag;
-    private SpriteRenderer checkpointSpriteRenderer;
+    public Animator animator;
 
     //Bool de control de activación del checkpoint
     public bool checkpointReached;
 
-
+    
 
     // Start is called before the first frame update
     void Start()
     {
-        checkpointSpriteRenderer = GetComponent<SpriteRenderer>();
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerPhone>();
     }
 
@@ -42,18 +39,29 @@ public class CheckpointController : MonoBehaviour
     //Colisión Player - Checkpoint
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player") && checkpointSpriteRenderer.sprite == redFlag)
+        if (collision.CompareTag("Player") && !checkpointReached)
         {
             //Activar checkpoint
-            checkpointSpriteRenderer.sprite = blueFlag;
+            animator.SetBool("Activated",true);
             checkpointReached = true;
+            player.checkpointReached = checkpointReached;
+
+            //Guardar atributos actuales en doc local
+            SaveProgress();
 
             //Registrar posición en variables de player
             player.respawnPoint = collision.transform.position;
-            player.checkpointActivated = true;
 
             //SFX
             FindObjectOfType<AudioManager>().Play("Checkpoint");
         }
+    }
+
+    //Guardar progreso al activar checkpoint
+    private void SaveProgress()
+    {
+        PlayerPrefs.SetInt("CurrentScore", player.Score);
+        PlayerPrefs.SetInt("CurrentStamina", player.myResistance);
+        PlayerPrefs.SetInt("CurrentHealth", player.myHealth);
     }
 }

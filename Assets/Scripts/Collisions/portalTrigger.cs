@@ -14,9 +14,15 @@ using UnityEngine.SceneManagement;
 
 public class portalTrigger : MonoBehaviour
 {
-
+    
     private PlayerPhone player;
+    public InOutController2 controller2;
+
     private int PlayerScore;
+
+    //Control de score minimo
+    public int minimumScore;
+    private int sceneIndex;
 
     //Bool de control para finalizar nivel
     private bool levelCleared = false;
@@ -25,10 +31,13 @@ public class portalTrigger : MonoBehaviour
     public string nextLevel = "Level2";
     public int nextLevelToUnlock = 2;
 
+    //Bool de control de colisión con portal
+    public bool validateCollision = true;
 
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerPhone>();
+        sceneIndex = SceneManager.GetActiveScene().buildIndex;
     }
 
     void Update()
@@ -43,36 +52,62 @@ public class portalTrigger : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            if (PlayerScore >= 1500 && levelCleared == false)    //score mínimo
+            if (PlayerScore >= minimumScore && levelCleared == false)    //score mínimo
             {
                 //Pasar de nivel + cambio de música
                 levelCleared = true;
                 FindObjectOfType<AudioManager>().Stop("Theme");
                 FindObjectOfType<AudioManager>().Play("Victory");
 
-                //Desbloquear proximo nivel
+                //Desbloquear proximo nivel y guardar nuevo record
                 Unlock();
+                SetRecord();
+
+                //Display info de victoria
+                controller2.ShowFinishInfo();
 
                 //Siguiente escena + delay (seg)
-                Invoke("nextScene", 6);
+                Invoke("nextScene", 4);
             }
-            else if (PlayerScore < 1500)                         //score mínimo
+            else if (minimumScore < 1500)                         //score mínimo
             {
-                //Diálogo para indicar que faltan puntos
-                gameObject.GetComponent<DialogueTrigger>().TriggerDialogue();
+                //SFX
+                FindObjectOfType<AudioManager>().Play("Error");
+
+                if (validateCollision)
+                {
+                    //Activar dialogo de alerta
+                    validateCollision = false;
+                    gameObject.GetComponent<DialogueTrigger>().TriggerDialogue();
+                }
+                
             }
         }
     }
 
     void nextScene()
     {
-        SceneManager.LoadScene(0);
+        //Activar la función de transición del controlador de niveles
+        FindObjectOfType<LevelChanger>().FadeToNextLevel();
     }
 
     //Desbloquear nivel (actualizar input en el inspector)
     public void Unlock()
     {
-        //Actualizar el archivo de texto local
-        PlayerPrefs.SetInt("levelReached", nextLevelToUnlock);
+        //If para evitar rebloqueo de niveles
+        if (PlayerPrefs.GetInt("levelReached") < nextLevelToUnlock)
+        {
+            PlayerPrefs.SetInt("levelReached", nextLevelToUnlock);
+        }
     }
+
+    //Almacenar record en documento
+    public void SetRecord()
+    {
+        if(PlayerPrefs.GetInt("ScoreRecord" + SceneManager.GetActiveScene().buildIndex, 0) < player.Score)
+        {
+            PlayerPrefs.SetInt("ScoreRecord"+SceneManager.GetActiveScene().buildIndex, player.Score);
+        }
+    }
+
 }

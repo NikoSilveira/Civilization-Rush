@@ -4,8 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 
 /*
-    -Este script crea un objeto de tipo playerphone para utilizar los setters del personaje
-    y poder validar su comportamiento al activar/desactivar dialogos
+ *  -Controlador de dialogos
+ *  -El tiempo es detenido con el script TimeControl usando un evento en el animador
+ *  -El tiempo es reanudado en este script al vaciar la cola de oraciones y terminar el dialogo
  */
 
 public class DialogueManager : MonoBehaviour
@@ -21,14 +22,10 @@ public class DialogueManager : MonoBehaviour
     //Cola FIFO para las oraciones
     private Queue<string> sentences;
 
-    //Objeto jugador
-    private PlayerPhone player;
 
-
-    // Start is called before the first frame update
+    //Start is called before the first frame update
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerPhone>();
         sentences = new Queue<string>();
     }
 
@@ -41,10 +38,11 @@ public class DialogueManager : MonoBehaviour
     //Comenzar el dialogo
     public void StartDialogue(Dialogue dialogue)
     {
-        animator.SetBool("IsOpen", true);   //Mostrar cuadro de diálogo
+        //Mostrar cuadro de diálogo
+        animator.SetBool("IsOpen", true);
 
-        //Pausar el juego
-        Invoke("Delay", 1);
+        //Detener timescale al salir dialogo
+        Invoke("StopTime",0.3f);
 
         nameText.text = dialogue.name;
 
@@ -57,7 +55,6 @@ public class DialogueManager : MonoBehaviour
         }
 
         DisplayNextSentence();
-
     }
 
     //Llamar la siguiente oración en la cola
@@ -70,7 +67,6 @@ public class DialogueManager : MonoBehaviour
             EndDialogue();
             return;
         }
-
         string sentence = sentences.Dequeue();
         dialogueText.text = sentence;
     }
@@ -81,11 +77,9 @@ public class DialogueManager : MonoBehaviour
         animator.SetBool("IsOpen", false);  //Esconder cuadro de diálogo
     }
 
-    //Pausar el juego al mostrar cuadro de dialogo
-    void Delay()
+    private void StopTime()
     {
         Time.timeScale = 0;
-        player.StopMoving();
     }
 
 }

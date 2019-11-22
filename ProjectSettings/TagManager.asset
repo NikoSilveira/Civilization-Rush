@@ -7,6 +7,8 @@ TagManager:
   - Enemy
   - Checkpoint
   - Tutorial
+  - playerArrow
+  - playerWeapon
   layers:
   - Default
   - TransparentFX
@@ -20,7 +22,7 @@ TagManager:
   - Player
   - Enemy
   - Objects
-  - 
+  - enemyRange
   - 
   - 
   - 
@@ -44,6 +46,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Sky
+    uniqueID: 200368647
+    locked: 0
   - name: Background
     uniqueID: 2558961631
     locked: 0
@@ -59,9 +64,12 @@ TagManager:
   - name: Foreground
     uniqueID: 3670636971
     locked: 0
-  - name: Button
-    uniqueID: 1789930167
-    locked: 0
   - name: Objects
     uniqueID: 2215256015
+    locked: 0
+  - name: Front
+    uniqueID: 3132555797
+    locked: 0
+  - name: Button
+    uniqueID: 1789930167
     locked: 0

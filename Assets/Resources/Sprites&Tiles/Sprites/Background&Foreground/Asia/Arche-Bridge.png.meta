@@ -1,0 +1,1548 @@
+fileFormatVersion: 2
+guid: 74a230e21fb82bc49918ab728c30f8ee
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4884953035562046492
+    second: Arche-Bridge_0
+  - first:
+      213: 3983660191492374505
+    second: Arche-Bridge_1
+  - first:
+      213: -6812742799532210879
+    second: Arche-Bridge_2
+  - first:
+      213: 4229434168430943564
+    second: Arche-Bridge_3
+  - first:
+      213: -1750584256505298893
+    second: Arche-Bridge_4
+  - first:
+      213: 7456150687926396722
+    second: Arche-Bridge_5
+  - first:
+      213: 6769348887534721639
+    second: Arche-Bridge_6
+  - first:
+      213: 2658684654884149776
+    second: Arche-Bridge_7
+  - first:
+      213: 1006403289259732595
+    second: Arche-Bridge_8
+  - first:
+      213: -4358208275446932301
+    second: Arche-Bridge_9
+  - first:
+      213: 6898799380607268186
+    second: Arche-Bridge_10
+  - first:
+      213: 4030864226874378930
+    second: Arche-Bridge_11
+  - first:
+      213: -3172660241860253794
+    second: Arche-Bridge_12
+  - first:
+      213: -7391010265467295668
+    second: Arche-Bridge_13
+  - first:
+      213: 5447826581271604433
+    second: Arche-Bridge_14
+  - first:
+      213: 3332391629365662539
+    second: Arche-Bridge_15
+  - first:
+      213: 4235669950300722118
+    second: Arche-Bridge_16
+  - first:
+      213: -4359486900742770255
+    second: Arche-Bridge_17
+  - first:
+      213: 4297684359848687656
+    second: Arche-Bridge_18
+  - first:
+      213: 523002967675037447
+    second: Arche-Bridge_19
+  - first:
+      213: 2743355004728859336
+    second: Arche-Bridge_20
+  - first:
+      213: 999780523590335661
+    second: Arche-Bridge_21
+  - first:
+      213: 6479294103276148708
+    second: Arche-Bridge_22
+  - first:
+      213: 8738984579056213660
+    second: Arche-Bridge_23
+  - first:
+      213: 8219027586924564651
+    second: Arche-Bridge_24
+  - first:
+      213: 2136995005366443985
+    second: Arche-Bridge_25
+  - first:
+      213: -5365696076392574853
+    second: Arche-Bridge_26
+  - first:
+      213: 1211329892534427024
+    second: Arche-Bridge_27
+  - first:
+      213: -5739918145328270343
+    second: Arche-Bridge_28
+  - first:
+      213: -3203959503475806911
+    second: Arche-Bridge_29
+  - first:
+      213: 534908740179201825
+    second: Arche-Bridge_30
+  - first:
+      213: -1274184833106941187
+    second: Arche-Bridge_31
+  - first:
+      213: 2152831572317618632
+    second: Arche-Bridge_32
+  - first:
+      213: 8517013339879469974
+    second: Arche-Bridge_33
+  - first:
+      213: -7591817520750958596
+    second: Arche-Bridge_34
+  - first:
+      213: 8910052209741768326
+    second: Arche-Bridge_35
+  - first:
+      213: -4933266020731701564
+    second: Arche-Bridge_36
+  - first:
+      213: -7330739730279425926
+    second: Arche-Bridge_37
+  - first:
+      213: -6554554963767590895
+    second: Arche-Bridge_38
+  - first:
+      213: -7965024489923906049
+    second: Arche-Bridge_39
+  - first:
+      213: -622921307477890996
+    second: Arche-Bridge_40
+  - first:
+      213: 2071875521795610242
+    second: Arche-Bridge_41
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Arche-Bridge_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 300
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49e976af33379114581c062583650caa
+      internalID: -4884953035562046492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arche-Bridge_1
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 300
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2fbb79e82639784b8e65422eca600d2
+      internalID: 3983660191492374505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arche-Bridge_2
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 300
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61d3bde7268276547a28c567089fef94
+      internalID: -6812742799532210879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arche-Bridge_3
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 300
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f0263c21d25ed04fbd3c4b712d2891f
+      internalID: 4229434168430943564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arche-Bridge_4
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 300
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f75ec0e9b5c1e24391541edcea35dc8
+      internalID: -1750584256505298893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arche-Bridge_5
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 300
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9702c34679b7a89479bb0dc103535df4
+      internalID: 7456150687926396722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arche-Bridge_6
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 300
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14e4b8f342dc4e744b4799828bb93964
+      internalID: 6769348887534721639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arche-Bridge_7
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 300
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74d3bc4621dd64446bb3d19ce5340a9c
+      internalID: 2658684654884149776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arche-Bridge_8
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 300
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0169ea08a98caf42b224d007888bacb
+      internalID: 1006403289259732595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arche-Bridge_9
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 300
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc5f1b2a3ca3bb347b7ddbf2306c79a3
+      internalID: -4358208275446932301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arche-Bridge_10
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 300
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df5bcbb135dacec4f9a687e54c523661
+      internalID: 6898799380607268186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arche-Bridge_11
+      rect:
+        serializedVersion: 2
+        x: 1100
+        y: 300
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d803fd2b3a100e4884bf9c1282b1099
+      internalID: 4030864226874378930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arche-Bridge_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 200
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b39e9d080b2a61a43a3c463b6df91f22
+      internalID: -3172660241860253794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arche-Bridge_13
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 200
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9ef3b50feb30444baaf3c7238e76382
+      internalID: -7391010265467295668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arche-Bridge_14
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 200
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 579339a9158d27a429eae08dd4c99a42
+      internalID: 5447826581271604433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arche-Bridge_15
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 200
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d014c0e96d996945a5a68e2bfcb16c9
+      internalID: 3332391629365662539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arche-Bridge_16
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 200
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 443b4b6395bc379429613bfe3460938e
+      internalID: 4235669950300722118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arche-Bridge_17
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 200
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 102bf59a43d3ad948afaf0197a78764f
+      internalID: -4359486900742770255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arche-Bridge_18
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 200
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a88c0c2ab013810458156675c95f0573
+      internalID: 4297684359848687656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arche-Bridge_19
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 200
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4324c51bbb932ce419da9ff422b72e42
+      internalID: 523002967675037447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arche-Bridge_20
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 200
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17fcdac16228c6a4289576bce90b1bf1
+      internalID: 2743355004728859336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arche-Bridge_21
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 200
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebde691bb1f59e446bcc23c19f64a4a3
+      internalID: 999780523590335661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arche-Bridge_22
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 200
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5cb647ac30247b44b2ba811e0c79683
+      internalID: 6479294103276148708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arche-Bridge_23
+      rect:
+        serializedVersion: 2
+        x: 1100
+        y: 200
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01c4b43d04ef1684ca7fafbe26a0ba61
+      internalID: 8738984579056213660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arche-Bridge_24
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 100
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -50, y: 50}
+        - {x: -50, y: -50}
+        - {x: 50, y: -50}
+        - {x: 50, y: 50}
+      - - {x: -23, y: -20}
+        - {x: -26, y: -17}
+        - {x: -29, y: -17}
+        - {x: -29, y: -18}
+        - {x: -26, y: -18}
+        - {x: -23, y: -15}
+        - {x: -23, y: -12}
+        - {x: -24, y: -12}
+        - {x: -24, y: -15}
+        - {x: -21, y: -18}
+        - {x: -18, y: -18}
+        - {x: -18, y: -17}
+        - {x: -21, y: -17}
+        - {x: -24, y: -20}
+        - {x: -24, y: -23}
+        - {x: -23, y: -23}
+      - - {x: 24, y: -20}
+        - {x: 21, y: -17}
+        - {x: 18, y: -17}
+        - {x: 18, y: -18}
+        - {x: 21, y: -18}
+        - {x: 24, y: -15}
+        - {x: 24, y: -12}
+        - {x: 23, y: -12}
+        - {x: 23, y: -15}
+        - {x: 26, y: -18}
+        - {x: 29, y: -18}
+        - {x: 29, y: -17}
+        - {x: 26, y: -17}
+        - {x: 23, y: -20}
+        - {x: 23, y: -23}
+        - {x: 24, y: -23}
+      - - {x: -23, y: 3}
+        - {x: -26, y: 6}
+        - {x: -29, y: 6}
+        - {x: -29, y: 5}
+        - {x: -26, y: 5}
+        - {x: -23, y: 8}
+        - {x: -23, y: 11}
+        - {x: -24, y: 11}
+        - {x: -24, y: 8}
+        - {x: -21, y: 5}
+        - {x: -18, y: 5}
+        - {x: -18, y: 6}
+        - {x: -21, y: 6}
+        - {x: -24, y: 3}
+        - {x: -24, y: 1}
+        - {x: -23, y: 1}
+      - - {x: 24, y: 3}
+        - {x: 21, y: 6}
+        - {x: 18, y: 6}
+        - {x: 18, y: 5}
+        - {x: 21, y: 5}
+        - {x: 24, y: 8}
+        - {x: 24, y: 11}
+        - {x: 23, y: 11}
+        - {x: 23, y: 8}
+        - {x: 26, y: 5}
+        - {x: 29, y: 5}
+        - {x: 29, y: 6}
+        - {x: 26, y: 6}
+        - {x: 23, y: 3}
+        - {x: 23, y: 1}
+        - {x: 24, y: 1}
+      - - {x: -23, y: 27}
+        - {x: -26, y: 30}
+        - {x: -29, y: 30}
+        - {x: -29, y: 29}
+        - {x: -26, y: 29}
+        - {x: -23, y: 32}
+        - {x: -23, y: 35}
+        - {x: -24, y: 35}
+        - {x: -24, y: 32}
+        - {x: -21, y: 29}
+        - {x: -18, y: 29}
+        - {x: -18, y: 30}
+        - {x: -21, y: 30}
+        - {x: -24, y: 27}
+        - {x: -24, y: 24}
+        - {x: -23, y: 24}
+      - - {x: 24, y: 27}
+        - {x: 21, y: 30}
+        - {x: 18, y: 30}
+        - {x: 18, y: 29}
+        - {x: 21, y: 29}
+        - {x: 24, y: 32}
+        - {x: 24, y: 35}
+        - {x: 23, y: 35}
+        - {x: 23, y: 32}
+        - {x: 26, y: 29}
+        - {x: 29, y: 29}
+        - {x: 29, y: 30}
+        - {x: 26, y: 30}
+        - {x: 23, y: 27}
+        - {x: 23, y: 24}
+        - {x: 24, y: 24}
+      physicsShape:
+      - - {x: -24, y: -37}
+        - {x: -50, y: -50}
+        - {x: -50, y: -49}
+        - {x: -50, y: -50}
+        - {x: 50, y: -50}
+        - {x: 50, y: -27}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 135d6741608293f4299bb1d90de10ea6
+      internalID: 8219027586924564651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arche-Bridge_25
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 100
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -50, y: 50}
+        - {x: -50, y: -50}
+        - {x: -45, y: -50}
+        - {x: 41, y: -20}
+        - {x: 50, y: -12}
+        - {x: 50, y: 50}
+      physicsShape:
+      - - {x: -7, y: -5}
+        - {x: -50, y: -26}
+        - {x: -50, y: -50}
+        - {x: -30, y: -38}
+        - {x: 2, y: -24}
+        - {x: 50, y: -1}
+        - {x: 50, y: 22}
+      tessellationDetail: 0
+      bones: []
+      spriteID: c939d72bb5bd21a4aad52041c0a9a7b0
+      internalID: 2136995005366443985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arche-Bridge_26
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 100
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 24, y: 50}
+        - {x: 25, y: 47}
+        - {x: 24, y: 45}
+        - {x: 23, y: 50}
+        - {x: -23, y: 50}
+        - {x: -22, y: 47}
+        - {x: -23, y: 45}
+        - {x: -24, y: 50}
+        - {x: -50, y: 50}
+        - {x: -50, y: -11}
+        - {x: 50, y: -11}
+        - {x: 50, y: 50}
+      - - {x: -26, y: 23}
+        - {x: -23, y: 26}
+        - {x: -23, y: 29}
+        - {x: -24, y: 29}
+        - {x: -24, y: 26}
+        - {x: -21, y: 23}
+        - {x: -18, y: 23}
+        - {x: -18, y: 24}
+        - {x: -29, y: 24}
+        - {x: -29, y: 23}
+      - - {x: 21, y: 23}
+        - {x: 24, y: 26}
+        - {x: 24, y: 29}
+        - {x: 23, y: 29}
+        - {x: 23, y: 26}
+        - {x: 26, y: 23}
+        - {x: 29, y: 23}
+        - {x: 29, y: 24}
+        - {x: 18, y: 24}
+        - {x: 18, y: 23}
+      physicsShape:
+      - - {x: -50, y: 21}
+        - {x: -50, y: -11}
+        - {x: 50, y: -11}
+        - {x: 50, y: 21}
+      tessellationDetail: 0
+      bones: []
+      spriteID: c500759dfac002f4a9e9076d711b5530
+      internalID: -5365696076392574853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arche-Bridge_27
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 100
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -50, y: 50}
+        - {x: -50, y: -12}
+        - {x: -35, y: -50}
+        - {x: 29, y: -50}
+        - {x: 50, y: -12}
+        - {x: 50, y: 23}
+        - {x: -45, y: 50}
+      physicsShape:
+      - - {x: -50, y: -10}
+        - {x: -32, y: -9}
+        - {x: -34, y: -50}
+        - {x: 28, y: -50}
+        - {x: 26, y: -9}
+        - {x: 50, y: -9}
+        - {x: 50, y: 21}
+        - {x: -50, y: 21}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01be6bafbfc7fe5499a5097cd51fe799
+      internalID: 1211329892534427024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arche-Bridge_28
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 100
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 24, y: 50}
+        - {x: 25, y: 47}
+        - {x: 24, y: 45}
+        - {x: 23, y: 50}
+        - {x: -23, y: 50}
+        - {x: -22, y: 47}
+        - {x: -23, y: 45}
+        - {x: -24, y: 50}
+        - {x: -50, y: 50}
+        - {x: -50, y: -11}
+        - {x: 50, y: -11}
+        - {x: 50, y: 50}
+      - - {x: -26, y: 23}
+        - {x: -23, y: 26}
+        - {x: -23, y: 29}
+        - {x: -24, y: 29}
+        - {x: -24, y: 26}
+        - {x: -21, y: 23}
+        - {x: -18, y: 23}
+        - {x: -18, y: 24}
+        - {x: -29, y: 24}
+        - {x: -29, y: 23}
+      - - {x: 21, y: 23}
+        - {x: 24, y: 26}
+        - {x: 24, y: 29}
+        - {x: 23, y: 29}
+        - {x: 23, y: 26}
+        - {x: 26, y: 23}
+        - {x: 29, y: 23}
+        - {x: 29, y: 24}
+        - {x: 18, y: 24}
+        - {x: 18, y: 23}
+      physicsShape:
+      - - {x: -50, y: 21}
+        - {x: -50, y: -11}
+        - {x: 50, y: -11}
+        - {x: 50, y: 21}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 113e2f527a3268d49a5e8964d26d47bc
+      internalID: -5739918145328270343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arche-Bridge_29
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 100
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 24, y: 50}
+        - {x: 25, y: 47}
+        - {x: 24, y: 45}
+        - {x: 23, y: 50}
+        - {x: -23, y: 50}
+        - {x: -22, y: 47}
+        - {x: -23, y: 45}
+        - {x: -24, y: 50}
+        - {x: -50, y: 50}
+        - {x: -50, y: -11}
+        - {x: 50, y: -11}
+        - {x: 50, y: 50}
+      - - {x: -26, y: 23}
+        - {x: -23, y: 26}
+        - {x: -23, y: 29}
+        - {x: -24, y: 29}
+        - {x: -24, y: 26}
+        - {x: -21, y: 23}
+        - {x: -18, y: 23}
+        - {x: -18, y: 24}
+        - {x: -29, y: 24}
+        - {x: -29, y: 23}
+      - - {x: 21, y: 23}
+        - {x: 24, y: 26}
+        - {x: 24, y: 29}
+        - {x: 23, y: 29}
+        - {x: 23, y: 26}
+        - {x: 26, y: 23}
+        - {x: 29, y: 23}
+        - {x: 29, y: 24}
+        - {x: 18, y: 24}
+        - {x: 18, y: 23}
+      physicsShape:
+      - - {x: -50, y: 21}
+        - {x: -50, y: -11}
+        - {x: 50, y: -11}
+        - {x: 50, y: 22}
+      tessellationDetail: 0
+      bones: []
+      spriteID: be7ae51bde097234ca49f179812bb41f
+      internalID: -3203959503475806911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arche-Bridge_30
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 100
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -50, y: -12}
+        - {x: -29, y: -50}
+        - {x: 35, y: -50}
+        - {x: 50, y: -12}
+        - {x: 50, y: 23}
+        - {x: -50, y: 23}
+      physicsShape:
+      - - {x: -50, y: -12}
+        - {x: -28, y: -50}
+        - {x: 34, y: -50}
+        - {x: 50, y: -12}
+        - {x: 50, y: 22}
+        - {x: -50, y: 22}
+      tessellationDetail: 0
+      bones: []
+      spriteID: b12681aa1d551da47b23a23da42caaed
+      internalID: 534908740179201825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arche-Bridge_31
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 100
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 24, y: 50}
+        - {x: 25, y: 47}
+        - {x: 24, y: 45}
+        - {x: 23, y: 50}
+        - {x: -23, y: 50}
+        - {x: -22, y: 47}
+        - {x: -23, y: 45}
+        - {x: -24, y: 50}
+        - {x: -50, y: 50}
+        - {x: -50, y: -11}
+        - {x: 50, y: -11}
+        - {x: 50, y: 50}
+      - - {x: -26, y: 23}
+        - {x: -23, y: 26}
+        - {x: -23, y: 29}
+        - {x: -24, y: 29}
+        - {x: -24, y: 26}
+        - {x: -21, y: 23}
+        - {x: -18, y: 23}
+        - {x: -18, y: 24}
+        - {x: -29, y: 24}
+        - {x: -29, y: 23}
+      - - {x: 21, y: 23}
+        - {x: 24, y: 26}
+        - {x: 24, y: 29}
+        - {x: 23, y: 29}
+        - {x: 23, y: 26}
+        - {x: 26, y: 23}
+        - {x: 29, y: 23}
+        - {x: 29, y: 24}
+        - {x: 18, y: 24}
+        - {x: 18, y: 23}
+      physicsShape:
+      - - {x: -50, y: 22}
+        - {x: -50, y: -11}
+        - {x: 50, y: -11}
+        - {x: 50, y: 22}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80e341e3977da8b4b8676851234b4cd0
+      internalID: -1274184833106941187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arche-Bridge_32
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 100
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -50, y: 23}
+        - {x: -50, y: -13}
+        - {x: 24, y: -41}
+        - {x: 50, y: -41}
+        - {x: 50, y: -5}
+        - {x: -34, y: 23}
+      - - {x: -50, y: 50}
+        - {x: -50, y: 47}
+        - {x: -39, y: 42}
+        - {x: -21, y: 36}
+        - {x: 31, y: 18}
+        - {x: 50, y: 18}
+        - {x: 50, y: 47}
+        - {x: 38, y: 50}
+      physicsShape:
+      - - {x: -50, y: 22}
+        - {x: -50, y: -8}
+        - {x: 50, y: -49}
+        - {x: 50, y: -24}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6398858e786a80d4db38793ee2b15ba8
+      internalID: 2152831572317618632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arche-Bridge_33
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 100
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -50, y: 50}
+        - {x: -50, y: -50}
+        - {x: 50, y: -50}
+        - {x: 50, y: 50}
+      - - {x: -23, y: -20}
+        - {x: -26, y: -17}
+        - {x: -29, y: -17}
+        - {x: -29, y: -18}
+        - {x: -26, y: -18}
+        - {x: -23, y: -15}
+        - {x: -23, y: -12}
+        - {x: -24, y: -12}
+        - {x: -24, y: -15}
+        - {x: -21, y: -18}
+        - {x: -18, y: -18}
+        - {x: -18, y: -17}
+        - {x: -21, y: -17}
+        - {x: -24, y: -20}
+        - {x: -24, y: -23}
+        - {x: -23, y: -23}
+      - - {x: 24, y: -20}
+        - {x: 21, y: -17}
+        - {x: 18, y: -17}
+        - {x: 18, y: -18}
+        - {x: 21, y: -18}
+        - {x: 24, y: -15}
+        - {x: 24, y: -12}
+        - {x: 23, y: -12}
+        - {x: 23, y: -15}
+        - {x: 26, y: -18}
+        - {x: 29, y: -18}
+        - {x: 29, y: -17}
+        - {x: 26, y: -17}
+        - {x: 23, y: -20}
+        - {x: 23, y: -23}
+        - {x: 24, y: -23}
+      - - {x: -23, y: 3}
+        - {x: -26, y: 6}
+        - {x: -29, y: 6}
+        - {x: -29, y: 5}
+        - {x: -26, y: 5}
+        - {x: -23, y: 8}
+        - {x: -23, y: 11}
+        - {x: -24, y: 11}
+        - {x: -24, y: 8}
+        - {x: -21, y: 5}
+        - {x: -18, y: 5}
+        - {x: -18, y: 6}
+        - {x: -21, y: 6}
+        - {x: -24, y: 3}
+        - {x: -24, y: 1}
+        - {x: -23, y: 1}
+      - - {x: 24, y: 3}
+        - {x: 21, y: 6}
+        - {x: 18, y: 6}
+        - {x: 18, y: 5}
+        - {x: 21, y: 5}
+        - {x: 24, y: 8}
+        - {x: 24, y: 11}
+        - {x: 23, y: 11}
+        - {x: 23, y: 8}
+        - {x: 26, y: 5}
+        - {x: 29, y: 5}
+        - {x: 29, y: 6}
+        - {x: 26, y: 6}
+        - {x: 23, y: 3}
+        - {x: 23, y: 1}
+        - {x: 24, y: 1}
+      - - {x: -23, y: 27}
+        - {x: -26, y: 30}
+        - {x: -29, y: 30}
+        - {x: -29, y: 29}
+        - {x: -26, y: 29}
+        - {x: -23, y: 32}
+        - {x: -23, y: 35}
+        - {x: -24, y: 35}
+        - {x: -24, y: 32}
+        - {x: -21, y: 29}
+        - {x: -18, y: 29}
+        - {x: -18, y: 30}
+        - {x: -21, y: 30}
+        - {x: -24, y: 27}
+        - {x: -24, y: 24}
+        - {x: -23, y: 24}
+      - - {x: 24, y: 27}
+        - {x: 21, y: 30}
+        - {x: 18, y: 30}
+        - {x: 18, y: 29}
+        - {x: 21, y: 29}
+        - {x: 24, y: 32}
+        - {x: 24, y: 35}
+        - {x: 23, y: 35}
+        - {x: 23, y: 32}
+        - {x: 26, y: 29}
+        - {x: 29, y: 29}
+        - {x: 29, y: 30}
+        - {x: 26, y: 30}
+        - {x: 23, y: 27}
+        - {x: 23, y: 24}
+        - {x: 24, y: 24}
+      physicsShape:
+      - - {x: 3, y: -30}
+        - {x: -50, y: -26}
+        - {x: -50, y: -50}
+        - {x: 50, y: -50}
+        - {x: 50, y: -47}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2554514bf4a285a42828e32a9ceb825e
+      internalID: 8517013339879469974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arche-Bridge_34
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 0
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19c6a930b38da4d4498b4ff0bcaa7502
+      internalID: -7591817520750958596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arche-Bridge_35
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 0
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7c101f1acc5ee54b98e3236a74db0f0
+      internalID: 8910052209741768326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arche-Bridge_36
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 0
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: add6f65608165ee488c2441e0e67ea5c
+      internalID: -4933266020731701564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arche-Bridge_37
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 0
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0641be6792ca4174a808c6866b854ad6
+      internalID: -7330739730279425926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arche-Bridge_38
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 0
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5ee6f6c65c232d499fbffe60dbe487d
+      internalID: -6554554963767590895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arche-Bridge_39
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 0
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38e5df8cc3bb8934ea3ede15b54414a4
+      internalID: -7965024489923906049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arche-Bridge_40
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 0
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5b85c9d0365894489f74054b4b78628
+      internalID: -622921307477890996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Arche-Bridge_41
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 0
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1425f2889f693e945a262aec1643b3cc
+      internalID: 2071875521795610242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

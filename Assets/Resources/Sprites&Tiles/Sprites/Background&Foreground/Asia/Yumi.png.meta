@@ -1,0 +1,1075 @@
+fileFormatVersion: 2
+guid: d25bbf743c222c7449f3b41cc588ec67
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2215656492508170788
+    second: Yumi_0
+  - first:
+      213: -4459869546289841754
+    second: Yumi_1
+  - first:
+      213: 1491274986175382249
+    second: Yumi_2
+  - first:
+      213: -6885682330963294628
+    second: Yumi_3
+  - first:
+      213: -2031035003785086459
+    second: Yumi_4
+  - first:
+      213: -3943792562563829886
+    second: Yumi_5
+  - first:
+      213: 9091842753864874549
+    second: Yumi_6
+  - first:
+      213: -1269492080837050240
+    second: Yumi_7
+  - first:
+      213: 4864096732034162394
+    second: Yumi_8
+  - first:
+      213: 2652738714861925052
+    second: Yumi_9
+  - first:
+      213: -6646688379596445558
+    second: Yumi_10
+  - first:
+      213: 6174384351097163032
+    second: Yumi_11
+  - first:
+      213: 4506160097476765419
+    second: Yumi_12
+  - first:
+      213: 7945505273324667400
+    second: Yumi_13
+  - first:
+      213: 6047823692034724821
+    second: Yumi_14
+  - first:
+      213: 5165171645904933305
+    second: Yumi_15
+  - first:
+      213: 7631946642200249352
+    second: Yumi_16
+  - first:
+      213: -1666494426520666826
+    second: Yumi_17
+  - first:
+      213: 917645485552003819
+    second: Yumi_18
+  - first:
+      213: -5048292492763952410
+    second: Yumi_19
+  - first:
+      213: -14443511446180489
+    second: Yumi_20
+  - first:
+      213: -4652422707534268027
+    second: Yumi_21
+  - first:
+      213: 4898065608313616577
+    second: Yumi_22
+  - first:
+      213: -6715918602120222401
+    second: Yumi_23
+  - first:
+      213: 4725353201964633780
+    second: Yumi_24
+  - first:
+      213: -4514194521864975679
+    second: Yumi_25
+  - first:
+      213: -7302849910725311531
+    second: Yumi_26
+  - first:
+      213: 7402511889708534561
+    second: Yumi_27
+  - first:
+      213: -5111714481257651038
+    second: Yumi_28
+  - first:
+      213: -2021929717950808959
+    second: Yumi_29
+  - first:
+      213: 801571467503133658
+    second: Yumi_30
+  - first:
+      213: -7690785643037735357
+    second: Yumi_31
+  - first:
+      213: 2603432925133958729
+    second: Yumi_32
+  - first:
+      213: 3749494578943605641
+    second: Yumi_33
+  - first:
+      213: -6421013910386158892
+    second: Yumi_34
+  - first:
+      213: 4522500650633274829
+    second: Yumi_35
+  - first:
+      213: 4532141258043988320
+    second: Yumi_36
+  - first:
+      213: 8538008791775115221
+    second: Yumi_37
+  - first:
+      213: -7442962027868285130
+    second: Yumi_38
+  - first:
+      213: -2229766185967304874
+    second: Yumi_39
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 80
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Yumi_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 612.5
+        width: 100
+        height: 87.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ccd3af652e09fc41a81704ef85f4922
+      internalID: 2215656492508170788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Yumi_1
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 612.5
+        width: 100
+        height: 87.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3bde06d7f3bc9d4caea120c39a2be6f
+      internalID: -4459869546289841754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Yumi_2
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 612.5
+        width: 100
+        height: 87.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5449d9454d24278459dc66c3408d9634
+      internalID: 1491274986175382249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Yumi_3
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 612.5
+        width: 100
+        height: 87.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12bd91bbe39222741b5308f9b5f1e57d
+      internalID: -6885682330963294628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Yumi_4
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 612.5
+        width: 100
+        height: 87.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c931ae3dcc03ef4f80f4bd746eaa547
+      internalID: -2031035003785086459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Yumi_5
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 612.5
+        width: 100
+        height: 87.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 060cc5cfb14bae4439299f8558a52e7f
+      internalID: -3943792562563829886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Yumi_6
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 612.5
+        width: 100
+        height: 87.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01e8699221549694faacd453ccce1d1c
+      internalID: 9091842753864874549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Yumi_7
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 612.5
+        width: 100
+        height: 87.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa3ab87b0cbaa5a47a13583fca89686c
+      internalID: -1269492080837050240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Yumi_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 525.5
+        width: 100
+        height: 87.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5943973ce266aa47b790445ae6bdaed
+      internalID: 4864096732034162394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Yumi_9
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 525.5
+        width: 100
+        height: 87.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 376ad1fe3e229d043999c2864150b07d
+      internalID: 2652738714861925052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Yumi_10
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 525.5
+        width: 100
+        height: 87.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f39d791c2ea3ac4c99a940f362ce38b
+      internalID: -6646688379596445558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Yumi_11
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 525.5
+        width: 100
+        height: 87.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b315635f49ce374488113880e8bb231e
+      internalID: 6174384351097163032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Yumi_12
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 525.5
+        width: 100
+        height: 87.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d62f8114dbef1d4388f6f62ff88097a
+      internalID: 4506160097476765419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Yumi_13
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 525.5
+        width: 100
+        height: 87.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b8505d5406c02f49a2db6e0553d9de2
+      internalID: 7945505273324667400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Yumi_14
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 525.5
+        width: 100
+        height: 87.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed43768bf6dceaa45a0d77eee264b773
+      internalID: 6047823692034724821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Yumi_15
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 525.5
+        width: 100
+        height: 87.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9461e557c2139634da1e011bbd3d5c28
+      internalID: 5165171645904933305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Yumi_16
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 438.5
+        width: 100
+        height: 87.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce8a0017f5ca04c4eaaaddd23f202de3
+      internalID: 7631946642200249352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Yumi_17
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 438.5
+        width: 100
+        height: 87.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd8711df58fd6e048b5682857acbff03
+      internalID: -1666494426520666826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Yumi_18
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 438.5
+        width: 100
+        height: 87.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0a49e467cebd2144974eafba7d2aa87
+      internalID: 917645485552003819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Yumi_19
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 438.5
+        width: 100
+        height: 87.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea6ec5a7ee5041442b38e246e1583037
+      internalID: -5048292492763952410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Yumi_20
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 351.5
+        width: 100
+        height: 87.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f68a2878ea37ea944a3e3dabe5dae72c
+      internalID: -14443511446180489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Yumi_21
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 351.5
+        width: 100
+        height: 87.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da0a07f0c6b469f408f9cd0f02d82fac
+      internalID: -4652422707534268027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Yumi_22
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 351.5
+        width: 100
+        height: 87.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a67d7c029a5653a42ac5636e7ef2124c
+      internalID: 4898065608313616577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Yumi_23
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 351.5
+        width: 100
+        height: 87.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b792c69dbfbe0f84ba72a0dd379d594f
+      internalID: -6715918602120222401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Yumi_24
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 264.5
+        width: 100
+        height: 87.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2649b177bc7bfcb45befed2d22dcc7c9
+      internalID: 4725353201964633780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Yumi_25
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 264.5
+        width: 100
+        height: 87.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3cf19a5de8c8b65449821592967b1178
+      internalID: -4514194521864975679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Yumi_26
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 264.5
+        width: 100
+        height: 87.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fbeefc31667243469e6f63085af4228
+      internalID: -7302849910725311531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Yumi_27
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 264.5
+        width: 100
+        height: 87.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 969c46920ef488147b4a237305dc9a33
+      internalID: 7402511889708534561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Yumi_28
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 177.5
+        width: 100
+        height: 87.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f7d458f14239cc4a8d3dc9adb9167ad
+      internalID: -5111714481257651038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Yumi_29
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 177.5
+        width: 100
+        height: 87.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a654682a86b0ff4a9b988c71d19207b
+      internalID: -2021929717950808959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Yumi_30
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 177.5
+        width: 100
+        height: 87.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bae7470a758dd3e40a656d2de36cda0c
+      internalID: 801571467503133658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Yumi_31
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 177.5
+        width: 100
+        height: 87.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a91005b1208b5743a03c1613320dbd9
+      internalID: -7690785643037735357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Yumi_32
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 90.5
+        width: 100
+        height: 87.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21c8b9ecba629a946bd8d21763c6400b
+      internalID: 2603432925133958729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Yumi_33
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 90.5
+        width: 100
+        height: 87.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2b0e360d653b8644bdff8f89bf1e021
+      internalID: 3749494578943605641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Yumi_34
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 90.5
+        width: 100
+        height: 87.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea253569ec34ca044b73e6fc0dcc6673
+      internalID: -6421013910386158892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Yumi_35
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 90.5
+        width: 100
+        height: 87.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a3ab4cb97f61df4f9c8abe8ccf9f8a1
+      internalID: 4522500650633274829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Yumi_36
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 3.5
+        width: 100
+        height: 87.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 128288ad205592d4a98b886535bae549
+      internalID: 4532141258043988320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Yumi_37
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 3.5
+        width: 100
+        height: 87.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0174ef39ba4fb94485c0f3050ed5fa1
+      internalID: 8538008791775115221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Yumi_38
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 3.5
+        width: 100
+        height: 87.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71332d2a2a2c66f41830a76dbeabbefe
+      internalID: -7442962027868285130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Yumi_39
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 3.5
+        width: 100
+        height: 87.5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 806707f3dfad2734c8b0a18bce897d44
+      internalID: -2229766185967304874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

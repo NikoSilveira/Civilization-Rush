@@ -23,7 +23,7 @@ public class AudioManager : MonoBehaviour
             return;
         }
 
-        //Obtener valores de volumen, pitch y loop asignados en el inspector
+        //Obtener valores de volumen, pitch, loop y mixer group del inspector
         foreach (Sound s in sounds)
         {
             s.source = gameObject.AddComponent<AudioSource>();
@@ -32,6 +32,7 @@ public class AudioManager : MonoBehaviour
             s.source.volume = s.volume;
             s.source.pitch = s.pitch;
             s.source.loop = s.loop;
+            s.source.outputAudioMixerGroup = s.mixerGroup;
         }
     }
 
