@@ -128,7 +128,7 @@ public class Boss2Movement : MonoBehaviour
         //cambio de patron de batalla
         if(enemyHealth == (enemy.getHealth() / 2))
         {
-            moveSpeed = 9;
+            moveSpeed = 8;
         }
     }
 
@@ -168,20 +168,11 @@ public class Boss2Movement : MonoBehaviour
     //Cálculo de vida y daño
     public void Damage(int damage)
     {
-        //iframes validación
-        if (!iframesActive)
-        {
-            enemyHealth -= damage;
-            FindObjectOfType<AudioManager>().Play("Inflict");
-            iframesActive = true;
-            Invoke("Iframes",1.0f);
-        }
+        enemyHealth -= damage;
+        FindObjectOfType<AudioManager>().Play("Inflict");
     }
 
-    public void Iframes()
-    {
-        iframesActive = false;
-    }
+
 
     //Movimiento
     public void Move(Rigidbody2D body)
