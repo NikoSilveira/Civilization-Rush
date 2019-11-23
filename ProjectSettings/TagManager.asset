@@ -73,3 +73,6 @@ TagManager:
   - name: Button
     uniqueID: 1789930167
     locked: 0
+  - name: SuperiorUI
+    uniqueID: 532418473
+    locked: 0
