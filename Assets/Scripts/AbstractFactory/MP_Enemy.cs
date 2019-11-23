@@ -6,8 +6,8 @@ public class MediumPowerEnemy : Enemy
 {
     public MediumPowerEnemy()
     {
-        this.attPow = 2;
-        this.health = 4;
+        this.attPow = 1;
+        this.health = 2;
         this.score = 150;
         this.tag = "Medium Power Enemy";
     }
