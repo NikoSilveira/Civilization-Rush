@@ -70,9 +70,21 @@ public class CheckpointController : MonoBehaviour
         MonoBehaviour[] enemies = enemyParameter.GetComponentsInChildren<MonoBehaviour>();
         for (int i = 0; i < enemies.Length; i++)
         {
-            if(!enemies[i].isActiveAndEnabled)
+            if(!enemies[i].gameObject.activeInHierarchy)
             {
                 Destroy(enemies[i].gameObject);
+            }
+        }
+    }
+
+    private void TurnOnEnemies()
+    {
+        MonoBehaviour[] enemies = enemyParameter.GetComponentsInChildren<MonoBehaviour>();
+        for(int i = 0; i < enemies.Length; i++)
+        {
+            if (!enemies[i].gameObject.activeInHierarchy)
+            {
+                enemies[i].gameObject.SetActive(true);
             }
         }
     }
