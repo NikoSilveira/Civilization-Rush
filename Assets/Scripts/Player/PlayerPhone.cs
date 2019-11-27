@@ -82,6 +82,9 @@ public class PlayerPhone : MonoBehaviour
     private float jumpStart = 0f;
     private Vector2 ccOffset;
 
+    public CheckpointController checkpointC;
+    public GameObject enemyParameter;
+
     //--------------------------------------------
     //      MÉTODOS PREDETERMINADOS DE UNITY
     //--------------------------------------------
@@ -114,6 +117,10 @@ public class PlayerPhone : MonoBehaviour
         PlayerPrefs.SetInt("CurrentScore", 0);
         PlayerPrefs.SetInt("CurrentStamina", 5);
         PlayerPrefs.SetInt("CurrentHealth", 9);
+
+        //Checkpoint
+        //checkpointC = FindObjectOfType<Checkpoints>
+        //checkpointC = FindGameObjectOfType<Checkpoints>.GetComponent<PlayerPhone>();
     }
 
     // Update is called once per frame
@@ -374,9 +381,11 @@ public class PlayerPhone : MonoBehaviour
         //Llamar funcion para revivir y normalizar tiempo
         Invoke("Respawn", 0.5f);
         StopMoving();
+
         //Desacelerar tiempo
         Time.timeScale = 0.3f;
-        if(checkpointReached == false)
+
+        /*if(checkpointReached == false)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             Time.timeScale = 1f;
@@ -386,7 +395,14 @@ public class PlayerPhone : MonoBehaviour
             myHealth = PlayerPrefs.GetInt("CurrentHealth");
             Score = PlayerPrefs.GetInt("CurrentScore");
             myResistance = PlayerPrefs.GetInt("CurrentStamina");
-        }
+            checkpointC.TurnOnEnemies();
+        }*/
+
+        //Recuperar los ultimos atributos guardados
+        myHealth = PlayerPrefs.GetInt("CurrentHealth");
+        Score = PlayerPrefs.GetInt("CurrentScore");
+        myResistance = PlayerPrefs.GetInt("CurrentStamina");
+        TurnOnEnemies();
     }
 
     //Revivir
@@ -465,6 +481,30 @@ public class PlayerPhone : MonoBehaviour
 
         myH = myHealth;
  
+    }
+
+    public void TurnOnEnemies()
+    {
+        MonoBehaviour[] enemies = enemyParameter.GetComponentsInChildren<MonoBehaviour>();
+        for (int i = 0; i < enemies.Length; i++)
+        {
+            if (!enemies[i].gameObject.activeInHierarchy)
+            {
+                enemies[i].gameObject.SetActive(true);
+                if (enemies[i].gameObject.GetComponent<EnemyMovement>() != null && enemies[i].gameObject.GetComponent<EnemyMovement>().isActiveAndEnabled)
+                {
+                    enemies[i].gameObject.GetComponent<EnemyMovement>().RestartHealth();
+                }
+                else if (enemies[i].gameObject.GetComponent<LargeDistanceEnemy>() != null && enemies[i].gameObject.GetComponent<LargeDistanceEnemy>().isActiveAndEnabled)
+                {
+                    enemies[i].gameObject.GetComponent<LargeDistanceEnemy>().RestartHealth();
+                }
+                else if (enemies[i].gameObject.GetComponent<Boss2Movement>() != null && enemies[i].gameObject.GetComponent<Boss2Movement>().isActiveAndEnabled)
+                {
+                    enemies[i].gameObject.GetComponent<Boss2Movement>().RestartHealth();
+                }
+            }
+        }
     }
 
 }

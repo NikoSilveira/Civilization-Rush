@@ -77,7 +77,7 @@ public class CheckpointController : MonoBehaviour
         }
     }
 
-    private void TurnOnEnemies()
+    public void TurnOnEnemies()
     {
         MonoBehaviour[] enemies = enemyParameter.GetComponentsInChildren<MonoBehaviour>();
         for(int i = 0; i < enemies.Length; i++)
