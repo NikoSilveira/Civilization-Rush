@@ -6,11 +6,11 @@ public class EnemyAttackTrigger : MonoBehaviour
 {
     // Start is called before the first frame update
     private PlayerPhone player;
-    private EnemyMovement enemy;
+    public EnemyMovement enemy;
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerPhone>();
-        enemy = GetComponent<EnemyMovement>();
+        //enemy = GetComponent<EnemyMovement>();
     }
 
     // Update is called once per frame
