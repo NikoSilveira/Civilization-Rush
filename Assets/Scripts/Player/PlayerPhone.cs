@@ -384,30 +384,14 @@ public class PlayerPhone : MonoBehaviour
 
         //Desacelerar tiempo
         Time.timeScale = 0.3f;
-
-        /*if(checkpointReached == false)
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-            Time.timeScale = 1f;
-        } else
-        {
-            //Recuperar los ultimos atributos guardados
-            myHealth = PlayerPrefs.GetInt("CurrentHealth");
-            Score = PlayerPrefs.GetInt("CurrentScore");
-            myResistance = PlayerPrefs.GetInt("CurrentStamina");
-            checkpointC.TurnOnEnemies();
-        }*/
-
-        //Recuperar los ultimos atributos guardados
-        myHealth = PlayerPrefs.GetInt("CurrentHealth");
-        Score = PlayerPrefs.GetInt("CurrentScore");
-        myResistance = PlayerPrefs.GetInt("CurrentStamina");
-        TurnOnEnemies();
     }
 
     //Revivir
     public void Respawn()
     {
+        myHealth = PlayerPrefs.GetInt("CurrentHealth");
+        myResistance = PlayerPrefs.GetInt("CurrentStamina");
+
         Time.timeScale = 1;
         transform.position = respawnPoint;
         StopMoving();
@@ -432,7 +416,7 @@ public class PlayerPhone : MonoBehaviour
 
             //Activar Iframes
             IframesActive = true;
-            Invoke("DeactivateIFrames", 1.1f);
+            Invoke("DeactivateIFrames", 0.75f);
         }
     }
 
@@ -481,30 +465,6 @@ public class PlayerPhone : MonoBehaviour
 
         myH = myHealth;
  
-    }
-
-    public void TurnOnEnemies()
-    {
-        MonoBehaviour[] enemies = enemyParameter.GetComponentsInChildren<MonoBehaviour>();
-        for (int i = 0; i < enemies.Length; i++)
-        {
-            if (!enemies[i].gameObject.activeInHierarchy)
-            {
-                enemies[i].gameObject.SetActive(true);
-                if (enemies[i].gameObject.GetComponent<EnemyMovement>() != null && enemies[i].gameObject.GetComponent<EnemyMovement>().isActiveAndEnabled)
-                {
-                    enemies[i].gameObject.GetComponent<EnemyMovement>().RestartHealth();
-                }
-                else if (enemies[i].gameObject.GetComponent<LargeDistanceEnemy>() != null && enemies[i].gameObject.GetComponent<LargeDistanceEnemy>().isActiveAndEnabled)
-                {
-                    enemies[i].gameObject.GetComponent<LargeDistanceEnemy>().RestartHealth();
-                }
-                else if (enemies[i].gameObject.GetComponent<Boss2Movement>() != null && enemies[i].gameObject.GetComponent<Boss2Movement>().isActiveAndEnabled)
-                {
-                    enemies[i].gameObject.GetComponent<Boss2Movement>().RestartHealth();
-                }
-            }
-        }
     }
 
 }

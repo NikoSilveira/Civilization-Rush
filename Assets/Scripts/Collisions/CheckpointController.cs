@@ -60,42 +60,8 @@ public class CheckpointController : MonoBehaviour
     //Guardar progreso al activar checkpoint
     private void SaveProgress()
     {
-        PlayerPrefs.SetInt("CurrentScore", player.Score);
+        //PlayerPrefs.SetInt("CurrentScore", player.Score);
         PlayerPrefs.SetInt("CurrentStamina", player.myResistance);
         PlayerPrefs.SetInt("CurrentHealth", player.myHealth);
-    }
-
-    private void DestroyEnemies()
-    {
-        MonoBehaviour[] enemies = enemyParameter.GetComponentsInChildren<MonoBehaviour>();
-        for (int i = 0; i < enemies.Length; i++)
-        {
-            if(!enemies[i].gameObject.activeInHierarchy)
-            {
-                Destroy(enemies[i].gameObject);
-            }
-        }
-    }
-
-    public void TurnOnEnemies()
-    {
-        MonoBehaviour[] enemies = enemyParameter.GetComponentsInChildren<MonoBehaviour>();
-        for(int i = 0; i < enemies.Length; i++)
-        {
-            if (!enemies[i].gameObject.activeInHierarchy)
-            {
-                enemies[i].gameObject.SetActive(true);
-                if(enemies[i].gameObject.GetComponent<EnemyMovement>() != null && enemies[i].gameObject.GetComponent<EnemyMovement>().isActiveAndEnabled)
-                {
-                    enemies[i].gameObject.GetComponent<EnemyMovement>().RestartHealth();
-                } else if(enemies[i].gameObject.GetComponent<LargeDistanceEnemy>() != null && enemies[i].gameObject.GetComponent<LargeDistanceEnemy>().isActiveAndEnabled)
-                {
-                    enemies[i].gameObject.GetComponent<LargeDistanceEnemy>().RestartHealth();
-                } else if(enemies[i].gameObject.GetComponent<Boss2Movement>() != null && enemies[i].gameObject.GetComponent<Boss2Movement>().isActiveAndEnabled)
-                {
-                    enemies[i].gameObject.GetComponent<Boss2Movement>().RestartHealth();
-                }
-            }
-        }
     }
 }
