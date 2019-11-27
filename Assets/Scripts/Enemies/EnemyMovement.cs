@@ -160,7 +160,7 @@ public class EnemyMovement : MonoBehaviour
     {
         try
         {
-            if (!collision.CompareTag("playerWeapon") && !collision.CompareTag("Player"))
+            if (!collision.CompareTag("playerWeapon") && !collision.CompareTag("Player") && !collision.CompareTag("playerArrow"))
             {
                 transform.localScale = new Vector2(-(Mathf.Sign(myRigiBody.velocity.x)), 1f);
             } else if(collision.CompareTag("playerWeapon"))

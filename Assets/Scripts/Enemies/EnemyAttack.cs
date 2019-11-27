@@ -9,7 +9,7 @@ public class EnemyAttack : MonoBehaviour
     public EnemyMovement enemy;
     private Animator anim;
     private float distancePlayer;
-    private float attackCD = 1.5f;
+    private float attackCD = 1.1f;
     private float attackIntervale;
     private float attackDuration;
     private float attackDurationCd = 0.4f;

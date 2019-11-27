@@ -149,18 +149,18 @@ TextureImporter:
       name: samurai_atacking_katana_2_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 6986
-        width: 975
-        height: 976
+        x: 268
+        y: 6996
+        width: 440
+        height: 512
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 0, y: 0, z: 0, w: 512}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9e5b14218a96b814cac0a7d1401d1b70
+      spriteID: 097c2fa48acc34546bf13744159b2dc7
       internalID: 5627083755397727943
       vertices: []
       indices: 
@@ -170,10 +170,10 @@ TextureImporter:
       name: samurai_atacking_katana_2_1
       rect:
         serializedVersion: 2
-        x: 0
-        y: 5988
-        width: 996
-        height: 998
+        x: 322
+        y: 5979
+        width: 496
+        height: 494
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -181,7 +181,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 28e0856675a710145b3cb642a2dbaeeb
+      spriteID: 38d4653dc40249247b51df7ef46baf7c
       internalID: -7621314382910598217
       vertices: []
       indices: 
@@ -191,10 +191,10 @@ TextureImporter:
       name: samurai_atacking_katana_2_2
       rect:
         serializedVersion: 2
-        x: 0
-        y: 4990
-        width: 996
-        height: 998
+        x: 322
+        y: 4977
+        width: 606
+        height: 510
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -202,7 +202,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4a63abbf999193a4c84617dff8138d66
+      spriteID: f3da438f698017248b5133affa117198
       internalID: -8253491656117691867
       vertices: []
       indices: 
@@ -212,10 +212,10 @@ TextureImporter:
       name: samurai_atacking_katana_2_3
       rect:
         serializedVersion: 2
-        x: 0
-        y: 3992
-        width: 996
-        height: 998
+        x: 268
+        y: 3994
+        width: 371
+        height: 651
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -223,7 +223,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 72702cf6cefa6f945a1a880392d0c92e
+      spriteID: 0166fe5d7e5d47843979e5b4b0f6ca65
       internalID: -2144910029106493854
       vertices: []
       indices: 
@@ -234,9 +234,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 2994
-        width: 996
-        height: 998
+        y: 2984
+        width: 638
+        height: 573
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -244,7 +244,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4ba6f4dfe8c033a45a8e20fd638c8213
+      spriteID: af4ce4eefbddce34d8bd3e386db32285
       internalID: 1319680474855606460
       vertices: []
       indices: 
@@ -254,18 +254,18 @@ TextureImporter:
       name: samurai_atacking_katana_2_5
       rect:
         serializedVersion: 2
-        x: 0
-        y: 1996
-        width: 996
-        height: 998
+        x: 22
+        y: 1994
+        width: 616
+        height: 604
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 0, y: 0, z: 40, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7ce42c6b4b1146c409bf416691bd7d3b
+      spriteID: f0d7b0add57cd534e9af8d98b914fb4b
       internalID: 7813944003550780053
       vertices: []
       indices: 
@@ -275,10 +275,10 @@ TextureImporter:
       name: samurai_atacking_katana_2_6
       rect:
         serializedVersion: 2
-        x: 0
-        y: 998
-        width: 996
-        height: 998
+        x: 230
+        y: 996
+        width: 766
+        height: 479
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -286,7 +286,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dfd1c5ca94cf7b647a206ecafc2acaad
+      spriteID: eee376161afb38b4dbf1178cb4f39016
       internalID: 49201988265709443
       vertices: []
       indices: 
@@ -296,10 +296,10 @@ TextureImporter:
       name: samurai_atacking_katana_2_7
       rect:
         serializedVersion: 2
-        x: 0
+        x: 268
         y: 0
-        width: 996
-        height: 998
+        width: 589
+        height: 489
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -307,7 +307,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8890849136f9e5b41b54064df229763d
+      spriteID: e7c1e40adc821374a802fc26d51d7bd5
       internalID: 2943726420506853321
       vertices: []
       indices: 

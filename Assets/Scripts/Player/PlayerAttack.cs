@@ -36,7 +36,7 @@ public class PlayerAttack : MonoBehaviour
 
     //Archer
     public float shootInterval;
-    public float shootIntervalCd = 0.3f;
+    public float shootIntervalCd = 10.2f;
     public float arrowSpead = 100;
     public float arrowTimer;
     public GameObject arrow;
