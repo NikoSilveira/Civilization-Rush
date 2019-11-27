@@ -150,4 +150,8 @@ public class LargeDistanceEnemy : MonoBehaviour
     {
         return this.enemy;
     }
+    public void RestartHealth()
+    {
+        this.enemyHealth = this.enemy.getHealth();
+    }
 }

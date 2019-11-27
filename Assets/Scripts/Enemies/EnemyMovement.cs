@@ -226,4 +226,8 @@ public class EnemyMovement : MonoBehaviour
     {
         return this.enemy;
     }
+    public void RestartHealth()
+    {
+        this.enemyHealth = this.enemy.getHealth();
+    }
 }
