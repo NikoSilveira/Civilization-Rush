@@ -143,6 +143,7 @@ public class LargeDistanceEnemy : MonoBehaviour
     public void Damage(int damage)
     {
         enemyHealth -= damage;
+        FindObjectOfType<AudioManager>().Play("Inflict");
     }
 
     public Enemy getEnemy()

@@ -99,6 +99,7 @@ public class SettingsMenu : MonoBehaviour
     {
         SettingsMenuPanel.SetActive(false);
         MainMenuPanel.SetActive(true);
+        FindObjectOfType<AudioManager>().Play("Press");
     }
 
 }

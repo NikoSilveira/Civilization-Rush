@@ -11,7 +11,7 @@ using UnityEngine.UI;
 public class Score : MonoBehaviour
 {
     
-    public Text playerScore;
+    [SerializeField] Text playerScore;
 
     public Text ScoreUi;
     private PlayerPhone player;
