@@ -21,7 +21,7 @@ public class CheckpointController : MonoBehaviour
     //Bool de control de activación del checkpoint
     public bool checkpointReached;
 
-    
+    public GameObject enemyParameter;
 
     // Start is called before the first frame update
     void Start()
@@ -63,5 +63,17 @@ public class CheckpointController : MonoBehaviour
         PlayerPrefs.SetInt("CurrentScore", player.Score);
         PlayerPrefs.SetInt("CurrentStamina", player.myResistance);
         PlayerPrefs.SetInt("CurrentHealth", player.myHealth);
+    }
+
+    private void DestroyEnemies()
+    {
+        MonoBehaviour[] enemies = enemyParameter.GetComponentsInChildren<MonoBehaviour>();
+        for (int i = 0; i < enemies.Length; i++)
+        {
+            if(!enemies[i].isActiveAndEnabled)
+            {
+                Destroy(enemies[i].gameObject);
+            }
+        }
     }
 }
