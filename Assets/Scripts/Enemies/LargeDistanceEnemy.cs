@@ -34,6 +34,11 @@ public class LargeDistanceEnemy : MonoBehaviour
 
     private Enemy enemy;
 
+    //Hurt
+    private float damageInt;
+    private float damageIntTime = 0.2f;
+    private float damageStart = 0f;
+
 
     private void Awake()
     {
@@ -54,6 +59,16 @@ public class LargeDistanceEnemy : MonoBehaviour
     {
         //enemyAnimator.SetBool("walk", range);
         //enemyAnimator.SetBool("shoot", attacking);
+
+        if (damageStart != 0f)
+        {
+            if (Time.time - damageStart >= damageInt)
+            {
+                enemyAnimator.SetBool("hurt", false);
+                damageStart = 0f;
+            }
+        }
+
 
         TargetInRange();
         distancePlayer = target.position.x - transform.position.x;
@@ -143,6 +158,9 @@ public class LargeDistanceEnemy : MonoBehaviour
     public void Damage(int damage)
     {
         enemyHealth -= damage;
+        damageInt = damageIntTime;
+        enemyAnimator.SetBool("hurt", true);
+        damageStart = Time.time;
         FindObjectOfType<AudioManager>().Play("Inflict");
     }
 
