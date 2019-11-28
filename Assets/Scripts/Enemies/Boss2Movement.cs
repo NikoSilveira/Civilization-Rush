@@ -64,6 +64,11 @@ public class Boss2Movement : MonoBehaviour
 
     private Enemy enemy;
 
+    //Hurt
+    private float damageInt;
+    private float damageIntTime = 0.2f;
+    private float damageStart = 0f;
+
 
     //----------------------------------------
     //    MÉTODOS PREDETERMINADOS DE UNITY
@@ -102,6 +107,14 @@ public class Boss2Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (damageStart != 0f)
+        {
+            if (Time.time - damageStart >= damageInt)
+            {
+                anim.SetBool("hurt", false);
+                damageStart = 0f;
+            }
+        }
 
         // Al ver al jugador
         distancePlayer = target.position.x - transform.position.x;
@@ -169,6 +182,9 @@ public class Boss2Movement : MonoBehaviour
     public void Damage(int damage)
     {
         enemyHealth -= damage;
+        damageInt = damageIntTime;
+        anim.SetBool("hurt", true);
+        damageStart = Time.time;
         FindObjectOfType<AudioManager>().Play("Inflict");
     }
 
