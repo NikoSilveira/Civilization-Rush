@@ -172,7 +172,7 @@ public class Boss2Movement : MonoBehaviour
     //Colisión del enemigo con un objeto
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (!collision.CompareTag("Player") && !collision.CompareTag("playerArrow"))
+        if (!collision.CompareTag("playerWeapon") && !collision.CompareTag("Player") && !collision.CompareTag("playerArrow"))
         {
             transform.localScale = new Vector2(-(Mathf.Sign(myRigiBody.velocity.x)), 1f);
         }
