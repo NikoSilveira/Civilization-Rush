@@ -70,7 +70,7 @@ public class portalTrigger : MonoBehaviour
                 //Siguiente escena + delay (seg)
                 Invoke("nextScene", 4);
             }
-            else                         //score mínimo
+            else if (PlayerScore < minimumScore)                        //score mínimo
             {
                 //SFX
                 FindObjectOfType<AudioManager>().Play("Error");
