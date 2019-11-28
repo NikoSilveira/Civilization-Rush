@@ -190,7 +190,7 @@ public class PlayerAttack : MonoBehaviour
         {
             if (player.myBodyFeet.IsTouchingLayers(LayerMask.GetMask("Ground")) == false && Input.GetKeyDown("f") && !downattacking)
             {
-                Vector2 downVelocityToAdd = new Vector2(0f, -10f);
+                Vector2 downVelocityToAdd = new Vector2(0f, -6f);
                 player.rb.velocity += downVelocityToAdd;
                 downattacking = true;
                 attackTimer = attackCd;

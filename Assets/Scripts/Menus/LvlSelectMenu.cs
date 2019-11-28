@@ -32,7 +32,7 @@ public class LvlSelectMenu : MonoBehaviour
         {
             if(i + 1 > levelReached)
             {
-                //levelButtons[i].interactable = false;
+                levelButtons[i].interactable = false;
                 infoButtons[i].interactable = false;
             }
         }
