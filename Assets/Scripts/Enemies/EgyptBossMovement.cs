@@ -3,6 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+//------------------------------------
+//    CONTROL Y LÓGICA DEL ENEMIGO
+//------------------------------------
+
+/*
+    -Este script crea un objeto de tipo playerPhone para poder
+    obtener al jugador como objeto y poder establecer una lógica
+    entre el enemigo y el jugador
+ */
+
 public class EgyptBossMovement : MonoBehaviour
 {
     //--------------------------
@@ -17,8 +27,8 @@ public class EgyptBossMovement : MonoBehaviour
     public Rigidbody2D rigiBody2D;
     private PlayerPhone player;
 
-    //Batala de jefe
-    public Slider slider;
+    //Variables para el jefe
+    public Slider enemyBar;
     public GameObject gate;
     public BossTrigger bossTrigger;
 
@@ -49,6 +59,16 @@ public class EgyptBossMovement : MonoBehaviour
     //Score
     public int Score;
 
+    //Iframes
+    private bool iframesActive = false;
+
+    private Enemy enemy;
+
+    //Hurt
+    private float damageInt;
+    private float damageIntTime = 0.2f;
+    private float damageStart = 0f;
+
 
     //----------------------------------------
     //    MÉTODOS PREDETERMINADOS DE UNITY
@@ -71,45 +91,33 @@ public class EgyptBossMovement : MonoBehaviour
         runLeft = new Vector2(-maxSpeed, 0);
         stop = new Vector2(0, 0);
 
-        //Inicializar vida
-        maxHealth = 12;
-        enemyHealth = maxHealth;
-
-        //Valor del enemigo
-        Score = 100;
 
         //Daño de ataque
-        damageLevel = 1;
+        EnemyFactory factory = new EnemyFactory();
+        enemy = factory.getEnemy(EnemyTypes.high);
+        damageLevel = enemy.getAttPow();
+
+        //Inicializar vida
+        enemyHealth = enemy.getHealth();
+
+        //Valor del enemigo
+        Score = enemy.getScore();
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (damageStart != 0f)
+        {
+            if (Time.time - damageStart >= damageInt)
+            {
+                anim.SetBool("hurt", false);
+                damageStart = 0f;
+            }
+        }
 
         // Al ver al jugador
         distancePlayer = target.position.x - transform.position.x;
-
-        /*if(distancePlayer > 0 && !facingRight)
-        {
-            Flip();
-        }
-        else if(distancePlayer < 0 && facingRight)
-        {
-         Flip();
-        }*/
-        /*
-        if(distancePlayer < -1f)
-        {
-            rigiBody2D.velocity = runLeft;
-        }
-        else if(distancePlayer > 1f)
-        {
-            rigiBody2D.velocity = runRight;
-        }
-        else
-        {
-            myRigiBody.velocity = stop;
-        } */
 
         //Camine sin ver al jugador
         Move(rigiBody2D);
@@ -119,12 +127,22 @@ public class EgyptBossMovement : MonoBehaviour
         {
             Destroy(gameObject);
             player.Score += Score;
-            FindObjectOfType<AudioManager>().Play("Scream");
+
+            //Fin de la batalla
             gate.SetActive(false);
             bossTrigger.StopBossBattle();
+            FindObjectOfType<AudioManager>().Play("Scream");
+
         }
 
-        slider.SetValueWithoutNotify(enemyHealth);
+        //Barra de vida
+        enemyBar.SetValueWithoutNotify(enemyHealth);
+
+        //cambio de patron de batalla
+        if (enemyHealth == (enemy.getHealth() / 2))
+        {
+            moveSpeed = 4;
+        }
     }
 
 
@@ -154,40 +172,9 @@ public class EgyptBossMovement : MonoBehaviour
     //Colisión del enemigo con un objeto
     private void OnTriggerExit2D(Collider2D collision)
     {
-        transform.localScale = new Vector2(-(Mathf.Sign(myRigiBody.velocity.x)), 1f);
-    }
-
-
-    /*public void attack(bool attackingRight)
-    {
-        attacktimer += Time.deltaTime;
-
-        if(attacktimer >= attackInterval)
+        if (!collision.CompareTag("Player") && !collision.CompareTag("playerArrow"))
         {
-            Vector2 direction = target.transform.position - transform.position;
-            direction.Normalize();
-
-            if (!attackingRight)
-            {
-
-            }
-        }
-    }
-
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Player"))
-        {
-
-        }
-    }*/
-
-    //Recibir daño del jugador
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.isTrigger != true && collision.CompareTag("Player"))
-        {
-            collision.GetComponent<PlayerPhone>().takeDamage(damageLevel);
+            transform.localScale = new Vector2(-(Mathf.Sign(myRigiBody.velocity.x)), 1f);
         }
     }
 
@@ -195,8 +182,13 @@ public class EgyptBossMovement : MonoBehaviour
     public void Damage(int damage)
     {
         enemyHealth -= damage;
+        damageInt = damageIntTime;
+        anim.SetBool("hurt", true);
+        damageStart = Time.time;
         FindObjectOfType<AudioManager>().Play("Inflict");
     }
+
+
 
     //Movimiento
     public void Move(Rigidbody2D body)
@@ -226,5 +218,13 @@ public class EgyptBossMovement : MonoBehaviour
     public void setBody(Rigidbody2D rigidbody2D)
     {
         this.rigiBody2D = rigidbody2D;
+    }
+    public Enemy getEnemy()
+    {
+        return this.enemy;
+    }
+    public void RestartHealth()
+    {
+        this.enemyHealth = this.enemy.getHealth();
     }
 }
