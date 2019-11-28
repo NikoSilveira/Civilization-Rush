@@ -23,10 +23,16 @@ public class ConfirmScreen : MonoBehaviour
     //Confirmar y borrar los datos guardados (solo rebloquea niveles)
     public void Confirm()
     {
-        PlayerPrefs.SetInt("levelReached", 1);
-        SceneManager.LoadScene(0);
-
         //SFX
         FindObjectOfType<AudioManager>().Play("Press");
+
+        //Reiniciar record por nivel - MODIFICAR SEGUN NUMERO DE NIVELES
+        for (int i = 1; i < 4; i++)
+        {
+            PlayerPrefs.SetInt("ScoreRecord" + i, 0);
+        }
+
+        PlayerPrefs.SetInt("levelReached", 1);
+        SceneManager.LoadScene(0);
     }
 }

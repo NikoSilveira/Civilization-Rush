@@ -75,23 +75,10 @@ public class SettingsMenu : MonoBehaviour
     //        BOTONES
     //------------------------
 
-    //Resetear los niveles desbloqueados y max score
-    public void resetProgress()
+    public void DeleteProgress()
     {
-        PlayerPrefs.SetInt("levelReached", 1);
-
-        //Reiniciar record por nivel - MODIFICAR SEGUN NUMERO DE NIVELES
-        for(int i=1; i<4; i++)
-        {
-            PlayerPrefs.SetInt("ScoreRecord"+i, 0);
-        }
-        
-
         ConfirmPanel.SetActive(true);
         SettingsMenuPanel.SetActive(false);
-
-        //SFX
-        FindObjectOfType<AudioManager>().Play("Press");
     }
 
     //Volver al menu principal
