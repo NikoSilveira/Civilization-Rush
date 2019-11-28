@@ -266,10 +266,10 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "Alberto Pereira\nMarcos De Andrade\nNicol\xE1s Silveira\nSamuel Boada\n\n\nIv\xE1n
-    Loscher\n\n\nAlberto Pereira\nMarcos De Andrade\nNicol\xE1s Silveira\nSamuel Boada\n\n\nMarcos
-    De Andrade\nSamuel Boada\n\n\nNicol\xE1s Silveira\n\n\nArcOfDream\n\n\t- Thought
-    Soup\n\t- Gone Fishing\n\t- Against All Odds\n\t- The Trial\n\t- Bounty Hunter\n\t-
-    End of Monolith\n\nDesperateMeasurez\n\n\t-Japanese Seaside\n\t Village\n\n\ngtkampos\n\n\t-
+    Loscher\n\n\nAlberto Pereira\nMarcos De Andrade\nNicol\xE1s Silveira\nSamuel Boada\nSantiago
+    Calcuri\xE1n\n\n\nMarcos De Andrade\nSamuel Boada\n\n\nNicol\xE1s Silveira\n\n\nArcOfDream\n\n\t-
+    Thought Soup\n\t- Gone Fishing\n\t- Against All Odds\n\t- The Trial\n\t- Bounty
+    Hunter\n\t- End of Monolith\n\nDesperateMeasurez\n\n\t-Japanese Seaside\n\t Village\n\n\ngtkampos\n\n\t-
     Egyptian Tileset\n\n\nPilar Cuenca"
 --- !u!222 &206312215
 CanvasRenderer:
@@ -654,7 +654,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Planeaci\xF3n\n\n\n\n\n\nSupervisi\xF3n\n\n\nProgramaci\xF3n y Testing\n\n\n\n\nDise\xF1o
+  m_Text: "Planeaci\xF3n\n\n\n\n\n\nSupervisi\xF3n\n\n\nProgramaci\xF3n y Testing\n\n\n\n\n\nDise\xF1o
     y Arte\n\n\n\nAudio\n\n\nM\xFAsica\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAssets\n\n\n\n\nAgradecimiento\nEspecial"
 --- !u!222 &638911563
 CanvasRenderer:
