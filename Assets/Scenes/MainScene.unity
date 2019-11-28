@@ -3707,7 +3707,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   description:
     title: Egipto
-    varObjetivo: 5000
+    varObjetivo: 4500
     varRecord: 0
     varDificultad: "Dif\xEDcil"
     varInformacion: "El Antiguo Egipto fue una civilizaci\xF3n que se origin\xF3 a
@@ -6183,7 +6183,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   description:
-    title: Mongolia
+    title: "Jap\xF3n"
     varObjetivo: 2500
     varRecord: 0
     varDificultad: Normal

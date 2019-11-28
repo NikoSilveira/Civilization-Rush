@@ -7,7 +7,7 @@ public class HighPowerEnemy : Enemy
     public HighPowerEnemy()
     {
         this.attPow = 2;
-        this.health = 20;
+        this.health = 14;
         this.score = 1000;
         this.tag = "High Power Enemy";
     }
